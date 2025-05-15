@@ -5,7 +5,7 @@ layout: single
 collection: projects
 date: 2025-05-15
 tags: [Python, CLI, Tkinter, Selenium]
-teaser: /assets/images/quiz-game-thumbnail.png
+teaser: /assets/images/images.png
 ---
 
 This project is a command-line quiz game built using Python. It scrapes general knowledge questions from a live website using Selenium, presents them via a Tkinter GUI, and evaluates user answers using fuzzy string matching.
