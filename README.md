@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # [Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/)
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE)
@@ -287,3 +288,7 @@ Lunr is distributed under the terms of the [MIT License](http://opensource.org/l
 Minimal Mistakes incorporates [clipboard.js](https://clipboardjs.com/),
 Copyright (c) 2021 Zeno Rocha.
 Clipboard.js is distributed under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+=======
+# ardit-islami.github.io
+My portfolio for AI/Data career showcasing projects and skills
+>>>>>>> 2ba349ca93d4bfcc67f4c3d847be3280e3fdaf08
