@@ -1,19 +1,18 @@
 ---
 title: "Quiz Game CLI"
-excerpt: "A Python-based terminal quiz game that scrapes live questions and checks answers with fuzzy matching."
+excerpt: "A command-line Python quiz game that scrapes live trivia questions and uses fuzzy matching to score."
 layout: single
 collection: projects
 date: 2025-05-15
-tags: [Python, CLI, Tkinter, Selenium]
-teaser: /assets/images/images.png
+tags: [Python, CLI, Selenium, Tkinter]
+teaser: https://via.placeholder.com/400x250
 ---
 
-This project is a command-line quiz game built using Python. It scrapes general knowledge questions from a live website using Selenium, presents them via a Tkinter GUI, and evaluates user answers using fuzzy string matching.
+This Python-based CLI quiz game uses Selenium to scrape trivia questions from the web, then presents them via a simple GUI and validates answers using fuzzy string matching.
 
-**Key Features:**
-- Live question scraping from quiz websites
-- GUI via Tkinter for user-friendly input
-- Fuzzy logic-based scoring (e.g., forgiving typos)
-- Modular code with future extensibility in mind
+### Features
+- Live web scraping
+- Tkinter-based user interaction
+- Scoring with fuzzywuzzy
 
-**Technologies Used:** Python, Selenium, Tkinter, fuzzywuzzy
+[View on GitHub](https://github.com/Ardit-Islami/quiz-game-cli)
