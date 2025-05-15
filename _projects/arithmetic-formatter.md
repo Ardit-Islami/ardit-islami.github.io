@@ -5,7 +5,7 @@ layout: single
 collection: projects
 date: 2025-05-10
 tags: [Python, Beginner, FreeCodeCamp]
-teaser: https://via.placeholder.com/400x250
+teaser: /assets/images/images.png
 ---
 
 This small script formats and aligns arithmetic problems for visual clarity — a great starter exercise in string manipulation and Python logic.
