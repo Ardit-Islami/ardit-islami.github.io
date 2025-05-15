@@ -33,6 +33,9 @@ collections:
     permalink: /projects/:title/
   posts:
     output: true
+  pages:
+    output: true
+    permalink: /:title/
 
 defaults:
   - scope:
@@ -45,6 +48,13 @@ defaults:
       comments: false
       share: false
       related: true
+
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
 plugins:
   - jekyll-feed
