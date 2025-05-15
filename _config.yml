@@ -8,7 +8,7 @@ description: >-
 baseurl: "" # user GitHub Page = blank
 url: "https://ardit-islami.github.io"
 
-remote_theme: mmistakes/minimal-mistakes
+theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: "air"
 
 markdown: kramdown
