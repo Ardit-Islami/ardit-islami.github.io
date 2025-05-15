@@ -5,7 +5,7 @@ layout: single
 collection: projects
 date: 2025-05-15
 tags: [Python, CLI, Selenium, Tkinter]
-teaser: https://via.placeholder.com/400x250
+teaser: /assets/images/images.png
 ---
 
 This Python-based CLI quiz game uses Selenium to scrape trivia questions from the web, then presents them via a simple GUI and validates answers using fuzzy string matching.

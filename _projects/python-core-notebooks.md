@@ -5,7 +5,7 @@ layout: single
 collection: projects
 date: 2025-05-01
 tags: [Python, Jupyter, Data Science, NumPy, Pandas]
-teaser: https://via.placeholder.com/400x250
+teaser: /assets/images/images.png
 ---
 
 This notebook series covers key fundamentals in data science with Python — covering everything from list comprehensions to NumPy matrix ops.
