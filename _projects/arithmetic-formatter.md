@@ -2,7 +2,6 @@
 title: "Arithmetic Formatter"
 excerpt: "A CLI tool that formats simple arithmetic problems. Built as part of FreeCodeCamp challenges."
 layout: single
-collection: projects
 date: 2025-05-10
 tags: [Python, Beginner, FreeCodeCamp]
 teaser: /assets/images/images.png
