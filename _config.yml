@@ -35,6 +35,7 @@ collections:
     output: true
   pages:
     output: true
+    permalink: /:title/
 
 defaults:
   - scope:

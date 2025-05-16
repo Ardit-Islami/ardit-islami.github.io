@@ -1,6 +1,7 @@
 ---
 title: "About Me"
 layout: single
+collection: pages
 permalink: /about/
 author_profile: true
 published: true
