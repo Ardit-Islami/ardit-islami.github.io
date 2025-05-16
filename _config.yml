@@ -36,16 +36,30 @@ collections:
 
 defaults:
   - scope:
-      path: ""
-      type: projects
+      path: "" # For all files
+      type: projects # Specifically for the 'projects' collection
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: true # You can set to false if preferred for projects
       comments: false
       share: false
-      related: true
-
+      related: true # You can set to false
+  - scope:
+      path: "" # For all files
+      type: posts # Specifically for the 'posts' collection
+    values:
+      layout: single
+      author_profile: true
+      # ... other post defaults
+  - scope:
+      path: "_pages" # Apply to files directly within the _pages directory
+      # type: "pages" # DO NOT add type: "pages" here, as 'pages' is not a custom collection
+    values:
+      layout: single # Default layout for files in _pages if they don't specify one
+      author_profile: true # Default author profile display for these
+      # Add any other common front matter you want for files in _pages
+      
 plugins:
   - jekyll-feed
   - jekyll-paginate
