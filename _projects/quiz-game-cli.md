@@ -2,6 +2,7 @@
 title: "Quiz Game CLI"
 excerpt: "A command-line Python quiz game that scrapes live trivia questions and uses fuzzy matching to score."
 layout: single
+collection: projects
 date: 2025-05-15
 tags: [Python, CLI, Selenium, Tkinter]
 teaser: /assets/images/images.png
