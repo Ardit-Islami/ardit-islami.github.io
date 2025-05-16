@@ -36,29 +36,34 @@ collections:
 
 defaults:
   - scope:
-      path: "" # For all files
-      type: projects # Specifically for the 'projects' collection
+      path: ""
+      type: projects
     values:
       layout: single
       author_profile: true
-      read_time: true # You can set to false if preferred for projects
-      comments: false
-      share: false
-      related: true # You can set to false
+      # ... other project specific defaults
   - scope:
-      path: "" # For all files
-      type: posts # Specifically for the 'posts' collection
+      path: ""
+      type: posts
     values:
       layout: single
       author_profile: true
-      # ... other post defaults
+      # ... other post specific defaults
   - scope:
-      path: "_pages" # Apply to files directly within the _pages directory
-      # type: "pages" # DO NOT add type: "pages" here, as 'pages' is not a custom collection
+      path: "_pages"  # Target files directly within the _pages directory
+      # type: "pages" # LEAVE THIS OUT. We are targeting by path.
+                      # Jekyll knows files in _pages with front matter are pages.
     values:
-      layout: single # Default layout for files in _pages if they don't specify one
-      author_profile: true # Default author profile display for these
-      # Add any other common front matter you want for files in _pages
+      layout: default # Assign a very basic, known-good layout from Minimal Mistakes.
+                      # Your _pages/about.md (with layout: single) and
+                      # _pages/projects.md (with layout: collection)
+                      # WILL OVERRIDE this default layout with their own specific ones,
+                      # which is what we want.
+                      # This 'layout: default' here is just to ensure Jekyll
+                      # unequivocally sees these files as needing processing.
+      # published: true # You could explicitly add this, though it's usually true by default
+                      # unless JEKYLL_ENV=production is being extra picky about files
+                      # not in a collection.
       
 plugins:
   - jekyll-feed
