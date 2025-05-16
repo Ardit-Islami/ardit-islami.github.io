@@ -19,13 +19,13 @@ paginate: 5
 paginate_path: /page:num/
 
 author:
-  name   : "Ardit Islami"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Mathematics grad with real-world SQL support experience and a passion for Python + AI."
+  name: "Ardit Islami"
+  avatar: /assets/images/bio-photo.png
+  bio: "First-Class Mathematics graduate transitioning into AI and data. Python enthusiast with SQL and problem-solving roots."
   location: "UK"
-  email  : "arditislami.pro@gmail.com"
-  github : "Ardit-Islami"
-  linkedin : "in/ardit-islami"
+  email: "arditislami.pro@gmail.com"
+  github: Ardit-Islami
+  linkedin: in/ardit-islami
 
 collections:
   projects:
