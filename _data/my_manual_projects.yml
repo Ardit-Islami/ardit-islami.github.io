@@ -1,0 +1,19 @@
+- title: "Quiz Game CLI"
+  excerpt: "A command-line quiz game built with Python, demonstrating fundamental programming concepts."
+  url: "/projects/quiz-game-cli/" # This links to the page generated from _projects/quiz-game-cli.md
+  teaser: "/assets/images/teasers/quiz-game-teaser.png" # Path to your teaser image
+  tags: ["Python", "CLI"]
+
+- title: "Arithmetic Formatter"
+  excerpt: "A Python function to neatly format arithmetic problems as specified in a coding challenge."
+  url: "/projects/arithmetic-formatter/"
+  teaser: "/assets/images/teasers/arithmetic-formatter-teaser.png"
+  tags: ["Python", "Algorithm"]
+
+- title: "Python Core Notebooks"
+  excerpt: "A collection of Jupyter notebooks exploring core Python concepts and libraries."
+  url: "/projects/python-core-notebooks/" # Link to the page from _projects/python-core-notebooks.md
+  teaser: "/assets/images/teasers/python-notebooks-teaser.png"
+  tags: ["Python", "Jupyter", "Data Science Basics"]
+
+# Add more projects here as you complete them
