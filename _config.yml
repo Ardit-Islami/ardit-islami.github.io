@@ -33,6 +33,8 @@ collections:
     permalink: /projects/:title/
   posts:
     output: true
+  pages:
+    output: true
 
 defaults:
   - scope:
