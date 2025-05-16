@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-#collection: projects
+collection: projects
 permalink: /projects/
 layout: collection
 entries_layout: list
