@@ -3,6 +3,7 @@ title: "About Me"
 layout: single
 permalink: /about/
 author_profile: true
+published: true
 ---
 
 ## 👋 Who I Am
