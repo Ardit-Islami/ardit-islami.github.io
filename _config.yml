@@ -33,9 +33,9 @@ collections:
     permalink: /projects/:title/
   posts:
     output: true
-  #pages:
-    #output: true
-    #permalink: /:title/
+  pages:
+    output: true
+    permalink: /:title/
 
 defaults:
   - scope:
