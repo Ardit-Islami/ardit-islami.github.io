@@ -46,13 +46,6 @@ defaults:
       share: false
       related: true
 
-  #- scope:
-      #path: ""
-      #type: pages
-    #values:
-      #layout: single
-      #author_profile: true
-
 plugins:
   - jekyll-feed
   - jekyll-paginate
