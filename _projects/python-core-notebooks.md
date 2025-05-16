@@ -2,7 +2,6 @@
 title: "Python Core Notebooks"
 excerpt: "A curated set of notebooks that document my learning journey through Python, NumPy, and Pandas."
 layout: single
-collection: projects
 date: 2025-05-01
 tags: [Python, Jupyter, Data Science, NumPy, Pandas]
 teaser: /assets/images/images.png
