@@ -2,7 +2,6 @@
 title: "Projects"
 permalink: /projects/
 layout: collection
-collection: pages
 entries_layout: list
 published: true
 ---
