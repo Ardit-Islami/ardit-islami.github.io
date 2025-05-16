@@ -1,13 +1,9 @@
 ---
 title: "My Projects Showcase"
 permalink: /projects/
-<<<<<<< HEAD
 layout: single # Or any layout that gives you a clean page structure
 author_profile: true # Or false, depending on preference
 published: true # Important for GHA
-=======
-published: true
->>>>>>> 4b4127380842515b9a2a78fb466d048a6c7fdf8a
 ---
 
 Here are some of the projects I've been working on:
