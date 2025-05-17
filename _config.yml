@@ -74,11 +74,8 @@ plugins:
   - jekyll-sitemap
 
 footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-github"
-      url: "https://github.com/Ardit-Islami"
-    - label: "LinkedIn"
-      icon: "fab fa-linkedin"
-      url: "https://linkedin.com/in/ardit-islami"
+  links: []
+
+atom_feed:
+  hide: true        # Remove "Feed" link
 
