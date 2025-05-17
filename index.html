@@ -1,40 +1,138 @@
 ---
-layout: splash
-title: "Welcome to My Portfolio"
-header:
-  overlay_color: "#000"
-  overlay_filter: "0.2"
-  overlay_image: /assets/images/header-bg.png
-  caption: "From Python Basics to AI Exploration"
-excerpt: "Python · AI · Data"
-feature_row:
-  - image_path: /assets/images/quiz-game-teaser.png
-    alt: "Quiz Game CLI"
-    title: "Quiz Game CLI"
-    excerpt: "A command-line Python quiz game that scrapes questions and uses fuzzy matching for answers."
-    url: "/projects/quiz-game-cli"
-    btn_label: "View Project"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/arithmetic-formatter.png
-    alt: "Arithmetic Formatter"
-    title: "Arithmetic Formatter"
-    excerpt: "A beginner-friendly CLI tool to format arithmetic problems—part of a FreeCodeCamp challenge."
-    url: "/projects/arithmetic-formatter"
-    btn_label: "View Project"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/python-notebooks.png
-    alt: "Python Core Notebooks"
-    title: "Python Core Notebooks"
-    excerpt: "A curated set of Jupyter notebooks documenting my learning in Python, NumPy, and Pandas."
-    url: "/projects/python-core-notebooks"
-    btn_label: "View Project"
-    btn_class: "btn--primary"
+layout: default
+title: "Ardit Islami – AI Portfolio"
+permalink: /
 ---
 
-Welcome to my developer portfolio.
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
 
-I'm Ardit — a former technical support analyst with a First-Class Mathematics degree, transitioning into AI and
-data-driven development. This site highlights the projects, notebooks, and tools I've built using my Job Hunt OS — a
-structured approach to upskilling, experimentation, and career alignment.
+  .hero {
+    background: url('/assets/images/header-bg.png') no-repeat center center;
+    background-size: cover;
+    height: 90vh;
+    position: relative;
+  }
 
-Below are some featured projects. Explore more on the [Projects](/projects/) page.
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .sidebar {
+    width: 25%;
+    min-width: 250px;
+  }
+
+  .sidebar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  .projects-scroll {
+    flex: 1;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 1rem;
+  }
+
+  .project-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+  }
+
+  .project-card img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .project-description h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .cta-text {
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+
+  .description-box {
+    width: 30%;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 24px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #888;
+    background: none;
+  }
+</style>
+
+<div class="hero"></div>
+
+<div class="main-content">
+  <div class="sidebar">
+    <img src="/assets/images/bio-photo.png" alt="Ardit Islami">
+    <h3>Ardit Islami</h3>
+    <p>Mathematics grad with real-world SQL support experience and a passion for Python + AI.</p>
+    <p>📍 UK<br>📧 <a href="mailto:arditislami.pro@gmail.com">Email</a><br>💼 <a href="https://linkedin.com/in/ardit-islami">LinkedIn</a><br>🐙 <a href="https://github.com/Ardit-Islami">GitHub</a></p>
+  </div>
+
+  <div class="projects-scroll">
+    <div class="project-card">
+      <img src="/assets/images/quiz-game-teaser.png" alt="Quiz Game">
+      <div class="project-description">
+        <h3>Quiz Game CLI</h3>
+        <p>Command-line Python game scraping live questions and using fuzzy matching for answers.</p>
+        <a href="/projects/quiz-game-cli">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="/assets/images/arithmetic-formatter.png" alt="Arithmetic Formatter">
+      <div class="project-description">
+        <h3>Arithmetic Formatter</h3>
+        <p>FreeCodeCamp-inspired CLI tool that formats and aligns arithmetic expressions.</p>
+        <a href="/projects/arithmetic-formatter">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="/assets/images/python-notebooks.png" alt="Python Notebooks">
+      <div class="project-description">
+        <h3>Python Core Notebooks</h3>
+        <p>A curated collection of Jupyter notebooks showcasing my Python, NumPy, and Pandas learning.</p>
+        <a href="/projects/python-core-notebooks">View Project →</a>
+      </div>
+    </div>
+
+    <p class="cta-text">👉 <a href="/projects/">See the rest of my projects</a></p>
+  </div>
+
+  <div class="description-box">
+    <p><strong>Welcome to my developer portfolio.</strong><br>
+    I'm Ardit — a former technical support analyst with a First-Class Mathematics degree, transitioning into AI and data-driven development. This site highlights the projects, notebooks, and tools I've built using my Job Hunt OS — a structured approach to upskilling, experimentation, and career alignment.</p>
+  </div>
+</div>
+
+<footer>
+  © 2025 Ardit Islami · Built with Jekyll
+</footer>
