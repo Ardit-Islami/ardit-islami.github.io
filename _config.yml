@@ -67,7 +67,14 @@ defaults:
       # published: true # You could explicitly add this, though it's usually true by default
                       # unless JEKYLL_ENV=production is being extra picky about files
                       # not in a collection.
-      
+  - scope:
+      path: "assets/css" 
+    values:
+      css: "custom.css"
+
+sass:
+  style: compressed
+
 plugins:
   - jekyll-feed
   - jekyll-paginate

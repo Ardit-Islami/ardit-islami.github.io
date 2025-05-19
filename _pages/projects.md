@@ -1,46 +1,36 @@
 ---
-title: "My Projects Showcase"
+layout: default
+title: "Projects"
 permalink: /projects/
-layout: single # Or any layout that gives you a clean page structure
-author_profile: true # Or false, depending on preference
-published: true # Important for GHA
 ---
 
-Here are some of the projects I've been working on:
-
-<div class="project-list-manual">
-{% for project_item in site.data.my_manual_projects %}
-  <div class="project-card">
-    {% if project_item.teaser %}
-      <a href="{{ project_item.url | relative_url }}">
-        <img src="{{ project_item.teaser | relative_url }}" alt="Teaser image for {{ project_item.title }}">
-      </a>
-    {% endif %}
-    <h2><a href="{{ project_item.url | relative_url }}">{{ project_item.title }}</a></h2>
-    <p>{{ project_item.excerpt }}</p>
-    {% if project_item.tags %}
-      <p class="page__meta"><strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong> <span itemprop="keywords">
-        {% for tag in project_item.tags %}
-          <a href="#" rel="tag">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-      </span></p>
-    {% endif %}
-    <p><a href="{{ project_item.url | relative_url }}" class="btn btn--inverse">View Project Details</a></p>
+<div class="projects-layout">
+  <div class="sidebar">
+    <img src="/assets/images/bio-photo.png" alt="Ardit Islami">
+    <h3>Ardit Islami</h3>
+    <p>Mathematics grad with real-world SQL support experience and a passion for Python + AI.</p>
+    <p>
+      📍 UK<br>
+      📧 <a href="mailto:arditislami.pro@gmail.com">Email</a><br>
+      💼 <a href="https://linkedin.com/in/ardit-islami">LinkedIn</a><br>
+      🐙 <a href="https://github.com/Ardit-Islami">GitHub</a>
+    </p>
   </div>
-{% endfor %}
-</div>
 
-<style>
-/* Basic styling for the cards - you can refine this or use theme classes */
-.project-list-manual .project-card {
-  border: 1px solid #eee;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-.project-list-manual .project-card img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-</style>
+  <div class="projects-content">
+    <h2 class="project-grid-title">A Showcase of My Projects</h2>
+    <div class="project-grid-wrapper">
+      {% for item in site.data.my_manual_projects %}
+        <div class="project-tile">
+          <a href="{{ item.url }}">
+            <div class="tile-image" style="background-image: url('{{ item.image }}');"></div>
+            <div class="tile-overlay">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
