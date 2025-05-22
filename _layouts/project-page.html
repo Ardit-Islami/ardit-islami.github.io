@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<div class="page-container">
+    <div class="project-wrapper">
+
+        <div class="project-content-box">
+            <h1 class="project-title">{{ page.title }}</h1>
+
+            {% if page.teaser %}
+            <img src="{{ page.teaser }}" alt="Project preview" class="project-image">
+            {% endif %}
+
+            {% if page.tags %}
+            <div class="skill-section">
+                {% for tag in page.tags %}
+                <span class="skill-pill">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="project-body">
+                {{ content }}
+            </div>
+            {% if page.github_url %}
+            <a href="{{ page.github_url }}" class="btn-github" target="_blank">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+            {% endif %}
+
+            <!-- Prev/Next Navigation -->
+            <div class="project-nav">
+                {% if page.previous %}
+                <a class="nav-button prev" href="{{ page.previous.url }}">
+                    ← {{ page.previous.title }}
+                </a>
+                {% endif %}
+                {% if page.next %}
+                <a class="nav-button next" href="{{ page.next.url }}">
+                    {{ page.next.title }} →
+                </a>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</div>
