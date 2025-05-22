@@ -1,0 +1,205 @@
+body {
+  background-image: url('/assets/images/full-background.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #E0E6FF;
+  font-family: 'Inter', sans-serif;
+}
+
+.projects-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 15vh;
+  box-sizing: border-box;
+  align-items: flex-start;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.sidebar {
+  flex: 0 0 260px;
+  margin-left: 2vh;
+  padding: 1.5rem;
+  background-color: rgba(1, 2, 34, 0.95);
+  color: #E0E6FF;
+  border: 1px solid rgba(122, 128, 255, 0.25);
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.sidebar:hover {
+  background-color: rgba(15, 18, 58, 0.98);
+  border: 1px solid #7B72FF;
+  box-shadow: 0 0 10px rgba(123, 114, 255, 0.35), 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.bio-photo {
+  width: 180px !important;
+  height: 180px !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem;
+  border: 3px solid #e9ecef;
+  max-width: unset !important;
+}
+
+.sidebar h3 {
+  /* Name in sidebar */
+  font-size: 1.5rem;
+  color: #E0E6FF;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  /* Often good for names in sidebars */
+}
+
+.sidebar p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #B0B8D1;
+  margin-bottom: 1rem;
+}
+
+.projects-content {
+  flex: 1;
+  flex-grow: 1;
+}
+
+.project-grid-title {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  color: #FFFFFF;
+  text-shadow: 0 0 6px rgba(77, 106, 255, 0.4);
+}
+
+.project-grid-wrapper {
+  max-height: 75vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
+
+.project-tile {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(1, 2, 34, 0.9);
+  border: 1px solid #1A1E3F;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tile-image {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  height: auto;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.3s ease;
+  object-fit: cover;
+}
+
+.tile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(15, 18, 58, 0.85);
+  color: #E0E6FF;
+  opacity: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+.tile-overlay h3 {
+  font-size: 1.1rem;
+}
+
+.tile-overlay p {
+  font-size: 0.7rem;
+  padding: 0 0.2rem;
+}
+
+.project-tile:hover {
+  border: 1px solid #7B72FF;
+  box-shadow: 0 0 10px rgba(123, 114, 255, 0.35), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-tile:hover .tile-image {
+  opacity: 0.4;
+  filter: blur(1px) brightness(0.9);
+}
+
+.project-tile:hover .tile-overlay {
+  opacity: 1;
+}
+
+.project-grid-wrapper::-webkit-scrollbar {
+  width: 10px;
+}
+
+.project-grid-wrapper::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .projects-layout {
+    flex-direction: column;
+    padding-top: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .project-grid-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tile-image {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-grid-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
