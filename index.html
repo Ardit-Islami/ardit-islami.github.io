@@ -1,155 +1,68 @@
 ---
 layout: default
-title: "Ardit Islami – AI Portfolio"
+title: "Ardit Islami – AI Portfolio" # Or your preferred title
 permalink: /
 ---
 
-<style>
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+<div class="page-container">
+  <div class="main-wrapper">
 
-  .page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+    <div class="hero-text-content">
+      <h1>
+        From Python Basics<br>
+        to AI Exploration
+      </h1>
+      <p class="hero-subtitle">Python • AI • Data</p>
+    </div>
 
-  .main-wrapper {
-    flex: 1;
-  }
+    <aside class="sidebar">
+      <img src="/assets/images/bio-photo.png" alt="Ardit Islami" class="bio-photo">
+      <h3>Ardit Islami</h3>
+      <p>Mathematics grad with real-world SQL support experience and a passion for Python + AI.</p>
+      <p>📍 UK<br>📧 <a href="mailto:arditislami.pro@gmail.com">Email</a><br>💼 <a
+          href="https://linkedin.com/in/ardit-islami">LinkedIn</a><br>🐙 <a
+          href="https://github.com/Ardit-Islami">GitHub</a></p>
+    </aside>
 
-  .hero {
-    background: url('/assets/images/header-bg.png') no-repeat center center;
-    background-size: cover;
-    height: 85vh;
-    position: relative;
-  }
+    <div class="content-column">
+      <div class="hero-spacer"></div>
 
-  .main-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    gap: 2rem;
-  }
-
-  .sidebar {
-    width: 25%;
-    min-width: 250px;
-  }
-
-  .sidebar img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-  }
-
-  .projects-scroll {
-    flex: 1;
-    max-height: 500px;
-    overflow-y: auto;
-    padding-right: 1rem;
-  }
-
-  .project-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 1rem;
-  }
-
-  .project-card img {
-    width: 120px;
-    height: auto;
-    border-radius: 8px;
-  }
-
-  .project-description h3 {
-    margin: 0;
-    font-size: 1.2rem;
-  }
-
-  .cta-text {
-    margin-top: 2rem;
-    font-weight: bold;
-  }
-
-  .description-box {
-    width: 30%;
-  }
-
-  .projects-scroll h2 {
-    text-align: center;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-  }
-</style>
-
-<div class="page-container" style="display: flex; flex-direction: column; min-height: 100vh;">
-
-  <div class="main-wrapper" style="flex: 1;">
-    <div class="hero"></div>
-
-    <div class="main-content">
-      <div class="sidebar">
-        <img src="/assets/images/bio-photo.png" alt="Ardit Islami">
-        <h3>Ardit Islami</h3>
-        <p>Mathematics grad with real-world SQL support experience and a passion for Python + AI.</p>
-        <p>📍 UK<br>📧 <a href="mailto:arditislami.pro@gmail.com">Email</a><br>💼 <a
-            href="https://linkedin.com/in/ardit-islami">LinkedIn</a><br>🐙 <a
-            href="https://github.com/Ardit-Islami">GitHub</a></p>
-      </div>
-
-      <div class="projects-scroll">
-        <h2>My Favourite Projects</h2>
-
-        <div class="project-card">
-          <img src="/assets/images/quiz-game-teaser.png" alt="Quiz Game">
-          <div class="project-description">
-            <h3>Quiz Game CLI</h3>
-            <p>Command-line Python game scraping live questions and using fuzzy matching for answers.</p>
-            <a href="/projects/quiz-game-cli">View Project →</a>
+      <div class="content-area">
+        <section class="projects-scroll">
+          <h2 class="projects-scroll-title">My Favourite Projects</h2>
+          <div class="project-list">
+            <div class="project-card">
+              <img class="project-teaser" src="/assets/images/quiz-game-teaser.png" alt="Quiz Game Teaser">
+              <h3>Quiz Game CLI</h3>
+              <p>Command-line Python game scraping live questions and using fuzzy matching for answers.</p>
+              <a href="/projects/quiz-game-cli" class="cta-button">View Project</a>
+            </div>
+            <div class="project-card">
+              <img class="project-teaser" src="/assets/images/arithmetic-formatter.png"
+                alt="Arithmetic Formatter Teaser">
+              <h3>Arithmetic Formatter</h3>
+              <p>FreeCodeCamp-inspired CLI tool that formats and aligns arithmetic expressions.</p>
+              <a href="/projects/arithmetic-formatter" class="cta-button">View Project</a>
+            </div>
+            <div class="project-card">
+              <img class="project-teaser" src="/assets/images/python-notebooks.png" alt="Python Notebooks Teaser">
+              <h3>Python Core Notebooks</h3>
+              <p>A curated collection of Jupyter notebooks showcasing my Python, NumPy, and Pandas learning.</p>
+              <a href="/projects/python-core-notebooks" class="cta-button">View Project</a>
+            </div>
           </div>
-        </div>
-
-        <div class="project-card">
-          <img src="/assets/images/arithmetic-formatter.png" alt="Arithmetic Formatter">
-          <div class="project-description">
-            <h3>Arithmetic Formatter</h3>
-            <p>FreeCodeCamp-inspired CLI tool that formats and aligns arithmetic expressions.</p>
-            <a href="/projects/arithmetic-formatter">View Project →</a>
+          <div class="cta-text">
+            <a href="/projects/" class="cta-button">See All Projects →</a>
           </div>
-        </div>
+        </section>
 
-        <div class="project-card">
-          <img src="/assets/images/python-notebooks.png" alt="Python Notebooks">
-          <div class="project-description">
-            <h3>Python Core Notebooks</h3>
-            <p>A curated collection of Jupyter notebooks showcasing my Python, NumPy, and Pandas learning.</p>
-            <a href="/projects/python-core-notebooks">View Project →</a>
-          </div>
-        </div>
-
-        <p class="cta-text">👉 <a href="/projects/">See the rest of my projects</a></p>
-      </div>
-
-      <div class="description-box">
-        <p><strong>Welcome to my developer portfolio.</strong><br>
-          I'm Ardit — a former technical support analyst with a First-Class Mathematics degree, transitioning into AI
-          and data-driven development. This site highlights the projects, notebooks, and tools I've built using my Job
-          Hunt OS — a structured approach to upskilling, experimentation, and career alignment.</p>
+        <section class="description-box">
+          <p><strong>Welcome to my developer portfolio.</strong><br>
+            I'm Ardit — a former technical support analyst with a First-Class Mathematics degree, transitioning into AI
+            and data-driven development. This site highlights the projects, notebooks, and tools I've built using my Job
+            Hunt OS — a structured approach to upskilling, experimentation, and career alignment.</p>
+        </section>
       </div>
     </div>
-  </div>
-
-  {% include footer.html %}
-
+  </div> {% include footer.html %}
 </div>

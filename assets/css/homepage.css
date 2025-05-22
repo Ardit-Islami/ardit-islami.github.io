@@ -1,0 +1,515 @@
+/* assets/css/homepage.css */
+
+/* --- Basic Reset & Font --- */
+/* Only keep body/html rules here if they are NOT handled by your theme's main CSS
+   or if you specifically want to override the theme font for the homepage.
+   If your theme (Minimal Mistakes) handles body/html margin, padding, base font,
+   you might not need these at all, or only the font-family. */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  /* Your desired font */
+}
+
+/* --- Page Container (Full Background Image) --- */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('../images/full-background.png');
+  /* YOUR ACTUAL BACKGROUND IMAGE PATH */
+  background-size: cover;
+  background-position: center top;
+  /* Shows top of image */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* Fixed background effect */
+  position: relative;
+  /* For ::before overlay and absolute children if any */
+  overflow-x: hidden;
+  /* Prevents horizontal scrollbar if .main-wrapper gets too wide due to padding */
+}
+
+/* Optional: Overlay for .page-container */
+.page-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  /* Adjust darkness/opacity (e.g., 0.3 = 30% black) */
+  z-index: 1;
+  /* Above background, below content */
+}
+
+/* --- Main Wrapper (Overall Content Layout) --- */
+.main-wrapper {
+  position: relative;
+  /* For absolute positioning of .hero-text-content */
+  z-index: 2;
+  /* Above .page-container::before overlay */
+  flex-grow: 1;
+  /* Takes up available vertical space */
+  display: flex;
+  flex-direction: row;
+  /* Sidebar and content-column side-by-side */
+  width: 100%;
+  /* Takes full width of .page-container */
+  padding: 0 2rem;
+  /* <<< PLAY WITH THIS: Overall left/right padding for main content area.
+                               (e.g., 0 1rem for less, 0 3rem for more) */
+  box-sizing: border-box;
+}
+
+/* --- Hero Text Overlay (Positioned Absolutely) --- */
+.hero-text-content {
+  position: absolute;
+  /* === PLAY WITH THESE VALUES to match your mockup === */
+  top: 35vh;
+  /* Vertical position from top of .main-wrapper */
+  left: 70%;
+  /* Horizontal starting point */
+  transform: translateX(-50%);
+  /* True horizontal centering */
+  width: 90%;
+  /* Max width relative to parent */
+  max-width: 700px;
+  /* Absolute max width of text block */
+  /* === END PLAYABLE VALUES === */
+  z-index: 3;
+  /* On top of other elements */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  /* border: 1px dashed limegreen; */
+  /* Temporary: to see its bounds */
+}
+
+.hero-text-content h1 {
+  font-size: 3.2rem;
+  /* Adjust as needed */
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: inherit;
+  text-shadow:
+    0 0 10px rgba(77, 106, 255, 0.6),
+    0 0 20px rgba(77, 106, 255, 0.4),
+    2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text-content .hero-subtitle {
+  font-size: 1.4rem;
+  /* Adjust as needed */
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  color: #E0E0E0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Sidebar (Author Card) --- */
+.sidebar {
+  flex: 0 0 260px;
+  margin-top: 15vh;
+  margin-left: 2vh;
+  height: fit-content;
+  padding: 1.5rem;
+
+  /* Solid glass-like base */
+  background-color: rgba(1, 2, 34, 0.95);
+  /* less transparent */
+  color: #E0E6FF;
+  border: 1px solid rgba(122, 128, 255, 0.25);
+  /* subtle soft edge */
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+
+  /* Polished glass effect */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.sidebar:hover {
+  background-color: rgba(15, 18, 58, 0.98);
+  /* tiny hue lift */
+  border: 1px solid #7B72FF;
+  /* thin violet glow */
+  box-shadow: 0 0 10px rgba(123, 114, 255, 0.35), 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.bio-photo {
+  width: 180px !important;
+  height: 180px !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem;
+  border: 3px solid #e9ecef;
+  max-width: unset !important;
+}
+
+.sidebar h3 {
+  /* Name in sidebar */
+  font-size: 1.5rem;
+  color: #E0E6FF;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  /* Often good for names in sidebars */
+}
+
+.sidebar p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #B0B8D1;
+  margin-bottom: 1rem;
+}
+
+/* --- Content Column (Wraps Spacer & Projects/Description) --- */
+.content-column {
+  flex-grow: 1;
+  /* Takes up remaining space next to sidebar */
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+  margin-left: 3rem;
+  /* <<< GAP between sidebar and this column. */
+  margin-right: 3rem;
+  /* <<< PLAY WITH THIS: Gap between sidebar and content-column */
+  /* border: 1px dashed purple; */
+  /* Temporary: to see its bounds */
+}
+
+/* --- Hero Spacer (Pushes down Projects/Description within Content Column) --- */
+.hero-spacer {
+  height: 75vh;
+  /* <<< CRITICAL: Height of old hero banner.
+                          Adjust this to position Projects/Description correctly. */
+  width: 100%;
+  /* border: 1px dashed red; */
+  /* Temporary: to see its bounds */
+}
+
+/* --- Content Area (Projects & Description Box) --- */
+.content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* Space between projects-scroll and description-box */
+  width: 100%;
+  /* Takes full width of content-column */
+  margin-left: auto;
+  /* Centers .content-area if max-width is reached */
+  margin-right: auto;
+}
+
+/* --- Projects Scroll & Cards --- */
+.projects-scroll {
+  overflow-x: auto;
+}
+
+.projects-scroll-title {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #007bff;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.project-card {
+  flex: 0 0 280px;
+  background-color: rgba(1, 2, 34, 0.9);
+  color: #E0E6FF;
+  border: 1px solid #1A1E3F;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.project-card img.project-teaser {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  color: #A9BFFF;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #D6E1FF;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  background: linear-gradient(to right, #5A4BFF, #7B72FF);
+  /* deep violet to soft indigo */
+  color: white;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(122, 128, 255, 0.25);
+}
+
+.cta-button:hover {
+  background: linear-gradient(to right, #7B72FF, #9BA6FF);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(122, 128, 255, 0.35);
+}
+
+.project-card .cta-button {
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.project-card,
+.sidebar {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* --- CTA Button (Shared styles) --- */
+.cta-button,
+.sidebar .cta-button {
+  /* Ensure .sidebar .cta-button is distinct if needed */
+  display: inline-block;
+  background-color: #4D6AFF;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.cta-button:hover,
+.sidebar .cta-button:hover {
+  background-color: #647DFF;
+  transform: translateY(-2px);
+}
+
+.cta-text {
+  /* For the "See the rest of my projects" link */
+  text-align: right;
+  /* Or center, or as desired */
+  margin-top: 1rem;
+}
+
+/* --- Description Box --- */
+.description-box {
+  background: rgba(1, 2, 34, 0.75);
+  /* matches hero bg, with translucency */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border-left: 4px solid #7B72FF;
+  /* violet accent */
+  color: #E4E9FF;
+  font-family: 'Inter', sans-serif;
+}
+
+.description-box p {
+  /* Simplified, assuming only <p> inside */
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.description-box p:last-child {
+  margin-bottom: 0;
+}
+
+.description-box strong {
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+
+  /* Larger tablets, small desktops */
+  .main-wrapper {
+    flex-direction: column;
+    /* Stack sidebar and content-column */
+    padding: 0 1.5rem;
+    /* Adjust overall padding */
+    align-items: center;
+    /* Center content when stacked */
+  }
+
+  .sidebar {
+    flex: 0 0 auto;
+    /* Reset flex basis */
+    width: 100%;
+    /* Full width */
+    max-width: 500px;
+    /* Max width for sidebar when stacked */
+    margin-top: 15vh;
+    /* Adjust vertical position when stacked */
+    margin-bottom: 2rem;
+    /* Space below sidebar */
+  }
+
+  .content-column {
+    width: 100%;
+    /* Full width */
+    max-width: 800px;
+    /* Max width for content area when stacked */
+    padding-left: 0;
+    /* No left padding when stacked below sidebar */
+  }
+
+  .hero-spacer {
+    height: 75vh;
+    /* Adjust spacer height for this breakpoint */
+  }
+
+  .project-card {
+    flex: 0 0 250px;
+  }
+
+  .hero-text-content {
+    top: 22vh;
+    /* Adjust text overlay position */
+  }
+
+  .hero-text-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-text-content .hero-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Smaller tablets and mobiles */
+  .main-wrapper {
+    padding: 0 1rem;
+    /* Further reduce padding */
+  }
+
+  .sidebar {
+    margin-top: 10vh;
+    padding: 1rem;
+  }
+
+  .hero-spacer {
+    height: 70vh;
+  }
+
+  .hero-text-content {
+    top: 20vh;
+    width: 95%;
+  }
+
+  .hero-text-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text-content .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .content-column {
+    /* No specific changes needed here unless further refinement desired */
+  }
+
+  .content-area {
+    gap: 1.5rem;
+  }
+
+  .projects-scroll-title {
+    font-size: 1.6rem;
+  }
+
+  .project-card {
+    flex: 0 0 220px;
+  }
+
+  .description-box {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Small mobiles */
+  .sidebar {
+    margin-top: 8vh;
+  }
+
+  .hero-spacer {
+    height: 65vh;
+  }
+
+  .hero-text-content {
+    top: 15vh;
+  }
+
+  .hero-text-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text-content .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .project-list {
+    /* Potentially stack project cards if horizontal scroll becomes too unwieldy */
+    /* flex-direction: column; */
+    /* align-items: center; */
+  }
+
+  .project-card {
+    flex: 0 0 100%;
+    /* If stacking, make cards full width of list */
+  }
+}
