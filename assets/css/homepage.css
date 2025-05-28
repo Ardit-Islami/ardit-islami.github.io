@@ -447,8 +447,6 @@ img {
   /* Prevents extra space below images */
 }
 
-/* --- Responsive Adjustments --- */
-/* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
 
   /* This breakpoint (and smaller) will now stack elements vertically */
@@ -457,13 +455,17 @@ img {
     padding: 0 1.5rem;
     align-items: center;
     max-width: 900px;
-    /* Important: Remove default margin-left/right on main-wrapper that might interfere with centering */
     margin-left: auto;
     margin-right: auto;
   }
 
-  /* Make hero-text-content flow with the document */
+  /* Order the elements using 'order' property for desired stacking */
+  /* HTML Order: hero-text-content, sidebar, content-column */
+  /* Desired Order: sidebar, hero-text-content, content-column */
+
   .hero-text-content {
+    order: 2;
+    /* Hero text content comes second in the desired order */
     position: static;
     /* Forces it back into the normal document flow */
     top: auto;
@@ -475,8 +477,8 @@ img {
     /* Take full available width */
     max-width: 600px;
     /* Limit its max width */
-    margin-top: 5vh;
-    /* Add vertical margin above hero text */
+    margin-top: 2rem;
+    /* Add vertical margin above hero text, after sidebar */
     margin-bottom: 2rem;
     /* Add vertical margin below hero text */
     text-align: center;
@@ -495,6 +497,8 @@ img {
   }
 
   .sidebar {
+    order: 1;
+    /* Auth card comes first in the desired order */
     flex: 0 0 auto;
     width: 95%;
     max-width: 400px;
@@ -511,19 +515,20 @@ img {
   }
 
   .content-column {
+    order: 3;
+    /* Content column (projects, description) comes third */
     width: 100%;
     max-width: 800px;
     padding-left: 0;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
-    /* Space above content column when stacked */
+    /* Space above content column */
   }
 
-  /* Hide or minimize the hero-spacer as hero-text-content is now in flow */
+  /* Hide the hero-spacer completely as it's no longer needed in flow */
   .hero-spacer {
     display: none;
-    /* Hide it completely, as its original purpose is fulfilled by in-flow elements */
     height: 0;
   }
 
@@ -540,12 +545,21 @@ img {
     padding: 0 0.8rem;
   }
 
+  .sidebar {
+    margin-top: 8vh;
+    padding: 0.8rem;
+  }
+
+  .bio-photo {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
   .hero-text-content {
-    margin-top: 3vh;
-    /* Smaller margin on smaller screens */
+    margin-top: 1.5rem;
+    /* Further reduce margin */
     margin-bottom: 1.5rem;
     width: 98%;
-    /* Give more room */
     max-width: 450px;
     padding: 0 0.5rem;
   }
@@ -556,16 +570,6 @@ img {
 
   .hero-text-content .hero-subtitle {
     font-size: 1.1rem;
-  }
-
-  .sidebar {
-    margin-top: 8vh;
-    padding: 0.8rem;
-  }
-
-  .bio-photo {
-    width: 120px !important;
-    height: 120px !important;
   }
 
   .content-area {
@@ -611,7 +615,8 @@ img {
   }
 
   .hero-text-content {
-    margin-top: 2vh;
+    margin-top: 1rem;
+    /* Smallest margin */
     margin-bottom: 1rem;
     width: 100%;
     max-width: 320px;
