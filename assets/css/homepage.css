@@ -448,125 +448,114 @@ img {
 }
 
 /* --- Responsive Adjustments --- */
+/* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
 
-  /* Larger tablets, small desktops */
+  /* This breakpoint (and smaller) will now stack elements vertically */
   .main-wrapper {
     flex-direction: column;
-    /* Stack sidebar and content-column */
     padding: 0 1.5rem;
-    /* Adjust overall padding */
     align-items: center;
-    /* Center content when stacked */
+    max-width: 900px;
+    /* Important: Remove default margin-left/right on main-wrapper that might interfere with centering */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Make hero-text-content flow with the document */
+  .hero-text-content {
+    position: static;
+    /* Forces it back into the normal document flow */
+    top: auto;
+    /* Reset absolute positioning properties */
+    left: auto;
+    transform: none;
+    /* Reset transform */
+    width: 100%;
+    /* Take full available width */
+    max-width: 600px;
+    /* Limit its max width */
+    margin-top: 5vh;
+    /* Add vertical margin above hero text */
+    margin-bottom: 2rem;
+    /* Add vertical margin below hero text */
+    text-align: center;
+    padding: 0 1rem;
+    /* Adjust padding for mobile */
+  }
+
+  .hero-text-content h1 {
+    font-size: 2.5rem;
+    /* Adjust font size for tablets */
+  }
+
+  .hero-text-content .hero-subtitle {
+    font-size: 1.2rem;
+    /* Adjust font size for tablets */
   }
 
   .sidebar {
     flex: 0 0 auto;
-    /* Reset flex basis */
-    width: 100%;
-    /* Full width */
-    max-width: 500px;
-    /* Max width for sidebar when stacked */
-    margin-top: 15vh;
-    /* Adjust vertical position when stacked */
+    width: 95%;
+    max-width: 400px;
+    margin-top: 10vh;
     margin-bottom: 2rem;
-    /* Space below sidebar */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+  }
+
+  .bio-photo {
+    width: 150px !important;
+    height: 150px !important;
   }
 
   .content-column {
     width: 100%;
-    /* Full width */
     max-width: 800px;
-    /* Max width for content area when stacked */
     padding-left: 0;
-    /* No left padding when stacked below sidebar */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    /* Space above content column when stacked */
   }
 
+  /* Hide or minimize the hero-spacer as hero-text-content is now in flow */
   .hero-spacer {
-    height: 75vh;
-    /* Adjust spacer height for this breakpoint */
+    display: none;
+    /* Hide it completely, as its original purpose is fulfilled by in-flow elements */
+    height: 0;
   }
 
   .project-card {
     flex: 0 0 250px;
-  }
-
-  .hero-text-content {
-    top: 22vh;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 95%;
-    /* Give more room on smaller screens */
-    max-width: 600px;
-    /* Adjust text overlay position */
-  }
-
-  .hero-text-content h1 {
-    font-size: 2.8rem;
-  }
-
-  .hero-text-content .hero-subtitle {
-    font-size: 1.3rem;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
 
-  /* Smaller tablets and mobiles */
+  /* Smaller tablets and large mobiles */
   .main-wrapper {
-    padding: 0 1rem;
-    /* Further reduce padding */
-  }
-
-  .sidebar {
-    margin-top: 10vh;
-    padding: 1rem;
-  }
-
-  .hero-spacer {
-    height: 70vh;
+    padding: 0 0.8rem;
   }
 
   .hero-text-content {
-    top: 20vh;
-    width: 95%;
+    margin-top: 3vh;
+    /* Smaller margin on smaller screens */
+    margin-bottom: 1.5rem;
+    width: 98%;
+    /* Give more room */
     max-width: 450px;
+    padding: 0 0.5rem;
   }
 
   .hero-text-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .hero-text-content .hero-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .content-column {
-    /* No specific changes needed here unless further refinement desired */
-  }
-
-  .content-area {
-    gap: 1.5rem;
-  }
-
-  .projects-scroll-title {
-    font-size: 1.6rem;
-  }
-
-  .project-card {
-    flex: 0 0 220px;
-  }
-
-  .description-box {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-
-  /* Small mobiles */
-  .main-wrapper {
-    padding: 0 0.5rem;
+    font-size: 1.1rem;
   }
 
   .sidebar {
@@ -574,48 +563,90 @@ img {
     padding: 0.8rem;
   }
 
-  .hero-spacer {
-    height: 65vh;
+  .bio-photo {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .content-area {
+    gap: 1rem;
+  }
+
+  .projects-scroll-title {
+    font-size: 1.4rem;
+  }
+
+  .project-card {
+    flex: 0 0 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .description-box {
+    padding: 1rem;
+  }
+
+  .hero-cta-buttons .cta-button {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    min-width: unset;
+    width: 100%;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Small mobiles */
+  .sidebar {
+    margin-top: 5vh;
+    padding: 0.6rem;
+  }
+
+  .bio-photo {
+    width: 100px !important;
+    height: 100px !important;
   }
 
   .hero-text-content {
-    top: 15vh;
+    margin-top: 2vh;
+    margin-bottom: 1rem;
     width: 100%;
-    /* Take full width on small mobiles */
-    padding: 0 0.5rem;
+    max-width: 320px;
+    padding: 0 0.2rem;
   }
 
   .hero-text-content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .hero-text-content .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .project-list {
-    /* Potentially stack project cards if horizontal scroll becomes too unwieldy */
     flex-direction: column;
     align-items: center;
   }
 
   .project-card {
     flex: 0 0 100%;
-    /* If stacking, make cards full width of list */
-  }
-
-  .hero-cta-buttons .cta-button {
-    font-size: 0.75rem;
-    /* Smaller font for very small screens */
-    padding: 0.5rem 0.8rem;
-    /* Smaller padding */
-    min-width: 100px;
-    max-width: 100%;
-    /* Allow buttons to take full width when stacked */
+    max-width: 280px;
   }
 
   .description-box {
-    padding: 1rem;
-    /* Smaller padding */
+    padding: 0.8rem;
+  }
+
+  .hero-cta-buttons .cta-button {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    max-width: 180px;
+  }
+
+  .main-wrapper {
+    padding: 0 0.5rem;
   }
 }
