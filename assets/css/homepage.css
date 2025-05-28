@@ -536,6 +536,71 @@ img {
     flex: 0 0 250px;
     max-width: 100%;
   }
+
+  .masthead {
+    width: 100%;
+    position: static;
+    /* Ensure it's in flow */
+    padding: 0.5rem 1rem;
+    /* Adjust padding for mobile */
+    min-height: auto;
+    box-sizing: border-box;
+  }
+
+  .masthead__inner-wrap {
+    flex-wrap: wrap;
+    /* Allow items to wrap within the inner wrap */
+    justify-content: space-between;
+    /* Space out branding and navigation toggle */
+    align-items: center;
+    padding: 0;
+    /* Remove extra padding, let masthead padding control */
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+    /* Smaller title on mobile */
+    margin: 0;
+    /* Remove default margins that might cause overflow */
+  }
+
+  .greedy-nav {
+    width: 100%;
+    /* Ensure the navigation container takes full width */
+    margin-top: 0.5rem;
+    /* Space below title if needed */
+    justify-content: center;
+    /* Center nav items */
+    display: flex;
+    /* Ensure greedy-nav itself is a flex container */
+    flex-wrap: wrap;
+    /* Allow nav items inside greedy-nav to wrap */
+  }
+
+  .greedy-nav__menu {
+    flex-direction: column;
+    /* Stack menu items vertically */
+    width: 100%;
+    /* Take full width for stacked items */
+  }
+
+  .greedy-nav a {
+    padding: 0.6rem 0.8rem;
+    /* Adjust link padding for mobile */
+    font-size: 1rem;
+    /* Adjust link font size for readability */
+    width: 100%;
+    /* Make links full width for stacking */
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Ensure the mobile toggle button is visible and correctly sized */
+  .greedy-nav__toggle {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    display: block;
+  }
 }
 
 @media (max-width: 768px) {
@@ -599,6 +664,24 @@ img {
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* Navigation adjustments for smaller screens */
+  .masthead {
+    padding: 0.5rem 0.5rem;
+    /* Reduce overall masthead padding */
+  }
+
+  .site-title {
+    font-size: 1.2rem;
+    /* Further reduce site title size */
+  }
+
+  .greedy-nav a {
+    font-size: 0.9rem;
+    /* Smaller font for nav links */
+    padding: 0.5rem;
+    /* Reduced padding for nav links */
+  }
 }
 
 @media (max-width: 480px) {
@@ -653,5 +736,23 @@ img {
 
   .main-wrapper {
     padding: 0 0.5rem;
+  }
+
+  /* Navigation adjustments for smallest screens */
+  .masthead {
+    padding: 0.4rem 0.2rem;
+    /* Very minimal padding for masthead */
+  }
+
+  .site-title {
+    font-size: 1rem;
+    /* Smallest site title */
+  }
+
+  .greedy-nav a {
+    font-size: 0.85rem;
+    /* Smallest font for nav links */
+    padding: 0.4rem;
+    /* Smallest padding for nav links */
   }
 }
