@@ -537,45 +537,55 @@ img {
     max-width: 100%;
   }
 
+  /* NEW: Navigation adjustments for homepage on mobile (Primary Fix) */
   .masthead {
     width: 100%;
-    position: static;
-    /* Ensure it's in flow with other elements */
-    padding: 0.5rem 1rem;
-    /* Adjust padding for mobile */
+    /* Minimal Mistakes default is position: relative, do not override to static here if it conflicts */
+    /* Ensure no unwanted fixed width is applied */
+    padding: 0.5rem 0.5rem;
+    /* Reduced padding for the masthead itself */
     min-height: auto;
-    /* Allow height to adapt */
     box-sizing: border-box;
   }
 
   .masthead__inner-wrap {
-    flex-wrap: wrap;
-    /* Allow items to wrap within the inner wrap */
-    justify-content: space-between;
-    /* Space out site title and navigation toggle */
-    align-items: center;
+    /* These properties are handled by theme's SCSS, ensure no conflicts here */
     padding: 0;
+    /* Let .masthead handle overall padding */
+    flex-wrap: wrap;
+    /* Ensure internal items can wrap */
+    justify-content: space-between;
+    align-items: center;
   }
 
   .site-title {
     font-size: 1.4rem;
     /* Smaller title on mobile */
     margin: 0;
+    /* Remove default margins that might cause overflow */
   }
 
   .greedy-nav {
     width: 100%;
-    /* Ensure the navigation container takes full width */
+    /* Ensure the navigation container takes full width of its parent */
     margin-top: 0.5rem;
     /* Space below title if needed */
+    /* Minimal Mistakes' _navigation.scss already sets display: flex and flex-wrap.
+       Do NOT override here to prevent conflicts with JS. */
   }
 
+  /* CRITICAL: Adjust margins and padding for individual navigation links aggressively */
   .greedy-nav a {
-    padding: 0.6rem 0.8rem;
-    /* Adjust link padding for mobile */
-    font-size: 1rem;
-    /* Adjust link font size for readability */
-    ;
+    padding: 0.5rem 0.2rem;
+    /* Very small horizontal padding for links */
+    margin: 0 0.1rem;
+    /* Extremely reduced horizontal margin to prevent overflow */
+    font-size: 0.95rem;
+    /* Adjust font size for readability on smaller screens */
+    white-space: nowrap;
+    /* Prevent text wrapping within the link */
+    /* Minimal Mistakes JS controls display: block/inline, and text-align based on menu state.
+       Do NOT override these here. */
   }
 
   /* Ensure the mobile toggle button is visible and correctly sized */
@@ -583,6 +593,7 @@ img {
     font-size: 1.5rem;
     padding: 0.5rem;
     display: block;
+    /* Make sure it's always displayed */
   }
 }
 
@@ -649,21 +660,19 @@ img {
   }
 
   /* Navigation adjustments for smaller screens */
+  /* Navigation adjustments for smaller screens (further reductions) */
   .masthead {
-    padding: 0.5rem 0.5rem;
-    /* Reduce overall masthead padding */
+    padding: 0.4rem 0.3rem;
   }
 
   .site-title {
-    font-size: 1.2rem;
-    /* Further reduce site title size */
+    font-size: 1.1rem;
   }
 
   .greedy-nav a {
     font-size: 0.9rem;
-    /* Smaller font for nav links */
-    padding: 0.5rem;
-    /* Reduced padding for nav links */
+    padding: 0.4rem 0.15rem;
+    margin: 0 0.08rem;
   }
 }
 
@@ -723,19 +732,16 @@ img {
 
   /* Navigation adjustments for smallest screens */
   .masthead {
-    padding: 0.4rem 0.2rem;
-    /* Very minimal padding for masthead */
+    padding: 0.3rem 0.2rem;
   }
 
   .site-title {
     font-size: 1rem;
-    /* Smallest site title */
   }
 
   .greedy-nav a {
-    font-size: 0.85rem;
-    /* Smallest font for nav links */
-    padding: 0.4rem;
-    /* Smallest padding for nav links */
+    font-size: 0.8rem;
+    padding: 0.3rem 0.1rem;
+    margin: 0 0.05rem;
   }
 }
