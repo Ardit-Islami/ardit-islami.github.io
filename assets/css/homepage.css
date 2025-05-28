@@ -122,17 +122,11 @@ html {
   margin-left: 2vh;
   height: fit-content;
   padding: 1.5rem;
-
-  /* Solid glass-like base */
   background-color: rgba(1, 2, 34, 0.95);
-  /* less transparent */
   color: #E0E6FF;
   border: 1px solid rgba(122, 128, 255, 0.25);
-  /* subtle soft edge */
   border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-
-  /* Polished glass effect */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   transition: all 0.3s ease;
@@ -173,6 +167,22 @@ html {
   line-height: 1.6;
   color: #B0B8D1;
   margin-bottom: 1rem;
+}
+
+.sidebar a,
+.sidebar a:visited,
+.sidebar a:hover,
+.sidebar a:focus {
+  color: #E0E6FF;
+  /* or white, or your preferred bright tone */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+  color: #9BA6FF;
+  /* optional: subtle hover effect */
 }
 
 /* --- Content Column (Wraps Spacer & Projects/Description) --- */
@@ -309,6 +319,58 @@ html {
 .sidebar {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+}
+
+.hero-value-block {
+  margin-top: 1rem;
+  text-align: center;
+  color: #E0E6FF;
+}
+
+.hero-value-prop {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  color: #D6DFFF;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-tagline {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #AEBFFF;
+  margin-bottom: 1rem;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-cta-buttons .cta-button {
+  background: linear-gradient(to right, #5A4BFF, #7B72FF);
+  color: white;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(122, 128, 255, 0.25);
+  transition: all 0.2s ease;
+}
+
+.hero-cta-buttons .cta-button:hover {
+  background: linear-gradient(to right, #7B72FF, #9BA6FF);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(122, 128, 255, 0.35);
+}
+
+.cta-button:visited {
+  color: white;
+  background: linear-gradient(to right, #5A4BFF, #7B72FF);
 }
 
 /* --- CTA Button (Shared styles) --- */

@@ -64,6 +64,11 @@
   margin-bottom: 1rem;
 }
 
+.btn-github:visited,
+.nav-button:visited {
+  color: #ffffff;
+}
+
 .skill-section {
   margin: 1rem 0 2rem;
 }

@@ -6,7 +6,7 @@ layout: project-page
 collection: projects
 tags: [Python, Beginner, FreeCodeCamp]
 teaser: /assets/images/arithmetic-formatter.png
-github_url: https://github.com/Ardit-Islami/
+github_url: https://github.com/Ardit-Islami/Arithmetic_Formatter
 ---
 
 This small script formats and aligns arithmetic problems for visual clarity — a great starter exercise in string manipulation and Python logic.

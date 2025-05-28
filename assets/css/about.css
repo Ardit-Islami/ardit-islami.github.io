@@ -85,6 +85,22 @@
   color: #B0B8D1;
 }
 
+.sidebar a,
+.sidebar a:visited,
+.sidebar a:hover,
+.sidebar a:focus {
+  color: #E0E6FF;
+  /* or white, or your preferred bright tone */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+  color: #9BA6FF;
+  /* optional: subtle hover effect */
+}
+
 /* Main content column */
 .content-column {
   flex-grow: 1;
@@ -102,7 +118,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   border-left: 4px solid #7B72FF;
   width: 100%;
-  margin-left: auto;
+  margin-left: 2rem;
   margin-right: auto;
 }
 
@@ -125,9 +141,27 @@
   color: #ffffff;
 }
 
-/* Spacer to push content below navbar */
-.about-spacer {
-  height: 10vh;
+.about-content a,
+.about-content a:visited {
+  color: #E0E6FF;
+  /* matches sidebar/cta tone */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.about-content a:hover,
+.about-content a:focus {
+  color: #9BA6FF;
+  /* subtle hover shift */
+  text-shadow: 0 0 5px rgba(122, 128, 255, 0.5);
+}
+
+.about-content li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #E0E6FF;
 }
 
 /* Skill Pills */

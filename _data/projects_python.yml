@@ -1,0 +1,31 @@
+- title: "Quiz Game CLI"
+  description: "A command-line quiz game built with Python, demonstrating fundamental programming concepts."
+  image: "/assets/images/quiz-game-teaser.png" # Path to your teaser image
+  url: "/projects/quiz-game-cli/" # This links to the page generated from _projects/quiz-game-cli.md
+  published: published
+
+- title: "Arithmetic Formatter"
+  description: "A Python function to neatly format arithmetic problems as specified in a coding challenge."
+  image: "/assets/images/arithmetic-formatter.png"
+  url: "/projects/arithmetic-formatter/"
+  published: published
+
+- title: "Python Toys"
+  description: "A collection of basic Python scripts to practice and learn."
+  url: "/projects/python-toys/" 
+  image: "/assets/images/python-toys.png"
+  published: published
+
+- title: "Python Core Notebooks"
+  description: "A collection of Jupyter notebooks exploring core Python concepts and libraries."
+  url: "/projects/python-notebooks/" # Link to the page from _projects/python-core-notebooks.md
+  image: "/assets/images/python-notebooks.png"
+  published: published
+ 
+- title: Placeholder Project
+  description: More projects coming soon!
+  image: /assets/images/placeholder.png
+  url: "#"
+  status: upcoming
+
+# Add more projects here as you complete them

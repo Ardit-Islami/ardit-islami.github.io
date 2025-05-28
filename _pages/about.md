@@ -74,6 +74,6 @@ I’m especially drawn to mission-driven teams that value curiosity, autonomy, a
 
 ## 🔗 Contact
 
-- 📧 arditislami.pro@gmail.com
+- arditislami.pro@gmail.com
 - [GitHub](https://github.com/Ardit-Islami)
 - [LinkedIn](https://linkedin.com/in/ardit-islami)
