@@ -10,7 +10,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  /* Your desired font */
+  font-size: 21px;
 }
 
 /* --- Page Container (Full Background Image) --- */
@@ -59,36 +59,30 @@ html {
   /* Sidebar and content-column side-by-side */
   width: 100%;
   /* Takes full width of .page-container */
+  max-width: 2560px;
+  margin: 0 auto;
   padding: 0 2rem;
-  /* <<< PLAY WITH THIS: Overall left/right padding for main content area.
-                               (e.g., 0 1rem for less, 0 3rem for more) */
   box-sizing: border-box;
 }
 
 /* --- Hero Text Overlay (Positioned Absolutely) --- */
 .hero-text-content {
   position: absolute;
-  /* === PLAY WITH THESE VALUES to match your mockup === */
   top: 35vh;
-  /* Vertical position from top of .main-wrapper */
   left: 70%;
-  /* Horizontal starting point */
   transform: translateX(-50%);
-  /* True horizontal centering */
   width: 90%;
-  /* Max width relative to parent */
   max-width: 700px;
-  /* Absolute max width of text block */
-  /* === END PLAYABLE VALUES === */
+  /* This max-width might be too restrictive on smaller screens */
   z-index: 3;
-  /* On top of other elements */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   color: #FFFFFF;
-  /* border: 1px dashed limegreen; */
-  /* Temporary: to see its bounds */
+  box-sizing: border-box;
+  /* Ensure padding is included in the width */
+  padding: 0 1rem;
 }
 
 .hero-text-content h1 {
@@ -118,6 +112,7 @@ html {
 /* --- Sidebar (Author Card) --- */
 .sidebar {
   flex: 0 0 260px;
+  max-width: 260px;
   margin-top: 15vh;
   margin-left: 2vh;
   height: fit-content;
@@ -203,11 +198,7 @@ html {
 /* --- Hero Spacer (Pushes down Projects/Description within Content Column) --- */
 .hero-spacer {
   height: 75vh;
-  /* <<< CRITICAL: Height of old hero banner.
-                          Adjust this to position Projects/Description correctly. */
   width: 100%;
-  /* border: 1px dashed red; */
-  /* Temporary: to see its bounds */
 }
 
 /* --- Content Area (Projects & Description Box) --- */
@@ -263,8 +254,9 @@ html {
 }
 
 .project-card img.project-teaser {
+  max-width: 100%;
   width: 100%;
-  height: 150px;
+  height: auto;
   object-fit: cover;
   border-radius: 6px 6px 0 0;
   margin-bottom: 1rem;
@@ -348,6 +340,10 @@ html {
   justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap;
+  /* Already good */
+  width: 100%;
+  /* Ensure the container takes full width of its parent */
+  max-width: 700px;
 }
 
 .hero-cta-buttons .cta-button {
@@ -360,6 +356,17 @@ html {
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(122, 128, 255, 0.25);
   transition: all 0.2s ease;
+  flex-grow: 1;
+  /* Allow buttons to grow and fill space */
+  flex-shrink: 1;
+  /* Allow buttons to shrink */
+  flex-basis: auto;
+  /* Base size adapts to content, then grows/shrinks */
+  min-width: 120px;
+  /* Ensure a minimum width so they don't become too small */
+  max-width: 200px;
+  /* Prevent them from becoming excessively wide on one line */
+  box-sizing: border-box;
 }
 
 .hero-cta-buttons .cta-button:hover {
@@ -432,6 +439,14 @@ html {
   color: #FFFFFF;
 }
 
+/* Ensure any other image or media tag is responsive in general */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  /* Prevents extra space below images */
+}
+
 /* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
 
@@ -478,6 +493,11 @@ html {
 
   .hero-text-content {
     top: 22vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    /* Give more room on smaller screens */
+    max-width: 600px;
     /* Adjust text overlay position */
   }
 
@@ -510,6 +530,7 @@ html {
   .hero-text-content {
     top: 20vh;
     width: 95%;
+    max-width: 450px;
   }
 
   .hero-text-content h1 {
@@ -544,8 +565,13 @@ html {
 @media (max-width: 480px) {
 
   /* Small mobiles */
+  .main-wrapper {
+    padding: 0 0.5rem;
+  }
+
   .sidebar {
     margin-top: 8vh;
+    padding: 0.8rem;
   }
 
   .hero-spacer {
@@ -554,6 +580,9 @@ html {
 
   .hero-text-content {
     top: 15vh;
+    width: 100%;
+    /* Take full width on small mobiles */
+    padding: 0 0.5rem;
   }
 
   .hero-text-content h1 {
@@ -566,12 +595,27 @@ html {
 
   .project-list {
     /* Potentially stack project cards if horizontal scroll becomes too unwieldy */
-    /* flex-direction: column; */
-    /* align-items: center; */
+    flex-direction: column;
+    align-items: center;
   }
 
   .project-card {
     flex: 0 0 100%;
     /* If stacking, make cards full width of list */
+  }
+
+  .hero-cta-buttons .cta-button {
+    font-size: 0.75rem;
+    /* Smaller font for very small screens */
+    padding: 0.5rem 0.8rem;
+    /* Smaller padding */
+    min-width: 100px;
+    max-width: 100%;
+    /* Allow buttons to take full width when stacked */
+  }
+
+  .description-box {
+    padding: 1rem;
+    /* Smaller padding */
   }
 }
