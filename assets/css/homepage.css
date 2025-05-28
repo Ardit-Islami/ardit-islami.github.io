@@ -540,10 +540,11 @@ img {
   .masthead {
     width: 100%;
     position: static;
-    /* Ensure it's in flow */
+    /* Ensure it's in flow with other elements */
     padding: 0.5rem 1rem;
     /* Adjust padding for mobile */
     min-height: auto;
+    /* Allow height to adapt */
     box-sizing: border-box;
   }
 
@@ -551,17 +552,15 @@ img {
     flex-wrap: wrap;
     /* Allow items to wrap within the inner wrap */
     justify-content: space-between;
-    /* Space out branding and navigation toggle */
+    /* Space out site title and navigation toggle */
     align-items: center;
     padding: 0;
-    /* Remove extra padding, let masthead padding control */
   }
 
   .site-title {
     font-size: 1.4rem;
     /* Smaller title on mobile */
     margin: 0;
-    /* Remove default margins that might cause overflow */
   }
 
   .greedy-nav {
@@ -569,19 +568,6 @@ img {
     /* Ensure the navigation container takes full width */
     margin-top: 0.5rem;
     /* Space below title if needed */
-    justify-content: center;
-    /* Center nav items */
-    display: flex;
-    /* Ensure greedy-nav itself is a flex container */
-    flex-wrap: wrap;
-    /* Allow nav items inside greedy-nav to wrap */
-  }
-
-  .greedy-nav__menu {
-    flex-direction: column;
-    /* Stack menu items vertically */
-    width: 100%;
-    /* Take full width for stacked items */
   }
 
   .greedy-nav a {
@@ -589,10 +575,7 @@ img {
     /* Adjust link padding for mobile */
     font-size: 1rem;
     /* Adjust link font size for readability */
-    width: 100%;
-    /* Make links full width for stacking */
-    text-align: center;
-    box-sizing: border-box;
+    ;
   }
 
   /* Ensure the mobile toggle button is visible and correctly sized */
