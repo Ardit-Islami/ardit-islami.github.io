@@ -1,24 +1,13 @@
-{% comment %} {% endcomment %}
-{% if page.layout == 'home' or page.url == '/' %}
-<link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}">
-{% endif %}
-
-{% comment %} Load homepage.css only on the homepage (identified by URL '/') {% endcomment %}
+{% comment %} Load page-specific CSS files {% endcomment %}
 {% if page.url == '/' %}
 <link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}">
 {% endif %}
-
-{% comment %} Load project.css only on the projects page (identified by URL '/projects/') {% endcomment %}
 {% if page.url == '/projects/' %}
 <link rel="stylesheet" href="{{ '/assets/css/project.css' | relative_url }}">
 {% endif %}
-
-{% comment %} Load about.css only on the about page (identified by URL '/about/') {% endcomment %}
 {% if page.url == '/about/' %}
 <link rel="stylesheet" href="{{ '/assets/css/about.css' | relative_url }}">
 {% endif %}
-
-{% comment %} Load custom styles for individual project pages using layout: single {% endcomment %}
 {% if page.layout == 'project-page' %}
 <link rel="stylesheet" href="{{ '/assets/css/project-single.css' | relative_url }}">
 {% endif %}
@@ -29,12 +18,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
-
 <style>
     /* --- Custom Masthead Styles --- */
     .masthead {
-        position: fixed;
+        position: absolute;
         /* Or absolute, as you have it */
         top: 0;
         left: 0;
@@ -143,4 +130,27 @@
       padding-top: 70px;
   }
   */
+    /* --- RESPONSIVE ADJUSTMENTS FOR NAVIGATION --- */
+
+    /* For Tablets and smaller */
+    @media (max-width: 768px) {
+        ul.visible-links .masthead__menu-item a {
+            padding: 0.6rem 0.5rem;
+            /* Smaller padding */
+            margin: 0 0.2rem;
+            /* Smaller margin */
+            font-size: 0.95rem;
+        }
+    }
+
+    /* For Mobile phones */
+    @media (max-width: 480px) {
+        ul.visible-links .masthead__menu-item a {
+            padding: 0.5rem 0.2rem;
+            /* Even smaller padding */
+            margin: 0 0.1rem;
+            /* Even smaller margin */
+            font-size: 0.9rem;
+        }
+    }
 </style>

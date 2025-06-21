@@ -1,7 +1,13 @@
-- title: "Quiz Game CLI"
+- title: "Quiz Game"
   description: "A command-line quiz game built with Python, demonstrating fundamental programming concepts."
   image: "/assets/images/quiz-game-teaser.png" # Path to your teaser image
   url: "/projects/quiz-game-cli/" # This links to the page generated from _projects/quiz-game-cli.md
+  published: published
+
+- title: "Password Manager CLI"
+  description: "A secure Python cmd tool for encrypted credential storage, using cryptography principles and intuitive CLI design."
+  image: "/assets/images/password-manager-teaser.png" # Path to your teaser image
+  url: "/projects/password-manager-cli/" # This links to the page generated from _projects/password-manager-cli.md
   published: published
 
 - title: "Arithmetic Formatter"
