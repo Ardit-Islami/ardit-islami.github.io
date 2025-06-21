@@ -1,9 +1,14 @@
 <div class="project-tile">
-  <a href="{{ item.url }}">
+  <a href="{{ item.url }}" class="tile-visual-link" aria-label="View project: {{ item.title }}">
     <div class="tile-image" style="background-image: url('{{ item.image }}');"></div>
     <div class="tile-overlay">
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.description }}</p>
+      <p class="tile-description">{{ item.description }}</p>
     </div>
   </a>
+
+  <div class="tile-caption">
+    <h3 class="tile-title">
+      <a href="{{ item.url }}">{{ item.title }}</a>
+    </h3>
+  </div>
 </div>

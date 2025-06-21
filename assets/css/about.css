@@ -117,8 +117,6 @@
   font-family: 'Inter', sans-serif;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   border-left: 4px solid #7B72FF;
-  width: 100%;
-  margin-left: 2rem;
   margin-right: auto;
 }
 
@@ -210,7 +208,6 @@
   line-height: 1.5;
 }
 
-/* --- Standardized Responsive Overrides --- */
 @media (max-width: 1700px) {
   .main-wrapper {
     flex-direction: column;
@@ -220,7 +217,6 @@
 
   .sidebar {
     order: 1;
-    /* Sidebar comes first */
     flex: 0 0 auto;
     width: 95%;
     max-width: 400px;
@@ -229,10 +225,9 @@
 
   .content-column {
     order: 2;
-    /* Content comes second */
     width: 100%;
+    max-width: 800px;
     margin: 0 auto 2rem auto;
-    /* Give it some bottom margin */
     padding: 0;
   }
 }
