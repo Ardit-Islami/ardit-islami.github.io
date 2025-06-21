@@ -349,33 +349,53 @@ body {
   border-radius: 5px;
 }
 
-@media (max-width: 768px) {
-  .projects-layout {
+/* --- Standardized Responsive Overrides --- */
+@media (max-width: 1024px) {
+  .main-wrapper {
     flex-direction: column;
-    padding-top: 5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    align-items: center;
   }
 
   .sidebar {
+    order: 1;
+    width: 95%;
+    max-width: 400px;
+    margin: 10vh auto 2rem auto;
+  }
+
+  .content-column {
+    order: 2;
     width: 100%;
-    margin-left: 0;
-    padding-left: 0;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .project-grid-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .tile-image {
-    aspect-ratio: 1 / 1;
+    margin: 0 auto 2rem auto;
+    padding: 0;
   }
 }
 
-@media (max-width: 480px) {
+/* --- Mobile Grid Enhancements --- */
+@media (max-width: 600px) {
+  .projects-content-container {
+    padding: 1rem;
+    /* Less padding on mobile */
+  }
+
   .project-grid-wrapper {
-    grid-template-columns: 1fr;
+    /* Change to a 2-column grid instead of 1 */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    /* Smaller gap */
+  }
+
+  .project-tile {
+    height: 150px;
+    /* Shorter tiles on mobile */
+  }
+
+  /* Make the text inside the overlay smaller */
+  .tile-overlay h3 {
+    font-size: 0.9rem;
+  }
+
+  .tile-overlay p {
+    font-size: 0.7rem;
   }
 }
