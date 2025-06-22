@@ -7,14 +7,14 @@ author_profile: true
 published: true
 ---
 
-## 👋 Who I Am
+## Who I Am
 
 I'm **Ardit Islami**, a First-Class Mathematics graduate based in the UK with a growing focus in **AI, Data Science, and Python development**.
 
 I’ve worked in real-time technical support, solving operational data problems using SQL and dashboards. Now I’m building a future in applied AI — with a hands-on, tool-based learning philosophy that combines reflection, iteration, and project work.
 
 
-## 🛠️ Skills
+## Skills
 
 <div class="skill-section">
   <h4>Languages</h4>
@@ -48,7 +48,7 @@ I’ve worked in real-time technical support, solving operational data problems 
   <span class="skill-pill">VS Code</span>
 </div>
 
-## 🧩 Background
+## Background
 
 <div class="info-block">
   <h4>🎓 Education</h4>
@@ -62,7 +62,17 @@ I’ve worked in real-time technical support, solving operational data problems 
   <p><strong>Technical Support Analyst</strong> — LiveOps / SQL diagnostics, dashboards, incident response</p>
 </div>
 
-## 🎯 What I'm Looking For
+## Certication
+
+<div class="info-block">
+  <h4>Certificates (Ongoing)</h4>
+  <p>
+    <strong><a href="https://www.coursera.org/professional-certificates/ai-engineer#courses" target="_blank" rel="noopener noreferrer">AI Engineer Professional Certificate</a></strong><br>
+    Coursera
+  </p>
+</div>
+
+## What I'm Looking For
 
 I'm actively seeking **remote junior roles** in:
 

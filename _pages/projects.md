@@ -19,31 +19,47 @@ permalink: /projects/
     </aside>
     <div class="content-column">
       <div class="about-spacer"></div>
+      <section class="project-section">
+        <details>
+          <summary class="project-category-title">Ongoing Learning</summary>
+          <div class="project-grid-wrapper scrollable">
+            {% for item in site.data.learning %}
+              {% include project_card.html item=item %}
+            {% endfor %}
+          </div>
+        </details>
+      </section>
       <div class="projects-content-container">
       <h1 class="projects-main-title">A Showcase of My Projects</h1>
         <section class="project-section">
-          <h2 class="project-category-title">🤖 AI + Data</h2>
+        <details>
+          <summary class="project-category-title"> AI / Data </summary>
           <div class="project-grid-wrapper scrollable">
             {% for item in site.data.projects_ai %}
               {% include project_card.html item=item %}
             {% endfor %}
           </div>
+        </details>
         </section>
         <section class="project-section">
-          <h2 class="project-category-title">🐍 Python Basics</h2>
+        <details>
+          <summary class="project-category-title">Python Basics</summary>
           <div class="project-grid-wrapper scrollable">
             {% for item in site.data.projects_python %}
               {% include project_card.html item=item %}
             {% endfor %}
           </div>
+        </details>
         </section>
         <section class="project-section" data-type="viz">
-          <h2 class="project-category-title">📊 Data Visualisation</h2>
+        <details>
+          <summary class="project-category-title">Data Visualisation</summary>
           <div class="project-grid-wrapper scrollable">
             {% for item in site.data.projects_viz %}
               {% include project_card.html item=item %}
             {% endfor %}
           </div>
+        </details>
         </section>
       </div>
     </div>

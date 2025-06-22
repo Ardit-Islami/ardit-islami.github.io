@@ -106,16 +106,21 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   padding: 0.1rem 1.5rem;
+  padding-bottom: 1rem;
   margin-bottom: 2rem;
   border-left: 4px solid #7B72FF;
 }
 
-.project-category-title {
+summary.project-category-title {
   font-size: 1.5rem;
   color: #A9BFFF;
+  margin-bottom: 1rem;
   border-bottom: 1px solid #7B72FF;
-  margin: 0.5rem;
-  padding: 0.5rem;
+  padding-bottom: 0.4rem;
+  cursor: pointer;
+  /* Indicates the title is clickable */
+  outline: none;
+  /* Removes the default focus outline */
 }
 
 .project-grid-wrapper {
@@ -208,6 +213,25 @@ body {
 
 .tile-title a:hover {
   color: #FFFFFF;
+}
+
+/* --- Add a [+] icon to collapsed titles --- */
+summary.project-category-title::after {
+  content: ' [+]';
+  font-family: monospace;
+  float: right;
+  font-size: 1.1rem;
+  color: #7B72FF;
+}
+
+/* --- Change the icon to [-] when the section is open --- */
+details[open]>summary.project-category-title::after {
+  content: ' [-]';
+}
+
+/* --- Add a little space when the section is open --- */
+details[open]>summary.project-category-title {
+  margin-bottom: 1.5rem;
 }
 
 /* --- STANDARDIZED RESPONSIVE OVERRIDES --- */
