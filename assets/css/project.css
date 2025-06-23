@@ -1,0 +1,279 @@
+/* project.css - Final Version with Hybrid Cards and Standardized Responsive Rules */
+
+body {
+  background-image: url('/assets/images/full-background.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #E0E6FF;
+  font-family: 'Inter', sans-serif;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.main-wrapper {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  gap: 2rem;
+}
+
+.sidebar {
+  flex: 0 0 260px;
+  margin-top: 15vh;
+  margin-left: 2vh;
+  height: fit-content;
+  padding: 1.5rem;
+  background-color: rgba(1, 2, 34, 0.95);
+  color: #E0E6FF;
+  border: 1px solid rgba(122, 128, 255, 0.25);
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* This rule for the bio-photo is preserved from your original file */
+.bio-photo {
+  width: 180px !important;
+  height: 180px !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem;
+  border: 3px solid #e9ecef;
+  max-width: unset !important;
+}
+
+.sidebar h3 {
+  font-size: 1.5rem;
+  color: #E0E6FF;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sidebar p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #B0B8D1;
+  margin-bottom: 1rem;
+}
+
+.content-column {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 15vh 3rem 3rem;
+}
+
+.projects-content-container {
+  background: rgba(1, 2, 34, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #7B72FF;
+}
+
+.projects-main-title {
+  font-size: 2.4rem;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.project-section {
+  background-color: rgba(1, 2, 34, 0.6);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 0.1rem 1.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid #7B72FF;
+}
+
+summary.project-category-title {
+  font-size: 1.5rem;
+  color: #A9BFFF;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #7B72FF;
+  padding-bottom: 0.4rem;
+  cursor: pointer;
+  /* Indicates the title is clickable */
+  outline: none;
+  /* Removes the default focus outline */
+}
+
+.project-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* --- HYBRID PROJECT TILE STYLES --- */
+
+.project-tile {
+  background-color: rgba(1, 2, 34, 0.9);
+  border: 1px solid #1A1E3F;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* Stacks the visual area and the caption */
+}
+
+.project-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(122, 128, 255, 0.35);
+}
+
+.tile-visual-link {
+  position: relative;
+  /* Parent for the overlay */
+  display: block;
+}
+
+.tile-image {
+  height: 180px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.3s ease;
+}
+
+.tile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(15, 18, 58, 0.85);
+  opacity: 0;
+  /* Hidden by default */
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.tile-description {
+  color: #E0E6FF;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.project-tile:hover .tile-overlay {
+  opacity: 1;
+  /* Show overlay on hover */
+}
+
+.project-tile:hover .tile-image {
+  filter: blur(2px) brightness(0.8);
+  /* Blur image on hover */
+}
+
+.tile-caption {
+  padding: 1rem;
+  border-top: 1px solid #1A1E3F;
+}
+
+.tile-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.tile-title a {
+  color: #A9BFFF;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.tile-title a:hover {
+  color: #FFFFFF;
+}
+
+/* --- Add a [+] icon to collapsed titles --- */
+summary.project-category-title::after {
+  content: ' [+]';
+  font-family: monospace;
+  float: right;
+  font-size: 1.1rem;
+  color: #7B72FF;
+}
+
+/* --- Change the icon to [-] when the section is open --- */
+details[open]>summary.project-category-title::after {
+  content: ' [-]';
+}
+
+/* --- Add a little space when the section is open --- */
+details[open]>summary.project-category-title {
+  margin-bottom: 1.5rem;
+}
+
+/* --- STANDARDIZED RESPONSIVE OVERRIDES --- */
+
+@media (max-width: 1700px) {
+  .main-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.5rem;
+  }
+
+  /* This rule is now identical to homepage.css and about.css */
+  .sidebar {
+    order: 1;
+    flex: 0 0 auto;
+    width: 95%;
+    max-width: 400px;
+    margin: 10vh auto 2rem auto;
+  }
+
+  .content-column {
+    order: 2;
+    width: 100%;
+    margin: 0 auto 2rem auto;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-content-container {
+    padding: 1rem;
+  }
+
+  .tile-image {
+    height: 140px;
+  }
+
+  .tile-caption {
+    padding: 0.75rem;
+  }
+
+  .tile-title {
+    font-size: 1rem;
+  }
+}
