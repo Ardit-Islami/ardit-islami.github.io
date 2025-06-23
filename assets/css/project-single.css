@@ -147,3 +147,19 @@
 .btn-github i {
   font-size: 1.2rem;
 }
+
+/* --- Consistent Link Colors in Project Content --- */
+.page__content a,
+.page__content a:visited {
+  color: #A9BFFF;
+  /* A bright, readable color from your theme */
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.page__content a:hover,
+.page__content a:focus {
+  color: #FFFFFF;
+  /* Make the link brighter on hover */
+  text-decoration: underline;
+}
