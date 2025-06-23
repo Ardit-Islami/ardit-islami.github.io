@@ -1,3 +1,8 @@
+- title: "Lineball Statistics Dashboard"
+  url: "/projects/lineball-dashboard/"
+  image: "/assets/images/lineball-thumbnail.png" # The same thumbnail you made in the last step
+  description: "An interactive Tableau dashboard analyzing player statistics for the Lineballs game."
+
 - title: Placeholder Project
   description: More projects coming soon!
   image: /assets/images/placeholder.png
