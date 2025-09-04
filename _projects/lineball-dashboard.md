@@ -15,7 +15,7 @@ This visualization was a personal passion project where I explored Tableau for t
 This is the official playlist for the Lineballs game, which the dashboard data is based on.
 
 <div class="responsive-video-wrapper">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL7n5i86UMpE8bBDhZts_Ox4s8JwWI4Q9a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/videoseries?list=PL7n5i86UMpE8bBDhZts_Ox4s8JwWI4Q9a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ### Learning Journey

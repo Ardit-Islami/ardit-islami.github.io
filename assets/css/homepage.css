@@ -67,7 +67,7 @@ html {
 /* --- Hero Text Overlay (Positioned Absolutely) --- */
 .hero-text-content {
   position: absolute;
-  top: 35vh;
+  top: 20vh;
   left: 70%;
   transform: translateX(-50%);
   width: 90%;

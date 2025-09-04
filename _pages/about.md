@@ -62,7 +62,7 @@ I’ve worked in real-time technical support, solving operational data problems 
   <p><strong>Technical Support Analyst</strong> — LiveOps / SQL diagnostics, dashboards, incident response</p>
 </div>
 
-## Certication
+## Certification
 
 <div class="info-block">
   <h4>Certificates (Ongoing)</h4>
