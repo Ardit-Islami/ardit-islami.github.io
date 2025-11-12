@@ -1,0 +1,197 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('../images/full-background.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.project-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 960px;
+  margin: 12vh auto 4rem;
+  padding: 0 2rem;
+}
+
+.project-content-box {
+  background: rgba(1, 2, 34, 0.9);
+  padding: 2rem;
+  border-left: 4px solid #7B72FF;
+  border-radius: 12px;
+  color: #E4E9FF;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.project-title {
+  font-size: 1.8rem;
+  color: #A9BFFF;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #7B72FF;
+  padding-bottom: 0.3rem;
+}
+
+.project-body h2,
+.project-body h3 {
+  color: #A9BFFF;
+  margin-top: 2rem;
+  border-bottom: 1px solid #7B72FF;
+  padding-bottom: 0.3rem;
+}
+
+.project-body p,
+.project-body li {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.btn-github:visited,
+.nav-button:visited {
+  color: #ffffff;
+}
+
+.skill-section {
+  margin: 1rem 0 2rem;
+}
+
+.skill-pill {
+  display: inline-block;
+  background: rgba(123, 114, 255, 0.2);
+  color: #E0E6FF;
+  padding: 0.3rem 0.7rem;
+  margin: 0.2rem 0.4rem 0.4rem 0;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(123, 114, 255, 0.3);
+  transition: background 0.3s ease;
+}
+
+.skill-pill:hover {
+  background: rgba(123, 114, 255, 0.4);
+}
+
+.project-image {
+  max-width: 200px;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.nav-button {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  background: rgba(123, 114, 255, 0.15);
+  color: #fff;
+  /* ← force white text */
+  border: 1px solid rgba(123, 114, 255, 0.3);
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(123, 114, 255, 0.3);
+  color: #ffffff;
+}
+
+/* GitHub Button */
+.btn-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #7B72FF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-github:hover {
+  background-color: #9e93ff;
+  transform: translateY(-1px);
+}
+
+.btn-github i {
+  font-size: 1.2rem;
+}
+
+/* --- Consistent Link Colors in Project Content --- */
+.page__content a,
+.page__content a:visited {
+  color: #A9BFFF;
+  /* A bright, readable color from your theme */
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.page__content a:hover,
+.page__content a:focus {
+  color: #FFFFFF;
+  /* Make the link brighter on hover */
+  text-decoration: underline;
+}
+
+.responsive-video-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  /* 16:9 aspect ratio */
+  width: 100%;
+  /* Take full width of parent */
+  max-width: none;
+  /* Remove cap */
+  margin: 2rem 0;
+  /* Space above/below */
+}
+
+.responsive-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.project-content-box a,
+.project-content-box a:visited {
+  color: #A9BFFF !important;
+  text-decoration: underline !important;
+}
+
+.project-content-box a:hover {
+  color: #FFFFFF !important;
+}

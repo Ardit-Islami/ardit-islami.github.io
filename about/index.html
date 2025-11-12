@@ -1,0 +1,419 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>About Me - Ardit Islami</title>
+<meta name="description" content="Who I Am">
+
+
+  <meta name="author" content="Ardit Islami">
+  
+  <meta property="article:author" content="Ardit Islami">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ardit Islami">
+<meta property="og:title" content="About Me">
+<meta property="og:url" content="https://ardit-islami.github.io/about/">
+
+
+  <meta property="og:description" content="Who I Am">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-11-12T17:26:18+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://ardit-islami.github.io/about/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+  
+
+
+
+<link rel="stylesheet" href="/assets/css/about.css">
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    /* --- Custom Masthead Styles --- */
+    .masthead {
+        position: absolute;
+        /* Or absolute, as you have it */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        /* YOUR CHOSEN HEIGHT */
+        background: transparent !important;
+        /* Ensuring this is transparent */
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Centers .masthead__inner-wrap if it's narrower than masthead */
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+
+    .masthead__inner-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        /* If this had a background from the theme, make it transparent: */
+        background: transparent !important;
+        /* max-width: $max-width; /* Theme default */
+        /* margin: 0 auto; /* Theme default for centering if max-width is active */
+    }
+
+    .masthead__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* If this had a background from the theme, make it transparent: */
+        background: transparent !important;
+    }
+
+    nav.greedy-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* If this had a background from the theme, make it transparent: */
+        background: transparent !important;
+    }
+
+    ul.visible-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        /* If this had a background from the theme, make it transparent: */
+        background: transparent !important;
+    }
+
+    ul.visible-links .masthead__menu-item {
+        margin: 0;
+        /* If li items had a background from the theme, make it transparent: */
+        background: transparent !important;
+    }
+
+    /* --- Link Styling (already good from previous steps) --- */
+    ul.visible-links .masthead__menu-item a {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        text-transform: none;
+        color: #FFFFFF;
+        /* <<< ADJUST THIS COLOR FOR VISIBILITY against your page background */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        /* <<< ADD/ADJUST for readability */
+        background-color: transparent;
+        /* Ensure link itself is transparent */
+        padding: 0.8rem 1rem;
+        margin: 0 0.4rem;
+        border-radius: 5px;
+        transition: color 0.2s ease, background-color 0.2s ease;
+        text-decoration: none;
+    }
+
+    ul.visible-links .masthead__menu-item a:hover {
+        color: #FFFFFF;
+        /* Or a brighter version of your link color */
+        background-color: rgba(255, 255, 255, 0.15);
+        /* Subtle hover for light text */
+    }
+
+    ul.visible-links .masthead__menu-item.active a {
+        color: #FFFFFF;
+        /* Or a brighter version of your link color */
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* --- Ensure main page content starts below the masthead --- */
+    /* This should already be in place globally if you targeted .initial-content-wrap or body */
+    .initial-content-wrap {
+        /* Or #main, or body depending on your theme's structure */
+        padding-top: 70px;
+        /* MUST MATCH YOUR .masthead height */
+    }
+
+    /* If specific to homepage, and .main-wrapper is the first content block inside .page-container */
+    /*
+  .page-container .main-wrapper {
+      padding-top: 70px;
+  }
+  */
+    /* --- RESPONSIVE ADJUSTMENTS FOR NAVIGATION --- */
+
+    /* For Tablets and smaller */
+    @media (max-width: 768px) {
+        ul.visible-links .masthead__menu-item a {
+            padding: 0.6rem 0.5rem;
+            /* Smaller padding */
+            margin: 0 0.2rem;
+            /* Smaller margin */
+            font-size: 0.95rem;
+        }
+    }
+
+    /* For Mobile phones */
+    @media (max-width: 480px) {
+        ul.visible-links .masthead__menu-item a {
+            padding: 0.5rem 0.2rem;
+            /* Even smaller padding */
+            margin: 0 0.1rem;
+            /* Even smaller margin */
+            font-size: 0.9rem;
+        }
+    }
+
+    /* --- Global Content Link Colors --- */
+    #main a,
+    #main a:visited {
+        color: #A9BFFF !important;
+        text-decoration: underline !important;
+    }
+
+    #main a:hover {
+        color: #FFFFFF !important;
+    }
+</style>
+</head>
+
+<body
+  class="layout--about"
+  dir="ltr">
+  <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <ul class="visible-links"><li class="masthead__menu-item">
+            <a href="/" 
+              >Home</a>
+          </li><li class="masthead__menu-item">
+            <a href="/projects/" 
+              >Projects</a>
+          </li><li class="masthead__menu-item">
+            <a href="/about/" 
+              >About Me</a>
+          </li><li class="masthead__menu-item">
+            <a href="mailto:arditislami.pro@gmail.com" 
+              >Contact</a>
+          </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <div class="initial-content">
+    <div class="page-container">
+    <div class="main-wrapper">
+
+        <!-- Author Sidebar -->
+        <aside class="sidebar">
+            <img src="/assets/images/bio-photo.png" alt="Ardit Islami" class="bio-photo">
+            <h3>Ardit Islami</h3>
+            <p>Mathematics grad with real-world SQL support experience and a passion for Python + AI.</p>
+            <p>
+                📍 UK<br>
+                📧 <a href="mailto:arditislami.pro@gmail.com">Email</a><br>
+                💼 <a href="https://linkedin.com/in/ardit-islami">LinkedIn</a><br>
+                🐙 <a href="https://github.com/Ardit-Islami">GitHub</a>
+            </p>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="content-column">
+            <div class="about-content">
+                <h2 id="who-i-am">Who I Am</h2>
+
+<p>I’m <strong>Ardit Islami</strong>, a First-Class Mathematics graduate based in the UK with a growing focus in <strong>AI, Data Science, and Python development</strong>.</p>
+
+<p>I’ve worked in real-time technical support, solving operational data problems using SQL and dashboards. Now I’m building a future in applied AI — with a hands-on, tool-based learning philosophy that combines reflection, iteration, and project work.</p>
+
+<h2 id="skills">Skills</h2>
+
+<div class="skill-section">
+  <h4>Languages</h4>
+  <span class="skill-pill">Python</span>
+  <span class="skill-pill">SQL (SSMS)</span>
+  <span class="skill-pill">HTML/CSS</span>
+</div>
+
+<div class="skill-section">
+  <h4>Libraries &amp; Frameworks</h4>
+  <span class="skill-pill">Pandas</span>
+  <span class="skill-pill">NumPy</span>
+  <span class="skill-pill">scikit-learn</span>
+  <span class="skill-pill">Tkinter</span>
+  <span class="skill-pill">Selenium</span>
+</div>
+
+<div class="skill-section">
+  <h4>AI &amp; Tools</h4>
+  <span class="skill-pill">LangChain</span>
+  <span class="skill-pill">Neo4j</span>
+  <span class="skill-pill">Prompt Engineering</span>
+  <span class="skill-pill">Simulation-Based Reasoning</span>
+</div>
+
+<div class="skill-section">
+  <h4>Workflow &amp; Dev</h4>
+  <span class="skill-pill">Git/GitHub</span>
+  <span class="skill-pill">Jupyter</span>
+  <span class="skill-pill">Docker (learning)</span>
+  <span class="skill-pill">VS Code</span>
+</div>
+
+<h2 id="background">Background</h2>
+
+<div class="info-block">
+  <h4>🎓 Education</h4>
+  <p><strong>University of Kent</strong><br />
+  BSc Mathematics (First Class)<br />
+  2018–2021</p>
+</div>
+
+<div class="info-block">
+  <h4>💼 Work Experience</h4>
+  <p><strong>Technical Support Analyst</strong> — LiveOps / SQL diagnostics, dashboards, incident response</p>
+</div>
+
+<h2 id="certification">Certification</h2>
+
+<div class="info-block">
+  <h4>Certificates (Ongoing)</h4>
+  <p>
+    <strong><a href="https://www.coursera.org/professional-certificates/ai-engineer#courses" target="_blank" rel="noopener noreferrer">AI Engineer Professional Certificate</a></strong><br />
+    Coursera
+  </p>
+</div>
+
+<h2 id="what-im-looking-for">What I’m Looking For</h2>
+
+<p>I’m actively seeking <strong>remote junior roles</strong> in:</p>
+
+<ul>
+  <li><strong>Data Analytics / Junior Data Science</strong></li>
+  <li><strong>AI / ML Associate Developer</strong></li>
+  <li><strong>Python Backend or Tooling Developer</strong></li>
+</ul>
+
+<p>I’m especially drawn to mission-driven teams that value curiosity, autonomy, and long-term thinking. Open to UK, EU, and East Coast US timezones.</p>
+
+<h2 id="-contact">🔗 Contact</h2>
+
+<ul>
+  <li>arditislami.pro@gmail.com</li>
+  <li><a href="https://github.com/Ardit-Islami">GitHub</a></li>
+  <li><a href="https://linkedin.com/in/ardit-islami">LinkedIn</a></li>
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+    
+  </div>
+
+  
+
+  <!--
+    <div id="footer" class="page__footer">
+      <footer>
+        <!--
+        <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
+  © 2025 Ardit Islami · Built with Jekyll
+</footer>
+      </footer>
+    </div>
+  -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

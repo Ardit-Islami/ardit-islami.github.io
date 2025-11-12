@@ -1,0 +1,409 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Password Manager CLI - Ardit Islami</title>
+<meta name="description" content="A secure Python CLI application for encrypted password management.">
+
+
+  <meta name="author" content="Ardit Islami">
+  
+  <meta property="article:author" content="Ardit Islami">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ardit Islami">
+<meta property="og:title" content="Password Manager CLI">
+<meta property="og:url" content="https://ardit-islami.github.io/projects/password-manager-cli/">
+
+
+  <meta property="og:description" content="A secure Python CLI application for encrypted password management.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-21T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://ardit-islami.github.io/projects/password-manager-cli/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/project-single.css">
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    /* --- Custom Masthead Styles --- */
+    .masthead {
+        position: absolute;
+        /* Or absolute, as you have it */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        /* YOUR CHOSEN HEIGHT */
+        background: transparent !important;
+        /* Ensuring this is transparent */
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Centers .masthead__inner-wrap if it's narrower than masthead */
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+
+    .masthead__inner-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        /* If this had a background from the theme, make it transparent: */
+        background: transparent !important;
+        /* max-width: $max-width; /* Theme default */
+        /* margin: 0 auto; /* Theme default for centering if max-width is active */
+    }
+
+    .masthead__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* If this had a background from the theme, make it transparent: */
+        background: transparent !important;
+    }
+
+    nav.greedy-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* If this had a background from the theme, make it transparent: */
+        background: transparent !important;
+    }
+
+    ul.visible-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        /* If this had a background from the theme, make it transparent: */
+        background: transparent !important;
+    }
+
+    ul.visible-links .masthead__menu-item {
+        margin: 0;
+        /* If li items had a background from the theme, make it transparent: */
+        background: transparent !important;
+    }
+
+    /* --- Link Styling (already good from previous steps) --- */
+    ul.visible-links .masthead__menu-item a {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        text-transform: none;
+        color: #FFFFFF;
+        /* <<< ADJUST THIS COLOR FOR VISIBILITY against your page background */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        /* <<< ADD/ADJUST for readability */
+        background-color: transparent;
+        /* Ensure link itself is transparent */
+        padding: 0.8rem 1rem;
+        margin: 0 0.4rem;
+        border-radius: 5px;
+        transition: color 0.2s ease, background-color 0.2s ease;
+        text-decoration: none;
+    }
+
+    ul.visible-links .masthead__menu-item a:hover {
+        color: #FFFFFF;
+        /* Or a brighter version of your link color */
+        background-color: rgba(255, 255, 255, 0.15);
+        /* Subtle hover for light text */
+    }
+
+    ul.visible-links .masthead__menu-item.active a {
+        color: #FFFFFF;
+        /* Or a brighter version of your link color */
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* --- Ensure main page content starts below the masthead --- */
+    /* This should already be in place globally if you targeted .initial-content-wrap or body */
+    .initial-content-wrap {
+        /* Or #main, or body depending on your theme's structure */
+        padding-top: 70px;
+        /* MUST MATCH YOUR .masthead height */
+    }
+
+    /* If specific to homepage, and .main-wrapper is the first content block inside .page-container */
+    /*
+  .page-container .main-wrapper {
+      padding-top: 70px;
+  }
+  */
+    /* --- RESPONSIVE ADJUSTMENTS FOR NAVIGATION --- */
+
+    /* For Tablets and smaller */
+    @media (max-width: 768px) {
+        ul.visible-links .masthead__menu-item a {
+            padding: 0.6rem 0.5rem;
+            /* Smaller padding */
+            margin: 0 0.2rem;
+            /* Smaller margin */
+            font-size: 0.95rem;
+        }
+    }
+
+    /* For Mobile phones */
+    @media (max-width: 480px) {
+        ul.visible-links .masthead__menu-item a {
+            padding: 0.5rem 0.2rem;
+            /* Even smaller padding */
+            margin: 0 0.1rem;
+            /* Even smaller margin */
+            font-size: 0.9rem;
+        }
+    }
+
+    /* --- Global Content Link Colors --- */
+    #main a,
+    #main a:visited {
+        color: #A9BFFF !important;
+        text-decoration: underline !important;
+    }
+
+    #main a:hover {
+        color: #FFFFFF !important;
+    }
+</style>
+</head>
+
+<body
+  class="layout--project-page"
+  dir="ltr">
+  <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <ul class="visible-links"><li class="masthead__menu-item">
+            <a href="/" 
+              >Home</a>
+          </li><li class="masthead__menu-item">
+            <a href="/projects/" 
+              >Projects</a>
+          </li><li class="masthead__menu-item">
+            <a href="/about/" 
+              >About Me</a>
+          </li><li class="masthead__menu-item">
+            <a href="mailto:arditislami.pro@gmail.com" 
+              >Contact</a>
+          </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <div class="initial-content">
+    <div class="page-container">
+    <div class="project-wrapper">
+
+        <div class="project-content-box">
+            <h1 class="project-title">Password Manager CLI</h1>
+
+            
+            <img src="/assets/images/password-manager-teaser.png" alt="Project preview" class="project-image">
+            
+
+            
+            <div class="skill-section">
+                
+                <span class="skill-pill">Python</span>
+                
+                <span class="skill-pill">CLI</span>
+                
+                <span class="skill-pill">Encryption</span>
+                
+                <span class="skill-pill">Cryptography</span>
+                
+            </div>
+            
+
+            <div class="project-body">
+                <p>This Python-based Command Line Interface (CLI) password manager securely stores user credentials in an encrypted vault, protected by a master password. It incorporates cryptographic principles with practical, user-friendly CLI commands, providing a robust yet approachable way to manage sensitive data.</p>
+
+<h3 id="key-features">Key Features</h3>
+
+<ul>
+  <li><strong>Secure Encryption</strong>: Uses <code class="language-plaintext highlighter-rouge">cryptography</code> library (Fernet and PBKDF2HMAC) for secure credential storage.</li>
+  <li><strong>Simple CLI Interface</strong>: Intuitive commands for adding, viewing, and managing stored credentials.</li>
+  <li><strong>Robust Error Handling</strong>: Designed with clear user feedback and error messages to streamline troubleshooting.</li>
+  <li><strong>Data Persistence</strong>: Credential vault data securely stored in JSON format, encrypted and encoded with base64.</li>
+</ul>
+
+<h3 id="learning-journey">Learning Journey</h3>
+
+<p>This project was developed with assistance from AI-powered reasoning tools, specifically Gemini, to conceptualize and structure the encryption logic and CLI architecture.</p>
+
+<p>For complete transparency, you can download the original <a href="https://github.com/Ardit-Islami/password-manager-cli/blob/main/Gemini%20Transcript.txt">AI interaction transcript</a>. Reviewers are encouraged to parse this transcript through an LLM or manually to confirm the appropriate and fair use of AI as an educational and developmental aid.</p>
+
+<h3 id="screenshots-and-demos">Screenshots and Demos</h3>
+
+<p><em>Coming soon: Terminal screenshots demonstrating the CLI workflow, secure login, credential retrieval, and encryption verification.</em></p>
+
+<h3 id="example-code-snippet">Example Code Snippet</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">cryptography.fernet</span> <span class="kn">import</span> <span class="n">Fernet</span>
+
+<span class="c1"># Generate encryption key
+</span><span class="k">def</span> <span class="nf">generate_key</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">Fernet</span><span class="p">.</span><span class="nf">generate_key</span><span class="p">()</span>
+
+<span class="c1"># Encrypt password
+</span><span class="k">def</span> <span class="nf">encrypt_password</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+    <span class="n">fernet</span> <span class="o">=</span> <span class="nc">Fernet</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fernet</span><span class="p">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="n">password</span><span class="p">.</span><span class="nf">encode</span><span class="p">()).</span><span class="nf">decode</span><span class="p">()</span>
+
+<span class="c1"># Decrypt password
+</span><span class="k">def</span> <span class="nf">decrypt_password</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">encrypted_password</span><span class="p">):</span>
+    <span class="n">fernet</span> <span class="o">=</span> <span class="nc">Fernet</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fernet</span><span class="p">.</span><span class="nf">decrypt</span><span class="p">(</span><span class="n">encrypted_password</span><span class="p">.</span><span class="nf">encode</span><span class="p">()).</span><span class="nf">decode</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="future-enhancements">Future Enhancements</h3>
+
+<ul>
+  <li><strong>Graphical Interface (GUI)</strong>: Exploring the addition of a front-end interface for easier use.</li>
+  <li><strong>Packaging</strong>: Planning to package the tool for easier distribution and installation via PyPI.</li>
+</ul>
+
+<p>Feel free to view the full source code and explore the project’s development on GitHub.</p>
+
+            </div>
+            
+            <a href="https://github.com/Ardit-Islami/password-manager-cli/" class="btn-github" target="_blank">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+            
+
+            <!-- Prev/Next Navigation -->
+            <div class="project-nav">
+                
+                <a class="nav-button prev" href="/projects/python-notebooks/">
+                    ← Python Core Notebooks
+                </a>
+                
+                
+                <a class="nav-button next" href="/projects/lineball-dashboard/">
+                    Line Ball Analysis →
+                </a>
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+    
+  </div>
+
+  
+
+  <!--
+    <div id="footer" class="page__footer">
+      <footer>
+        <!--
+        <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
+  © 2025 Ardit Islami · Built with Jekyll
+</footer>
+      </footer>
+    </div>
+  -->
+
+  
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
