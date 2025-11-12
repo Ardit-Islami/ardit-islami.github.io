@@ -1,32 +1,44 @@
-# Vim
-*~
-*.sw[p_]
-
-# IntelliJ IDEA
-*.idea
-
-# Sublime Text
+# --- Editors / IDEs ---
+.vscode/
+.idea/
 *.sublime-project
 *.sublime-workspace
 
-# Ruby Gem
-*.gem
-.bundle
-Gemfile.lock
-**/vendor/bundle
+# Vim
+*~
+*.sw[pP]
 
-# Node.js and NPM
-node_modules
+# --- OS noise ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Node / JS toolchains ---
+node_modules/
 npm-debug.log*
-package-lock.json
 codekit-config.json
 
-# macOS
-.DS_Store
+# --- Ruby / Bundler ---
+.bundle/
+*.gem
+Gemfile.lock
+**/vendor/bundle/
 
-# Jekyll generated files
-.jekyll-cache
+# --- Jekyll build artifacts ---
+_site/
+.jekyll-cache/
 .jekyll-metadata
-.sass-cache
-_asset_bundler_cache
-_site
+.sass-cache/
+_asset_bundler_cache/
+
+# --- Local config & env (keep secrets/local-only out of Git) ---
+.env
+.env.*            # e.g., .env.development
+_config.local.yml # optional per-machine Jekyll config
+.ruby-version
+.rbenv-vars
+.tool-versions
+
+# --- Logs / temp ---
+log/
+tmp/
