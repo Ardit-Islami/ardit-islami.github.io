@@ -1,44 +1,36 @@
-# --- Editors / IDEs ---
+# Editors
 .vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
 
-# Vim
-*~
-*.sw[pP]
-
-# --- OS noise ---
+# OS noise
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# --- Node / JS toolchains ---
+# Node / JS
 node_modules/
 npm-debug.log*
-codekit-config.json
 
-# --- Ruby / Bundler ---
+# Ruby / Bundler
 .bundle/
 *.gem
 Gemfile.lock
-**/vendor/bundle/
+vendor/
+vendor/bundle/
 
-# --- Jekyll build artifacts ---
+# Jekyll build artifacts
 _site/
+.sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-.sass-cache/
-_asset_bundler_cache/
 
-# --- Local config & env (keep secrets/local-only out of Git) ---
+# Local env / config
 .env
-.env.*            # e.g., .env.development
-_config.local.yml # optional per-machine Jekyll config
+.env.*
+_config.local.yml
 .ruby-version
 .rbenv-vars
 .tool-versions
 
-# --- Logs / temp ---
+# Logs / temp
 log/
 tmp/

@@ -74,6 +74,7 @@ defaults:
 
 sass:
   style: compressed
+  quiet_deps: true
 
 plugins:
   - jekyll-feed

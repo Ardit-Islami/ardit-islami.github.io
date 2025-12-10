@@ -1,0 +1,22 @@
+{
+  "name": "Jekyll Portfolio",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "forwardPorts": [4000],
+  "postCreateCommand": "bundle install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "shengchen.vscode-checkpoints",
+        "ecmel.vscode-html-css",
+        "biati.jekyll"
+      ]
+    }
+  }
+}
