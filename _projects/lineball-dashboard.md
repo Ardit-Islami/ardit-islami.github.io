@@ -1,10 +1,15 @@
 ---
 title: "Line Ball Analysis"
-date: 2025-06-22
-layout: project-page
-image: "/assets/images/lineball-thumbnail.png"
 description: "An interactive Tableau dashboard analyzing player performance data from a unique game created by a friend."
-github_url: ""  # Add if you host data/code
+image: "/assets/images/lineball-teaser.png"
+date: 2025-05-06
+published: published
+featured: false
+category: "viz"
+layout: project-page
+collection: projects
+tags: []
+github_url: "" 
 ---
 
 ### Project Overview

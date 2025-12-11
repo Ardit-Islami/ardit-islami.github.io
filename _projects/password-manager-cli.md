@@ -1,11 +1,14 @@
 ---
 title: "Password Manager CLI"
-date: 2025-06-21
-excerpt: "A secure Python CLI application for encrypted password management."
+description: "A secure Python CLI application for encrypted password management."
+image: /assets/images/password-manager-teaser.png
+date: 2025-05-04
+published: published
+featured: true
+category: "python"
 layout: project-page
 collection: projects
 tags: [Python, CLI, Encryption, Cryptography]
-teaser: /assets/images/password-manager-teaser.png
 github_url: https://github.com/Ardit-Islami/password-manager-cli/
 ---
 

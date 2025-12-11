@@ -1,0 +1,9 @@
+<div class="project-card">
+  <img class="project-teaser" src="{{ item.image | default: item.teaser }}" alt="{{ item.title }} Teaser">
+  
+  <h3>{{ item.title }}</h3>
+  
+  <p>{{ item.description | default: item.excerpt | strip_html | truncate: 120 }}</p>
+  
+  <a href="{{ item.url }}" class="cta-button">View Project</a>
+</div>

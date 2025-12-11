@@ -5,7 +5,7 @@ description: >-
   Skilled in Python, SQL, and problem-solving. 
   This site showcases projects built during my structured job hunt system.
 
-baseurl: "" # user GitHub Page = blank
+baseurl: ""
 url: "https://ardit-islami.github.io"
 
 theme: minimal-mistakes-jekyll
@@ -21,11 +21,11 @@ paginate_path: /page:num/
 author:
   name: "Ardit Islami"
   avatar: /assets/images/bio-photo.png
-  bio: "First-Class Mathematics graduate transitioning into AI and data. Python enthusiast with SQL and problem-solving roots."
+  bio: "Mathematics grad with real-world SQL support experience and a passion for Python + AI."
   location: "UK"
   email: "arditislami.pro@gmail.com"
-  github: Ardit-Islami
-  linkedin: in/ardit-islami
+  github: https://github.com/Ardit-Islami
+  linkedin: https://linkedin.com/in/ardit-islami
 
 collections:
   projects:
@@ -44,29 +44,17 @@ defaults:
     values:
       layout: single
       author_profile: true
-      # ... other project specific defaults
+      page_css: project-single.css
   - scope:
       path: ""
       type: posts
     values:
       layout: single
       author_profile: true
-      # ... other post specific defaults
   - scope:
-      path: "_pages"  # Target files directly within the _pages directory
-      # type: "pages" # LEAVE THIS OUT. We are targeting by path.
-                      # Jekyll knows files in _pages with front matter are pages.
+      path: "_pages"
     values:
-      layout: default # Assign a very basic, known-good layout from Minimal Mistakes.
-                      # Your _pages/about.md (with layout: single) and
-                      # _pages/projects.md (with layout: collection)
-                      # WILL OVERRIDE this default layout with their own specific ones,
-                      # which is what we want.
-                      # This 'layout: default' here is just to ensure Jekyll
-                      # unequivocally sees these files as needing processing.
-      # published: true # You could explicitly add this, though it's usually true by default
-                      # unless JEKYLL_ENV=production is being extra picky about files
-                      # not in a collection.
+      layout: default
   - scope:
       path: "assets/css" 
     values:

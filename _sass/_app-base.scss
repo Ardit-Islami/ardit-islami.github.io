@@ -1,0 +1,246 @@
+/* Shared Layout Structures */
+
+/* --- Page Container (Full Background Image) --- */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('../images/full-background.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Dark Overlay */
+.page-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* --- Main Wrapper --- */
+.main-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 2560px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  flex: 0 0 260px;
+  max-width: 260px;
+  margin-top: 15vh;
+  margin-left: 2vh;
+  padding: 1.5rem;
+  background-color: rgba(1, 2, 34, 0.95);
+  color: #E0E6FF;
+  border: 1px solid rgba(122, 128, 255, 0.25);
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-self: flex-start;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.sidebar:hover {
+  background-color: rgba(15, 18, 58, 0.98);
+  border: 1px solid #7B72FF;
+  box-shadow: 0 0 10px rgba(123, 114, 255, 0.35), 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.bio-photo {
+  width: 180px !important;
+  height: 180px !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem;
+  border: 3px solid #e9ecef;
+  max-width: unset !important;
+}
+
+.sidebar h3 {
+  font-size: 1.5rem;
+  color: #E0E6FF;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.sidebar p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #B0B8D1;
+  margin-bottom: 1rem;
+}
+
+.sidebar a,
+.sidebar a:visited,
+.sidebar a:hover,
+.sidebar a:focus {
+  color: #E0E6FF;
+  /* or white, or your preferred bright tone */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+  color: #9BA6FF;
+}
+
+/* --- Custom Masthead Styles --- */
+    .masthead {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background: transparent !important;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+
+    .masthead__inner-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background: transparent !important;
+    }
+
+    .masthead__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent !important;
+    }
+
+    nav.greedy-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent !important;
+    }
+
+    ul.visible-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+    ul.visible-links .masthead__menu-item {
+        margin: 0;
+        background: transparent !important;
+    }
+
+    /* --- Link Styling --- */
+    ul.visible-links .masthead__menu-item a {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        text-transform: none;
+        color: #FFFFFF;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        background-color: transparent;
+        padding: 0.8rem 1rem;
+        margin: 0 0.4rem;
+        border-radius: 5px;
+        transition: color 0.2s ease, background-color 0.2s ease;
+        text-decoration: none;
+    }
+
+    ul.visible-links .masthead__menu-item a:hover {
+        color: #FFFFFF;
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    ul.visible-links .masthead__menu-item.active a {
+        color: #FFFFFF;
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* --- Main page content starts below the masthead --- */
+    .initial-content-wrap {
+        padding-top: 70px;
+    }
+
+    /* --- Global Content Link Colors --- */
+    #main a,
+    #main a:visited {
+        color: #A9BFFF !important;
+        text-decoration: underline !important;
+    }
+
+    #main a:hover {
+        color: #FFFFFF !important;
+    }
+
+/* --- Responsive Helpers --- */
+@media (max-width: 1700px) {
+  .main-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.5rem;
+  }
+
+  .sidebar {
+    order: 1;
+    width: 95%;
+    max-width: 400px;
+    margin: 10vh auto 2rem auto;
+  }
+
+  .content-column {
+    order: 2; 
+    width: 100%;
+    margin: 0 auto 2rem auto;
+    padding: 0;
+  }
+}
+
+/* --- RESPONSIVE ADJUSTMENTS FOR NAVIGATION --- */
+
+    /* For Tablets and smaller */
+    @media (max-width: 768px) {
+        ul.visible-links .masthead__menu-item a {
+            padding: 0.6rem 0.5rem;
+            margin: 0 0.2rem;
+            font-size: 0.95rem;
+        }
+    }
+
+    /* For Mobile phones */
+    @media (max-width: 480px) {
+        ul.visible-links .masthead__menu-item a {
+            padding: 0.5rem 0.2rem;
+            margin: 0 0.1rem;
+            font-size: 0.9rem;
+        }
+    }

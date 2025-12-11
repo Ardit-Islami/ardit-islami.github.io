@@ -1,11 +1,14 @@
 ---
 title: "Arithmetic Formatter"
-date: 2025-05-10
-excerpt: "A CLI tool that formats simple arithmetic problems. Built as part of FreeCodeCamp challenges."
+description: "A CLI tool that formats simple arithmetic problems. Built as part of FreeCodeCamp challenges."
+image: "/assets/images/arithmetic-formatter-teaser.png"
+date: 2025-05-09
+published: published
+featured: false
+category: "python"
 layout: project-page
 collection: projects
 tags: [Python, Beginner, FreeCodeCamp]
-teaser: /assets/images/arithmetic-formatter.png
 github_url: https://github.com/Ardit-Islami/Arithmetic_Formatter
 ---
 

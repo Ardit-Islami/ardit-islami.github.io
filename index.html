@@ -2,6 +2,7 @@
 layout: default
 title: "Ardit Islami – AI Portfolio" # Or your preferred title
 permalink: /
+page_css: homepage.css
 ---
 
 <div class="page-container">
@@ -26,14 +27,7 @@ permalink: /
       </div>
     </div>
 
-    <aside class="sidebar">
-      <img src="/assets/images/bio-photo.png" alt="Ardit Islami" class="bio-photo">
-      <h3>Ardit Islami</h3>
-      <p>Mathematics grad with real-world SQL support experience and a passion for Python + AI.</p>
-      <p>UK<br><a href="mailto:arditislami.pro@gmail.com">Email</a><br><a
-          href="https://linkedin.com/in/ardit-islami">LinkedIn</a><br><a
-          href="https://github.com/Ardit-Islami">GitHub</a></p>
-    </aside>
+    {% include sidebar.html %}
 
     <div class="content-column">
       <div class="hero-spacer"></div>
@@ -42,25 +36,11 @@ permalink: /
         <section class="projects-scroll">
           <h2 class="projects-scroll-title">Featured Projects</h2>
           <div class="project-list">
-            <div class="project-card">
-              <img class="project-teaser" src="/assets/images/quiz-game-teaser.png" alt="Quiz Game Teaser">
-              <h3>Quiz Game CLI</h3>
-              <p>Command-line Python game scraping live questions and using fuzzy matching for answers.</p>
-              <a href="/projects/quiz-game-cli" class="cta-button">View Project</a>
-            </div>
-            <div class="project-card">
-              <img class="project-teaser" src="/assets/images/arithmetic-formatter.png"
-                alt="Arithmetic Formatter Teaser">
-              <h3>Arithmetic Formatter</h3>
-              <p>FreeCodeCamp-inspired CLI tool that formats and aligns arithmetic expressions.</p>
-              <a href="/projects/arithmetic-formatter" class="cta-button">View Project</a>
-            </div>
-            <div class="project-card">
-              <img class="project-teaser" src="/assets/images/python-notebooks.png" alt="Python Notebooks Teaser">
-              <h3>Python Core Notebooks</h3>
-              <p>A curated collection of Jupyter notebooks showcasing my Python, NumPy, and Pandas learning.</p>
-              <a href="/projects/python-core-notebooks" class="cta-button">View Project</a>
-            </div>
+            {% assign featured_projects = site.projects | where: "featured", true %}
+
+            {% for item in featured_projects %}
+              {% include homepage_card.html item=item %}
+            {% endfor %}
           </div>
           <div class="cta-text">
             <a href="/projects/" class="cta-button">See All Projects →</a>

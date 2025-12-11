@@ -5,6 +5,7 @@ collection: pages
 permalink: /about/
 author_profile: true
 published: true
+page_css: about.css
 ---
 
 ## Who I Am
@@ -51,14 +52,14 @@ I’ve worked in real-time technical support, solving operational data problems 
 ## Background
 
 <div class="info-block">
-  <h4>🎓 Education</h4>
+  <h4>Education</h4>
   <p><strong>University of Kent</strong><br>
   BSc Mathematics (First Class)<br>
   2018–2021</p>
 </div>
 
 <div class="info-block">
-  <h4>💼 Work Experience</h4>
+  <h4>Work Experience</h4>
   <p><strong>Technical Support Analyst</strong> — LiveOps / SQL diagnostics, dashboards, incident response</p>
 </div>
 
@@ -82,7 +83,7 @@ I'm actively seeking **remote junior roles** in:
 
 I’m especially drawn to mission-driven teams that value curiosity, autonomy, and long-term thinking. Open to UK, EU, and East Coast US timezones.
 
-## 🔗 Contact
+## Contact
 
 - arditislami.pro@gmail.com
 - [GitHub](https://github.com/Ardit-Islami)

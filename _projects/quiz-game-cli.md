@@ -1,11 +1,14 @@
 ---
 title: "Quiz Game CLI"
-date: 2025-05-01
-excerpt: "A command-line Python quiz game that scrapes live trivia questions and uses fuzzy matching to score."
+description: "A command-line Python quiz game that scrapes live trivia questions and uses fuzzy matching to score."
+image: /assets/images/quiz-game-teaser.png
+date: 2025-05-05
+published: published
+featured: true
+category: "python"
 layout: project-page
 collection: projects
 tags: [Python, CLI, Selenium, Tkinter]
-teaser: /assets/images/quiz-game-teaser.png
 github_url: https://github.com/Ardit-Islami/
 ---
 

@@ -1,0 +1,31 @@
+<aside class="sidebar">
+  {% if site.author.avatar %}
+  <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="bio-photo">
+  {% endif %}
+
+  {% if site.author.name %}
+  <h3>{{ site.author.name }}</h3>
+  {% endif %}
+
+  {% if site.author.bio %}
+  <p>{{ site.author.bio }}</p>
+  {% endif %}
+
+  <p>
+    {% if site.author.location %}
+      {{ site.author.location }}<br>
+    {% endif %}
+
+    {% if site.author.email %}
+      <a href="mailto:{{ site.author.email }}">Email</a><br>
+    {% endif %}
+
+    {% if site.author.linkedin %}
+      <a href="https://linkedin.com/{{ site.author.linkedin }}">LinkedIn</a><br>
+    {% endif %}
+
+    {% if site.author.github %}
+      <a href="https://github.com/{{ site.author.github }}">GitHub</a>
+    {% endif %}
+  </p>
+</aside>

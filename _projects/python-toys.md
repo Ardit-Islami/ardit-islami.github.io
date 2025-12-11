@@ -1,11 +1,14 @@
 ---
 title: "Python Toys"
-date: 2025-05-19
-excerpt: "A collection of beginner-friendly Python CLI projects built for practice and learning."
+description: "A collection of beginner-friendly Python CLI projects built for practice and learning."
+image: "/assets/images/python-toys-teaser.png"
+date: 2025-05-08
+published: published
+featured: false
+category: "python"
 layout: project-page
 collection: projects
 tags: [Python, CLI, Beginner, Games]
-teaser: /assets/images/python-toys-teaser.png
 github_url: https://github.com/Ardit-Islami/python-toys/
 ---
 

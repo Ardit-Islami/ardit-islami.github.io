@@ -1,0 +1,50 @@
+---
+layout: sidebar-page
+---
+
+<div class="about-spacer"></div>
+<section class="project-section">
+  <details>
+    <summary class="project-category-title">Ongoing Learning</summary>
+    <div class="project-grid-wrapper scrollable">
+      {% for item in site.data.learning %}
+        {% include project_tile.html item=item %}
+      {% endfor %}
+    </div>
+  </details>
+</section>
+<div class="projects-content-container">
+  <h1 class="projects-main-title">A Showcase of My Projects</h1>
+  <section class="project-section">
+    <details>
+      <summary class="project-category-title"> AI / Data </summary>
+      <div class="project-grid-wrapper scrollable">
+        {% for item in site.data.projects_ai %}
+          {% include project_tile.html item=item %}
+        {% endfor %}
+      </div>
+    </details>
+  </section>
+  <section class="project-section">
+    <details>
+      <summary class="project-category-title">Python Basics</summary>
+      <div class="project-grid-wrapper scrollable">
+        {% assign python_projects = site.projects | where: "category", "python" %}
+              {% for item in python_projects %}
+                {% include project_tile.html item=item %}
+              {% endfor %}
+      </div>
+    </details>
+  </section>
+  <section class="project-section" data-type="viz">
+    <details>
+      <summary class="project-category-title">Data Visualisation</summary>
+        <div class="project-grid-wrapper scrollable">
+          {% assign viz_projects = site.projects | where: "category", "viz" %}
+              {% for item in viz_projects %}
+                {% include project_tile.html item=item %}
+              {% endfor %}
+        </div>
+    </details>
+  </section>
+</div>

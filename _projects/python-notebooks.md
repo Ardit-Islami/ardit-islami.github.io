@@ -1,11 +1,14 @@
 ---
 title: "Python Core Notebooks"
-date: 2025-05-20
-excerpt: "A curated set of notebooks that document my learning journey through Python, NumPy, and Pandas."
+description: "A curated set of notebooks that document my learning journey through Python, NumPy, and Pandas."
+image: /assets/images/python-notebooks-teaser.png
+date: 2025-05-07
+published: published
+featured: true
+category: "python"
 layout: project-page
 collection: projects
 tags: [Python, Jupyter, Learning, Data Structures, Functional Programming]
-teaser: /assets/images/python-notebooks.png
 github_url: https://github.com/Ardit-Islami/learning-python-notes/
 ---
 
