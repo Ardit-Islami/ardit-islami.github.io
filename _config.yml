@@ -20,7 +20,7 @@ paginate_path: /page:num/
 
 author:
   name: "Ardit Islami"
-  avatar: /assets/images/bio-photo.png
+  avatar: /assets/images/bio-photo.jpg
   bio: "Mathematics grad with real-world SQL support experience and a passion for Python + AI."
   location: "UK"
   email: "arditislami.pro@gmail.com"
