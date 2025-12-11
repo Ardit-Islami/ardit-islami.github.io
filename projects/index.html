@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
   Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -11,8 +11,8 @@
 <head>
   <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Projects - Ardit Islami</title>
-<meta name="description" content="Ardit Islami       Mathematics grad with real-world SQL support experience and a passion for Python + AI.                📍 UK         📧 Email         💼 LinkedIn         🐙 GitHub                                                   Ongoing Learning                                                           Currently enrolled in a comprehensive Data Science program focusing on machine learning.                        Data Science Certificate                                                         Building an interactive Choose Your Own Adventure game using Python and advanced data structures.                        Interactive CYOA Game                                                               A Showcase of My Projects                              AI / Data                                                            More projects coming soon!                        Placeholder Project                                                                                Python Basics                                                           A command-line quiz game built with Python, demonstrating fundamental programming concepts.                        Quiz Game                                                         A secure Python cmd tool for encrypted credential storage, using cryptography principles and intuitive CLI design.                        Password Manager CLI                                                         A Python function to neatly format arithmetic problems as specified in a coding challenge.                        Arithmetic Formatter                                                         A collection of basic Python scripts to practice and learn.                        Python Toys                                                         A collection of Jupyter notebooks exploring core Python concepts and libraries.                        Python Core Notebooks                                                         More projects coming soon!                        Placeholder Project                                                                                Data Visualisation                                                           An interactive Tableau dashboard analyzing player statistics for the Lineballs game.                        Lineball Statistics Dashboard                                                         More projects coming soon!                        Placeholder Project">
+<!-- begin _includes/seo.html --><title>A Showcase of My Projects - Ardit Islami</title>
+<meta name="description" content="">
 
 
   <meta name="author" content="Ardit Islami">
@@ -24,11 +24,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ardit Islami">
-<meta property="og:title" content="Projects">
+<meta property="og:title" content="A Showcase of My Projects">
 <meta property="og:url" content="https://ardit-islami.github.io/projects/">
 
 
-  <meta property="og:description" content="Ardit Islami       Mathematics grad with real-world SQL support experience and a passion for Python + AI.                📍 UK         📧 Email         💼 LinkedIn         🐙 GitHub                                                   Ongoing Learning                                                           Currently enrolled in a comprehensive Data Science program focusing on machine learning.                        Data Science Certificate                                                         Building an interactive Choose Your Own Adventure game using Python and advanced data structures.                        Interactive CYOA Game                                                               A Showcase of My Projects                              AI / Data                                                            More projects coming soon!                        Placeholder Project                                                                                Python Basics                                                           A command-line quiz game built with Python, demonstrating fundamental programming concepts.                        Quiz Game                                                         A secure Python cmd tool for encrypted credential storage, using cryptography principles and intuitive CLI design.                        Password Manager CLI                                                         A Python function to neatly format arithmetic problems as specified in a coding challenge.                        Arithmetic Formatter                                                         A collection of basic Python scripts to practice and learn.                        Python Toys                                                         A collection of Jupyter notebooks exploring core Python concepts and libraries.                        Python Core Notebooks                                                         More projects coming soon!                        Placeholder Project                                                                                Data Visualisation                                                           An interactive Tableau dashboard analyzing player statistics for the Lineballs game.                        Lineball Statistics Dashboard                                                         More projects coming soon!                        Placeholder Project">
+  <meta property="og:description" content="">
 
 
 
@@ -36,7 +36,7 @@
 
 
 
-  <meta property="article:published_time" content="2025-11-12T17:26:18+00:00">
+  <meta property="article:published_time" content="2025-12-11T03:14:55+00:00">
 
 
 
@@ -75,10 +75,7 @@
 
   
 
-
-<link rel="stylesheet" href="/assets/css/project.css">
-
-
+  <link rel="stylesheet" href="/assets/css/project.css">
 
 
 
@@ -86,158 +83,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-    /* --- Custom Masthead Styles --- */
-    .masthead {
-        position: absolute;
-        /* Or absolute, as you have it */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 70px;
-        /* YOUR CHOSEN HEIGHT */
-        background: transparent !important;
-        /* Ensuring this is transparent */
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* Centers .masthead__inner-wrap if it's narrower than masthead */
-        border-bottom: none !important;
-        box-shadow: none !important;
-    }
-
-    .masthead__inner-wrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        /* If this had a background from the theme, make it transparent: */
-        background: transparent !important;
-        /* max-width: $max-width; /* Theme default */
-        /* margin: 0 auto; /* Theme default for centering if max-width is active */
-    }
-
-    .masthead__menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* If this had a background from the theme, make it transparent: */
-        background: transparent !important;
-    }
-
-    nav.greedy-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* If this had a background from the theme, make it transparent: */
-        background: transparent !important;
-    }
-
-    ul.visible-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        /* If this had a background from the theme, make it transparent: */
-        background: transparent !important;
-    }
-
-    ul.visible-links .masthead__menu-item {
-        margin: 0;
-        /* If li items had a background from the theme, make it transparent: */
-        background: transparent !important;
-    }
-
-    /* --- Link Styling (already good from previous steps) --- */
-    ul.visible-links .masthead__menu-item a {
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
-        text-transform: none;
-        color: #FFFFFF;
-        /* <<< ADJUST THIS COLOR FOR VISIBILITY against your page background */
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        /* <<< ADD/ADJUST for readability */
-        background-color: transparent;
-        /* Ensure link itself is transparent */
-        padding: 0.8rem 1rem;
-        margin: 0 0.4rem;
-        border-radius: 5px;
-        transition: color 0.2s ease, background-color 0.2s ease;
-        text-decoration: none;
-    }
-
-    ul.visible-links .masthead__menu-item a:hover {
-        color: #FFFFFF;
-        /* Or a brighter version of your link color */
-        background-color: rgba(255, 255, 255, 0.15);
-        /* Subtle hover for light text */
-    }
-
-    ul.visible-links .masthead__menu-item.active a {
-        color: #FFFFFF;
-        /* Or a brighter version of your link color */
-        font-weight: 600;
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    /* --- Ensure main page content starts below the masthead --- */
-    /* This should already be in place globally if you targeted .initial-content-wrap or body */
-    .initial-content-wrap {
-        /* Or #main, or body depending on your theme's structure */
-        padding-top: 70px;
-        /* MUST MATCH YOUR .masthead height */
-    }
-
-    /* If specific to homepage, and .main-wrapper is the first content block inside .page-container */
-    /*
-  .page-container .main-wrapper {
-      padding-top: 70px;
-  }
-  */
-    /* --- RESPONSIVE ADJUSTMENTS FOR NAVIGATION --- */
-
-    /* For Tablets and smaller */
-    @media (max-width: 768px) {
-        ul.visible-links .masthead__menu-item a {
-            padding: 0.6rem 0.5rem;
-            /* Smaller padding */
-            margin: 0 0.2rem;
-            /* Smaller margin */
-            font-size: 0.95rem;
-        }
-    }
-
-    /* For Mobile phones */
-    @media (max-width: 480px) {
-        ul.visible-links .masthead__menu-item a {
-            padding: 0.5rem 0.2rem;
-            /* Even smaller padding */
-            margin: 0 0.1rem;
-            /* Even smaller margin */
-            font-size: 0.9rem;
-        }
-    }
-
-    /* --- Global Content Link Colors --- */
-    #main a,
-    #main a:visited {
-        color: #A9BFFF !important;
-        text-decoration: underline !important;
-    }
-
-    #main a:hover {
-        color: #FFFFFF !important;
-    }
-</style>
 </head>
 
 <body
-  class="layout--default"
+  class="layout--projects"
   dir="ltr">
   <nav class="skip-links">
   <ul>
@@ -282,24 +131,44 @@
     <div class="page-container">
   <div class="main-wrapper">
     <aside class="sidebar">
-      <img src="/assets/images/bio-photo.png" alt="Ardit Islami" class="bio-photo" />
-      <h3>Ardit Islami</h3>
-      <p>Mathematics grad with real-world SQL support experience and a passion for Python + AI.</p>
-      <p>
-        📍 UK<br />
-        📧 <a href="mailto:arditislami.pro@gmail.com">Email</a><br />
-        💼 <a href="https://linkedin.com/in/ardit-islami">LinkedIn</a><br />
-        🐙 <a href="https://github.com/Ardit-Islami">GitHub</a>
-      </p>
-    </aside>
+  
+  <img src="/assets/images/bio-photo.png" alt="Ardit Islami" class="bio-photo">
+  
+
+  
+  <h3>Ardit Islami</h3>
+  
+
+  
+  <p>Mathematics grad with real-world SQL support experience and a passion for Python + AI.</p>
+  
+
+  <p>
+    
+      UK<br>
+    
+
+    
+      <a href="mailto:arditislami.pro@gmail.com">Email</a><br>
+    
+
+    
+      <a href="https://linkedin.com/https://linkedin.com/in/ardit-islami">LinkedIn</a><br>
+    
+
+    
+      <a href="https://github.com/https://github.com/Ardit-Islami">GitHub</a>
+    
+  </p>
+</aside>
     <div class="content-column">
       <div class="about-spacer"></div>
-      <section class="project-section">
-        <details>
-          <summary class="project-category-title">Ongoing Learning</summary>
-          <div class="project-grid-wrapper scrollable">
-            
-              <div class="project-tile">
+<section class="project-section">
+  <details>
+    <summary class="project-category-title">Ongoing Learning</summary>
+    <div class="project-grid-wrapper scrollable">
+      
+        <div class="project-tile">
   <a href="#" class="tile-visual-link" aria-label="View project: Data Science Certificate">
     <div class="tile-image" style="background-image: url('/assets/images/placeholder.png');"></div>
     <div class="tile-overlay">
@@ -313,8 +182,8 @@
     </h3>
   </div>
 </div>
-            
-              <div class="project-tile">
+      
+        <div class="project-tile">
   <a href="#" class="tile-visual-link" aria-label="View project: Interactive CYOA Game">
     <div class="tile-image" style="background-image: url('/assets/images/placeholder.png');"></div>
     <div class="tile-overlay">
@@ -328,19 +197,19 @@
     </h3>
   </div>
 </div>
-            
-          </div>
-        </details>
-      </section>
-      <div class="projects-content-container">
-      <h1 class="projects-main-title">A Showcase of My Projects</h1>
-        <section class="project-section">
-        <details>
-          <summary class="project-category-title"> AI / Data </summary>
-          <div class="project-grid-wrapper scrollable">
-            
-              <div class="project-tile">
-  <a href="#" class="tile-visual-link" aria-label="View project: Placeholder Project">
+      
+    </div>
+  </details>
+</section>
+<div class="projects-content-container">
+  <h1 class="projects-main-title">A Showcase of My Projects</h1>
+  <section class="project-section">
+    <details>
+      <summary class="project-category-title"> AI / Data </summary>
+      <div class="project-grid-wrapper scrollable">
+        
+          <div class="project-tile">
+  <a href="#" class="tile-visual-link" aria-label="View project: Projects Upcoming!">
     <div class="tile-image" style="background-image: url('/assets/images/placeholder.png');"></div>
     <div class="tile-overlay">
       <p class="tile-description">More projects coming soon!</p>
@@ -349,39 +218,25 @@
 
   <div class="tile-caption">
     <h3 class="tile-title">
-      <a href="#">Placeholder Project</a>
+      <a href="#">Projects Upcoming!</a>
     </h3>
   </div>
 </div>
-            
-          </div>
-        </details>
-        </section>
-        <section class="project-section">
-        <details>
-          <summary class="project-category-title">Python Basics</summary>
-          <div class="project-grid-wrapper scrollable">
-            
-              <div class="project-tile">
-  <a href="/projects/quiz-game-cli/" class="tile-visual-link" aria-label="View project: Quiz Game">
-    <div class="tile-image" style="background-image: url('/assets/images/quiz-game-teaser.png');"></div>
-    <div class="tile-overlay">
-      <p class="tile-description">A command-line quiz game built with Python, demonstrating fundamental programming concepts.</p>
-    </div>
-  </a>
-
-  <div class="tile-caption">
-    <h3 class="tile-title">
-      <a href="/projects/quiz-game-cli/">Quiz Game</a>
-    </h3>
-  </div>
-</div>
-            
-              <div class="project-tile">
+        
+      </div>
+    </details>
+  </section>
+  <section class="project-section">
+    <details>
+      <summary class="project-category-title">Python Basics</summary>
+      <div class="project-grid-wrapper scrollable">
+        
+              
+                <div class="project-tile">
   <a href="/projects/password-manager-cli/" class="tile-visual-link" aria-label="View project: Password Manager CLI">
     <div class="tile-image" style="background-image: url('/assets/images/password-manager-teaser.png');"></div>
     <div class="tile-overlay">
-      <p class="tile-description">A secure Python cmd tool for encrypted credential storage, using cryptography principles and intuitive CLI design.</p>
+      <p class="tile-description">A secure Python CLI application for encrypted password management.</p>
     </div>
   </a>
 
@@ -391,42 +246,27 @@
     </h3>
   </div>
 </div>
-            
-              <div class="project-tile">
-  <a href="/projects/arithmetic-formatter/" class="tile-visual-link" aria-label="View project: Arithmetic Formatter">
-    <div class="tile-image" style="background-image: url('/assets/images/arithmetic-formatter.png');"></div>
+              
+                <div class="project-tile">
+  <a href="/projects/quiz-game-cli/" class="tile-visual-link" aria-label="View project: Quiz Game CLI">
+    <div class="tile-image" style="background-image: url('/assets/images/quiz-game-teaser.png');"></div>
     <div class="tile-overlay">
-      <p class="tile-description">A Python function to neatly format arithmetic problems as specified in a coding challenge.</p>
+      <p class="tile-description">A command-line Python quiz game that scrapes live trivia questions and uses fuzzy matching to score.</p>
     </div>
   </a>
 
   <div class="tile-caption">
     <h3 class="tile-title">
-      <a href="/projects/arithmetic-formatter/">Arithmetic Formatter</a>
+      <a href="/projects/quiz-game-cli/">Quiz Game CLI</a>
     </h3>
   </div>
 </div>
-            
-              <div class="project-tile">
-  <a href="/projects/python-toys/" class="tile-visual-link" aria-label="View project: Python Toys">
-    <div class="tile-image" style="background-image: url('/assets/images/python-toys.png');"></div>
-    <div class="tile-overlay">
-      <p class="tile-description">A collection of basic Python scripts to practice and learn.</p>
-    </div>
-  </a>
-
-  <div class="tile-caption">
-    <h3 class="tile-title">
-      <a href="/projects/python-toys/">Python Toys</a>
-    </h3>
-  </div>
-</div>
-            
-              <div class="project-tile">
+              
+                <div class="project-tile">
   <a href="/projects/python-notebooks/" class="tile-visual-link" aria-label="View project: Python Core Notebooks">
-    <div class="tile-image" style="background-image: url('/assets/images/python-notebooks.png');"></div>
+    <div class="tile-image" style="background-image: url('/assets/images/python-notebooks-teaser.png');"></div>
     <div class="tile-overlay">
-      <p class="tile-description">A collection of Jupyter notebooks exploring core Python concepts and libraries.</p>
+      <p class="tile-description">A curated set of notebooks that document my learning journey through Python, NumPy, and Pandas.</p>
     </div>
   </a>
 
@@ -436,68 +276,68 @@
     </h3>
   </div>
 </div>
-            
-              <div class="project-tile">
-  <a href="#" class="tile-visual-link" aria-label="View project: Placeholder Project">
-    <div class="tile-image" style="background-image: url('/assets/images/placeholder.png');"></div>
+              
+                <div class="project-tile">
+  <a href="/projects/python-toys/" class="tile-visual-link" aria-label="View project: Python Toys">
+    <div class="tile-image" style="background-image: url('/assets/images/python-toys-teaser.png');"></div>
     <div class="tile-overlay">
-      <p class="tile-description">More projects coming soon!</p>
+      <p class="tile-description">A collection of beginner-friendly Python CLI projects built for practice and learning.</p>
     </div>
   </a>
 
   <div class="tile-caption">
     <h3 class="tile-title">
-      <a href="#">Placeholder Project</a>
+      <a href="/projects/python-toys/">Python Toys</a>
     </h3>
   </div>
 </div>
-            
-          </div>
-        </details>
-        </section>
-        <section class="project-section" data-type="viz">
-        <details>
-          <summary class="project-category-title">Data Visualisation</summary>
-          <div class="project-grid-wrapper scrollable">
-            
-              <div class="project-tile">
-  <a href="/projects/lineball-dashboard/" class="tile-visual-link" aria-label="View project: Lineball Statistics Dashboard">
-    <div class="tile-image" style="background-image: url('/assets/images/lineball-thumbnail.png');"></div>
+              
+                <div class="project-tile">
+  <a href="/projects/arithmetic-formatter/" class="tile-visual-link" aria-label="View project: Arithmetic Formatter">
+    <div class="tile-image" style="background-image: url('/assets/images/arithmetic-formatter-teaser.png');"></div>
     <div class="tile-overlay">
-      <p class="tile-description">An interactive Tableau dashboard analyzing player statistics for the Lineballs game.</p>
+      <p class="tile-description">A CLI tool that formats simple arithmetic problems. Built as part of FreeCodeCamp challenges.</p>
     </div>
   </a>
 
   <div class="tile-caption">
     <h3 class="tile-title">
-      <a href="/projects/lineball-dashboard/">Lineball Statistics Dashboard</a>
+      <a href="/projects/arithmetic-formatter/">Arithmetic Formatter</a>
     </h3>
   </div>
 </div>
-            
-              <div class="project-tile">
-  <a href="#" class="tile-visual-link" aria-label="View project: Placeholder Project">
-    <div class="tile-image" style="background-image: url('/assets/images/placeholder.png');"></div>
-    <div class="tile-overlay">
-      <p class="tile-description">More projects coming soon!</p>
-    </div>
-  </a>
-
-  <div class="tile-caption">
-    <h3 class="tile-title">
-      <a href="#">Placeholder Project</a>
-    </h3>
-  </div>
-</div>
-            
-          </div>
-        </details>
-        </section>
+              
       </div>
+    </details>
+  </section>
+  <section class="project-section" data-type="viz">
+    <details>
+      <summary class="project-category-title">Data Visualisation</summary>
+        <div class="project-grid-wrapper scrollable">
+          
+              
+                <div class="project-tile">
+  <a href="/projects/lineball-dashboard/" class="tile-visual-link" aria-label="View project: Line Ball Analysis">
+    <div class="tile-image" style="background-image: url('/assets/images/lineball-teaser.png');"></div>
+    <div class="tile-overlay">
+      <p class="tile-description">An interactive Tableau dashboard analyzing player performance data from a unique game created by a friend.</p>
+    </div>
+  </a>
+
+  <div class="tile-caption">
+    <h3 class="tile-title">
+      <a href="/projects/lineball-dashboard/">Line Ball Analysis</a>
+    </h3>
+  </div>
+</div>
+              
+        </div>
+    </details>
+  </section>
+</div>
     </div>
   </div>
 </div>
-
     
   </div>
 
@@ -506,7 +346,7 @@
   <!--
     <div id="footer" class="page__footer">
       <footer>
-        <!--
+        
         <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
   © 2025 Ardit Islami · Built with Jekyll
 </footer>
