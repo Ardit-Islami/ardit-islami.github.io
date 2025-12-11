@@ -1,7 +1,7 @@
 ---
 title: "Line Ball Analysis"
 description: "An interactive Tableau dashboard analyzing player performance data from a unique game created by a friend."
-image: "/assets/images/lineball-teaser.png"
+image: "/assets/images/lineball-teaser.jpg"
 date: 2025-05-06
 published: published
 featured: false
@@ -9,7 +9,6 @@ category: "viz"
 layout: project-page
 collection: projects
 tags: []
-github_url: "" 
 ---
 
 ### Project Overview
@@ -50,7 +49,9 @@ If I were to revisit this project, I would:
 
 Below is a preview of the dashboard. Click the image or the link below to view the interactive version on Tableau Public.
 
-[![Lineball Dashboard Preview](/assets/images/lineball-thumbnail.jpg)](https://public.tableau.com/app/profile/ardit.islami/viz/LineBallStatistics/LineBallDashboard)
+<a href="https://public.tableau.com/app/profile/ardit.islami/viz/LineBallStatistics/LineBallDashboard" target="_blank" rel="noopener noreferrer">
+  <img src="/assets/images/lineball-thumbnail.jpg" alt="Lineball Dashboard Preview" class="project-banner-fade">
+</a>
 
 <p style="text-align: center; margin-top: 1rem;">
   <a href="https://public.tableau.com/app/profile/ardit.islami/viz/LineBallStatistics/LineBallDashboard" class="cta-button" target="_blank" rel="noopener noreferrer">

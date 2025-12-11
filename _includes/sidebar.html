@@ -11,21 +11,33 @@
   <p>{{ site.author.bio }}</p>
   {% endif %}
 
-  <p>
+  <div class="sidebar-contact-info">
     {% if site.author.location %}
-      {{ site.author.location }}<br>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt fa-fw"></i> 
+        <span>{{ site.author.location }}</span>
+      </div>
     {% endif %}
 
     {% if site.author.email %}
-      <a href="mailto:{{ site.author.email }}">Email</a><br>
+      <a href="#" class="contact-item js-open-contact">
+        <i class="fas fa-envelope fa-fw"></i> 
+        <span>Email</span>
+      </a>
     {% endif %}
 
     {% if site.author.linkedin %}
-      <a href="https://linkedin.com/{{ site.author.linkedin }}">LinkedIn</a><br>
+      <a href="https://linkedin.com/in/{{ site.author.linkedin }}" class="contact-item" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin fa-fw"></i> 
+        <span>LinkedIn</span>
+      </a>
     {% endif %}
 
     {% if site.author.github %}
-      <a href="https://github.com/{{ site.author.github }}">GitHub</a>
+      <a href="https://github.com/{{ site.author.github }}" class="contact-item" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github fa-fw"></i> 
+        <span>GitHub</span>
+      </a>
     {% endif %}
-  </p>
+  </div>
 </aside>

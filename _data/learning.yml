@@ -1,11 +1,11 @@
 - title: "Data Science Certificate"
   url: "#"  # Link to the certificate or course
-  image: "/assets/images/placeholder.png" # Path to a teaser image
+  image: "/assets/images/placeholder.jpg" # Path to a teaser image
   description: "Currently enrolled in a comprehensive Data Science program focusing on machine learning."
 
 - title: "Interactive CYOA Game"
   url: "#" # Link to the GitHub repo for the game
-  image: "/assets/images/placeholder.png"
+  image: "/assets/images/placeholder.jpg"
   description: "Building an interactive Choose Your Own Adventure game using Python and advanced data structures."
 
 # Add more projects here as you complete them

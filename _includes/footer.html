@@ -1,3 +1,33 @@
 <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
   © {{ site.time | date: '%Y' }} {{ site.author.name }} · Built with Jekyll
 </footer>
+
+{% include contact-modal.html %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('contact-modal');
+    const openBtns = document.querySelectorAll('.js-open-contact');
+    const closeBtn = document.querySelector('.js-close-contact');
+
+    // Open Modal
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.add('is-visible');
+      });
+    });
+
+    // Close Modal (X button)
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('is-visible');
+    });
+
+    // Close Modal (Click outside)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('is-visible');
+      }
+    });
+  });
+</script>

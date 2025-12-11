@@ -24,8 +24,10 @@ author:
   bio: "Mathematics grad with real-world SQL support experience and a passion for Python + AI."
   location: "UK"
   email: "arditislami.pro@gmail.com"
-  github: https://github.com/Ardit-Islami
-  linkedin: https://linkedin.com/in/ardit-islami
+  github: Ardit-Islami
+  linkedin: arditislami
+
+formspree_form_id: "mjknpyov"
 
 collections:
   projects:

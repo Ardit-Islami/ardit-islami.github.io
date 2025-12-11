@@ -1,4 +1,3 @@
-
 .project-wrapper {
   position: relative;
   z-index: 2;
@@ -125,20 +124,28 @@
   font-size: 1.2rem;
 }
 
+.project-banner-fade {
+  width: 100%;
+  display: block;
+  height: 25vh; 
+  object-fit: cover;
+  object-position: top center;
+  -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+  border-radius: 8px 8px 0 0; 
+}
+
+
 /* --- Consistent Link Colors in Project Content --- */
 .page__content a,
 .page__content a:visited {
   color: #A9BFFF;
-  /* A bright, readable color from your theme */
-  text-decoration: underline;
   transition: color 0.2s ease;
 }
 
 .page__content a:hover,
 .page__content a:focus {
   color: #FFFFFF;
-  /* Make the link brighter on hover */
-  text-decoration: underline;
 }
 
 .responsive-video-wrapper {
@@ -162,7 +169,6 @@
 .project-content-box a,
 .project-content-box a:visited {
   color: #A9BFFF !important;
-  text-decoration: underline !important;
 }
 
 .project-content-box a:hover {

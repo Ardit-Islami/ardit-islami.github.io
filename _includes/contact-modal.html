@@ -1,0 +1,42 @@
+<div id="contact-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close js-close-contact">&times;</button>
+    
+    <div class="modal-body-grid">
+      <div class="modal-info-side">
+        <h3>Let's Chat</h3>
+        <p>I'm always open to discussing AI projects, data challenges, or just geeking out over Python.</p>
+        
+        <div class="modal-mini-contacts">
+          {% if site.author.email %}
+          <div class="mini-contact-item">
+            <i class="fas fa-envelope fa-fw"></i> {{ site.author.email }}
+          </div>
+          {% endif %}
+          <div class="mini-contact-item">
+            <i class="fas fa-map-marker-alt fa-fw"></i> {{ site.author.location }}
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-form-side">
+        <form id="contact-form" action="https://formspree.io/f/{{ site.formspree_form_id }}" method="POST">
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" name="email" id="email" placeholder="name@example.com" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="4" placeholder="How can I help?" required></textarea>
+            </div>
+
+            <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+
+            <p class="form-success" style="display:none;margin-top:1rem;">
+                Thanks – your message was sent!
+            </p>
+        </form>
+    </div>
+  </div>
+</div>

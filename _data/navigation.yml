@@ -6,4 +6,5 @@ main:
   - title: "About Me"
     url: "/about/"
   - title: "Contact"
-    url: "mailto:arditislami.pro@gmail.com"
+    url: "#"
+    class: "js-open-contact"
