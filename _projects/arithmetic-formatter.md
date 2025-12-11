@@ -1,7 +1,7 @@
 ---
 title: "Arithmetic Formatter"
 description: "A CLI tool that formats simple arithmetic problems. Built as part of FreeCodeCamp challenges."
-image: "/assets/images/arithmetic-formatter-teaser.png"
+image: "/assets/images/arithmetic-formatter-teaser.jpg"
 date: 2025-05-09
 published: published
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "Quiz Game CLI"
 description: "A command-line Python quiz game that scrapes live trivia questions and uses fuzzy matching to score."
-image: /assets/images/quiz-game-teaser.png
+image: /assets/images/quiz-game-teaser.jpg
 date: 2025-05-05
 published: published
 featured: true

@@ -1,7 +1,7 @@
 ---
 title: "Password Manager CLI"
 description: "A secure Python CLI application for encrypted password management."
-image: /assets/images/password-manager-teaser.png
+image: /assets/images/password-manager-teaser.jpg
 date: 2025-05-04
 published: published
 featured: true

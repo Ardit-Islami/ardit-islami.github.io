@@ -1,7 +1,7 @@
 ---
 title: "Python Core Notebooks"
 description: "A curated set of notebooks that document my learning journey through Python, NumPy, and Pandas."
-image: /assets/images/python-notebooks-teaser.png
+image: /assets/images/python-notebooks-teaser.jpg
 date: 2025-05-07
 published: published
 featured: true

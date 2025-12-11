@@ -1,7 +1,7 @@
 ---
 title: "Python Toys"
 description: "A collection of beginner-friendly Python CLI projects built for practice and learning."
-image: "/assets/images/python-toys-teaser.png"
+image: /assets/images/python-toys-teaser.jpg
 date: 2025-05-08
 published: published
 featured: false

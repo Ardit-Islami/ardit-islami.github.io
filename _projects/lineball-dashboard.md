@@ -50,7 +50,7 @@ If I were to revisit this project, I would:
 
 Below is a preview of the dashboard. Click the image or the link below to view the interactive version on Tableau Public.
 
-[![Lineball Dashboard Preview](/assets/images/lineball-thumbnail.png)](https://public.tableau.com/app/profile/ardit.islami/viz/LineBallStatistics/LineBallDashboard)
+[![Lineball Dashboard Preview](/assets/images/lineball-thumbnail.jpg)](https://public.tableau.com/app/profile/ardit.islami/viz/LineBallStatistics/LineBallDashboard)
 
 <p style="text-align: center; margin-top: 1rem;">
   <a href="https://public.tableau.com/app/profile/ardit.islami/viz/LineBallStatistics/LineBallDashboard" class="cta-button" target="_blank" rel="noopener noreferrer">
