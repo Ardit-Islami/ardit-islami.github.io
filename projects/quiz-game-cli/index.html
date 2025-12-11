@@ -105,16 +105,32 @@
         
         <ul class="visible-links"><li class="masthead__menu-item">
             <a href="/" 
-              >Home</a>
+                
+               
+               >
+               Home
+            </a>
           </li><li class="masthead__menu-item">
             <a href="/projects/" 
-              >Projects</a>
+                
+               
+               >
+               Projects
+            </a>
           </li><li class="masthead__menu-item">
             <a href="/about/" 
-              >About Me</a>
+                
+               
+               >
+               About Me
+            </a>
           </li><li class="masthead__menu-item">
-            <a href="mailto:arditislami.pro@gmail.com" 
-              >Contact</a>
+            <a href="/" 
+                class="js-open-contact"  
+               
+               >
+               Contact
+            </a>
           </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -183,6 +199,80 @@
         </div>
 
     </div>
+    <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
+  © 2025 Ardit Islami · Built with Jekyll
+</footer>
+
+<div id="contact-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close js-close-contact">&times;</button>
+    
+    <div class="modal-body-grid">
+      <div class="modal-info-side">
+        <h3>Let's Chat</h3>
+        <p>I'm always open to discussing AI projects, data challenges, or just geeking out over Python.</p>
+        
+        <div class="modal-mini-contacts">
+          
+          <div class="mini-contact-item">
+            <i class="fas fa-envelope fa-fw"></i> arditislami.pro@gmail.com
+          </div>
+          
+          <div class="mini-contact-item">
+            <i class="fas fa-map-marker-alt fa-fw"></i> UK
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-form-side">
+        <form id="contact-form" action="https://formspree.io/f/mjknpyov" method="POST">
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" name="email" id="email" placeholder="name@example.com" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="4" placeholder="How can I help?" required></textarea>
+            </div>
+
+            <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+
+            <p class="form-success" style="display:none;margin-top:1rem;">
+                Thanks – your message was sent!
+            </p>
+        </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('contact-modal');
+    const openBtns = document.querySelectorAll('.js-open-contact');
+    const closeBtn = document.querySelector('.js-close-contact');
+
+    // Open Modal
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.add('is-visible');
+      });
+    });
+
+    // Close Modal (X button)
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('is-visible');
+    });
+
+    // Close Modal (Click outside)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('is-visible');
+      }
+    });
+  });
+</script>
 </div>
     
   </div>
@@ -196,21 +286,82 @@
         <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
   © 2025 Ardit Islami · Built with Jekyll
 </footer>
+
+<div id="contact-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close js-close-contact">&times;</button>
+    
+    <div class="modal-body-grid">
+      <div class="modal-info-side">
+        <h3>Let's Chat</h3>
+        <p>I'm always open to discussing AI projects, data challenges, or just geeking out over Python.</p>
+        
+        <div class="modal-mini-contacts">
+          
+          <div class="mini-contact-item">
+            <i class="fas fa-envelope fa-fw"></i> arditislami.pro@gmail.com
+          </div>
+          
+          <div class="mini-contact-item">
+            <i class="fas fa-map-marker-alt fa-fw"></i> UK
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-form-side">
+        <form id="contact-form" action="https://formspree.io/f/mjknpyov" method="POST">
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" name="email" id="email" placeholder="name@example.com" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="4" placeholder="How can I help?" required></textarea>
+            </div>
+
+            <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+
+            <p class="form-success" style="display:none;margin-top:1rem;">
+                Thanks – your message was sent!
+            </p>
+        </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('contact-modal');
+    const openBtns = document.querySelectorAll('.js-open-contact');
+    const closeBtn = document.querySelector('.js-close-contact');
+
+    // Open Modal
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.add('is-visible');
+      });
+    });
+
+    // Close Modal (X button)
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('is-visible');
+    });
+
+    // Close Modal (Click outside)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('is-visible');
+      }
+    });
+  });
+</script>
       </footer>
     </div>
   -->
 
-  
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-
-
-
-
-
+  <script defer src="/assets/js/contact-modal.js"></script>
 </body>
 
 </html>
