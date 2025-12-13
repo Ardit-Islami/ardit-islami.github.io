@@ -5,45 +5,104 @@ html {
   font-family: 'Inter', sans-serif;
 }
 
-/* --- Hero Text Overlay (Positioned Absolutely) --- */
+/* --- Hero CSS --- */
 .hero-text-content {
   position: absolute;
-  top: 20vh;
-  left: 70%;
+  top: 15vh;
+  left: 62%;
   transform: translateX(-50%);
   width: 90%;
   max-width: 700px;
   z-index: 3;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start !important;
+  text-align: left !important;
   color: #FFFFFF;
   box-sizing: border-box;
-  padding: 0 1rem;
+  padding: 0 1rem; 
 }
 
 .hero-text-content h1 {
-  font-size: 3.2rem;
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.01rem;
   color: inherit;
+  letter-spacing: -0.02em;
   text-shadow:
     0 0 10px rgba(77, 106, 255, 0.6),
     0 0 20px rgba(77, 106, 255, 0.4),
     2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.hero-text-content .hero-subtitle {
+.text-gradient {
+  background: linear-gradient(90deg, #A9BFFF 0%, #7B72FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+.hero-subtitle {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  align-items: flex-start !important;
+  text-align: left !important;
   color: #E0E0E0;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
+
+.hero-value-block {
+  margin-top: 1rem;
+  text-align: center;
+  color: #E0E6FF; 
+}
+
+.hero-mission {
+  left: 95%;
+  max-width: 700px;
+}
+
+.hero-value-prop {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  color: #D6DFFF;
+  align-items: flex-start !important;
+  text-align: left !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-tagline {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #AEBFFF;
+  margin-bottom: 1rem;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  justify-content: left;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 700px;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.hero-spacer {
+  height: 75vh;
+  width: 100%;
+}
+
 
 /* --- Content Column (Wraps Spacer & Projects/Description) --- */
 .content-column {
@@ -53,12 +112,6 @@ html {
   padding-left: 2rem;
   margin-left: 3rem;
   margin-right: 3rem;
-}
-
-/* --- Hero Spacer (Pushes down Projects/Description within Content Column) --- */
-.hero-spacer {
-  height: 75vh;
-  width: 100%;
 }
 
 /* --- Content Area (Projects & Description Box) --- */
@@ -71,10 +124,12 @@ html {
   margin-right: auto;
 }
 
+
 /* --- Projects Scroll & Cards --- */
 .projects-scroll {
   overflow-x: auto;
 }
+
 
 .projects-scroll-title {
   font-size: 1.8rem;
@@ -84,6 +139,7 @@ html {
   border-bottom: 2px solid #007bff;
 }
 
+
 .project-list {
   display: flex;
   flex-wrap: wrap;
@@ -91,6 +147,7 @@ html {
   gap: 1.5rem;
   padding-bottom: 1rem;
 }
+
 
 .project-card {
   flex: 0 0 280px;
@@ -105,10 +162,12 @@ html {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
 }
+
 
 .project-card img.project-teaser {
   max-width: 100%;
@@ -119,6 +178,7 @@ html {
   margin-bottom: 1rem;
 }
 
+
 .project-card h3 {
   font-size: 1.25rem;
   color: #A9BFFF;
@@ -127,6 +187,7 @@ html {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
+
 
 .project-card p {
   font-size: 0.95rem;
@@ -167,39 +228,6 @@ html {
 .sidebar {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-}
-
-.hero-value-block {
-  margin-top: 1rem;
-  text-align: center;
-  color: #E0E6FF;
-}
-
-.hero-value-prop {
-  font-size: 1.1rem;
-  font-weight: 500;
-  line-height: 1.6;
-  margin-bottom: 0.5rem;
-  color: #D6DFFF;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.hero-tagline {
-  font-size: 0.95rem;
-  font-style: italic;
-  color: #AEBFFF;
-  margin-bottom: 1rem;
-}
-
-.hero-cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  /* Already good */
-  width: 100%;
-  /* Ensure the container takes full width of its parent */
-  max-width: 700px;
 }
 
 .hero-cta-buttons .cta-button {
@@ -247,6 +275,7 @@ html {
   margin-top: 0.5rem;
 }
 
+
 .cta-button:hover,
 .sidebar .cta-button:hover {
   background-color: #647DFF;
@@ -265,7 +294,6 @@ html {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   border-left: 4px solid #7B72FF;
-  /* violet accent */
   color: #E4E9FF;
   font-family: 'Inter', sans-serif;
 }
@@ -285,17 +313,15 @@ html {
   color: #FFFFFF;
 }
 
-/* Ensure any other image or media tag is responsive in general */
 img {
   max-width: 100%;
   height: auto;
   display: block;
-  /* Prevents extra space below images */
 }
+
 
 /* --- Responsive Helpers --- */
 @media (max-width: 1700px) {
-
     .hero-text-content {
     order: 2;
     position: static;
@@ -307,13 +333,14 @@ img {
   }
 
     .content-column {
-    order: 3 !important;
+      order: 3 !important;
   }
-
-  .hero-spacer {
-    display: none;
-  }
+  
+    .hero-spacer {
+      display: none;
+    }
 }
+
 
 @media (max-width: 768px) {
   .hero-text-content h1 {
@@ -332,4 +359,4 @@ img {
   .project-card {
     flex-basis: 320px;
   }
-}
+} 
