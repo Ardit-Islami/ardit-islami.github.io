@@ -1,69 +1,54 @@
 ---
-layout: default
-title: "Ardit Islami – AI Portfolio" # Or your preferred title
+layout: sidebar-page
+title: "Ardit Islami – AI Portfolio"
 permalink: /
 page_css: homepage.css
 ---
 
-<div class="page-container">
-  <div class="main-wrapper">
-
-    <div class="hero-text-content">
-      <div class="hero-mission">
+<div class="hero-block hero-mission">
         <p class="hero-subtitle">Mathematics • Data • Intelligence</p>
       
         <h1>
           Tinkering with <span class="text-gradient">Systems</span>.<br>
           Steered by <span class="text-gradient">Maths.</span>
         </h1>
-      </div>
-
-      <div class="hero-value-block">
-        <p class="hero-value-prop">
-          Mathematics graduate, head over heels with taming Data<br>
-          from CLI scripting to building foundations for AI workflows.
-        </p>
-        
-        <p class="hero-tagline">
-          <code>Learning becomes meaningful when it meets practice.</code><br>
-          <code>Have a look while you're here:</code>
-        </p>
-
-        <div class="hero-cta-buttons">
-          <a href="/projects/" class="cta-button">View Work</a>
-          <a href="/assets/files/Ardit Islami CV.pdf" class="cta-button" target="_blank">Download CV</a>
-        </div>
-      </div>
-    </div>
-
-    {% include sidebar.html %}
-
-    <div class="content-column">
-      <div class="hero-spacer"></div>
-
-      <div class="content-area">
-        <section class="projects-scroll">
-          <h2 class="projects-scroll-title">Featured Projects</h2>
-          <div class="project-list">
-            {% assign featured_projects = site.projects | where: "featured", true %}
-
-            {% for item in featured_projects %}
-              {% include homepage_card.html item=item %}
-            {% endfor %}
-          </div>
-          <div class="cta-text">
-            <a href="/projects/" class="cta-button">See All Projects →</a>
-          </div>
-        </section>
-
-        <section class="description-box">
-          <p><strong>This space is my lab.</strong><br>
-              A place where I wish to digitise my progress, learning and slowly turn knowledge into tools.<br>
-              Every project here reflects something I'm learning, building, or figuring out... CLI apps, Streamlit dashboards, or a stub of an AI system.<br><br>
-              You won't find perfection, but steady evolution, real curiosity, and a love for making things work.
-            </p>
-        </section>
-      </div>
-    </div>
-  </div> {% include footer.html %}
 </div>
+
+<div class="hero-block hero-value">
+  <p class="hero-value-prop">
+    Graduate of Mathematics, head over heels with taming Data,<br>
+    from CLI scripting to building foundations for AI workflows.
+  </p>
+        
+  <p class="hero-tagline">
+    <code>Learning becomes meaningful when it meets practice.</code><br>
+    <code>Have a look while you're here:</code>
+  </p>
+
+  <div class="hero-cta-buttons">
+    <a href="/projects/" class="cta-button">View Work</a>
+    <a href="/assets/files/Ardit Islami CV.pdf" class="cta-button" target="_blank">Download CV</a>
+  </div>
+</div>
+
+<section class="projects-scroll">
+  <h2 class="projects-scroll-title">Featured Projects</h2>
+  <div class="project-list">
+    {% assign featured_projects = site.projects | where: "featured", true %}
+    {% for item in featured_projects %}
+      {% include homepage_card.html item=item %}
+    {% endfor %}
+  </div>
+  <div class="cta-text">
+    <a href="/projects/" class="cta-button">See All Projects →</a>
+  </div>
+</section>
+
+
+<section class="description-box">
+  <p><strong>This space is my lab.</strong><br>
+    A place where I wish to digitise my progress, learning and slowly turn knowledge into tools.<br>
+    Every project here reflects something I'm learning, building, or figuring out... CLI apps, Streamlit dashboards, or a stub of an AI system.<br><br>
+    You won't find perfection, but steady evolution, real curiosity, and a love for making things work.
+  </p>
+</section>
