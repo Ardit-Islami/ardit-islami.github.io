@@ -375,10 +375,44 @@ img {
     gap: 2rem;
     width: 100%;
   }
+  
+  .projects-scroll-title {
+    text-align: center;
+  }
 
   .project-card {
     width: 100%;
     max-width: 400px;
     margin: 0;
+  }
+
+  .project-card h3 {
+  text-align: center;
+  }
+
+  .project-card p {
+  text-align: center;
+}
+}
+
+@media (max-width: 480px) {
+  
+  .hero-mission br,
+  .hero-value br {
+    display: none;
+  }
+
+  .hero-mission h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    padding: 0 10px;
+  }
+
+  .hero-subtitle,
+  .hero-value-prop,
+  .hero-tagline {
+    font-size: 1rem;
+    padding: 0 1rem;
+    width: auto;
   }
 }
