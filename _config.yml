@@ -1,9 +1,6 @@
 title: "Ardit Islami"
 email: arditislami.pro@gmail.com
-description: >- 
-  First-Class Mathematics graduate pivoting into AI and Data. 
-  Skilled in Python, SQL, and problem-solving. 
-  This site showcases projects built during my structured job hunt system.
+description: >-
 
 baseurl: ""
 url: "https://ardit-islami.github.io"
@@ -21,7 +18,7 @@ paginate_path: /page:num/
 author:
   name: "Ardit Islami"
   avatar: /assets/images/bio-photo.jpg
-  bio: "Mathematics grad with real-world SQL support experience and a passion for Python + AI."
+  bio: "Kent-based, with a background in technical support and a brain wired for logic. Now Exploring Python, data, and the tools that make it all click."
   location: "UK"
   email: "arditislami.pro@gmail.com"
   github: Ardit-Islami
