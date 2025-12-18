@@ -1,6 +1,6 @@
 var store = [{
         "title": "About Me",
-        "excerpt":"Who I Am I’m Ardit Islami, a First-Class Mathematics graduate based in the UK with a growing focus in AI, Data Science, and Python development. I’ve worked in real-time technical support, solving operational data problems using SQL and dashboards. Now I’m building a future in applied AI — with a...","categories": [],
+        "excerpt":"Why Work With Me I’ve spent the last few years working closely with real users, real data, and the consequences of systems that don’t quite work the way they should. In my current role supporting NHS software, that has meant diagnosing SQL issues and fixing data inconsistencies to keeping services...","categories": [],
         "tags": [],
         "url": "/about/",
         "teaser": null
@@ -12,7 +12,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Password Manager CLI",
-        "excerpt":"This Python-based Command Line Interface (CLI) password manager securely stores user credentials in an encrypted vault, protected by a master password. It incorporates cryptographic principles with practical, user-friendly CLI commands, providing a robust yet approachable way to manage sensitive data. Key Features Secure Encryption: Uses cryptography library (Fernet and PBKDF2HMAC)...","categories": ["python"],
+        "excerpt":"Project Overview This command-line password manager was built to deepen my understanding of applied cryptography and data security in Python. It allows users to store and retrieve login credentials securely, using a master password and an encrypted vault. The core goal was to build something practical that I could actually...","categories": ["python"],
         "tags": ["Python","CLI","Encryption","Cryptography"],
         "url": "/projects/password-manager-cli/",
         "teaser": null
@@ -23,9 +23,9 @@ var store = [{
         "url": "/projects/quiz-game-cli/",
         "teaser": null
       },{
-        "title": "Line Ball Analysis",
-        "excerpt":"Project Overview This visualization was a personal passion project where I explored Tableau for the first time, working with data from a custom game called Lineball, invented by a friend. I participated in the tournament and took on the challenge of creating an interactive dashboard to analyze player performance. Game...","categories": ["viz"],
-        "tags": [],
+        "title": "Lineball Performance Dashboard",
+        "excerpt":"Project Overview This was my first serious foray into data visualization. A personal project built around Lineball, a custom pool game invented by a friend. I participated in the tournament, then took on the challenge of designing an interactive Tableau dashboard to analyze shot-level performance. It was as much about...","categories": ["viz"],
+        "tags": ["Tableau","Data Viz","Python","Games"],
         "url": "/projects/lineball-dashboard/",
         "teaser": null
       },{
@@ -42,8 +42,8 @@ var store = [{
         "teaser": null
       },{
         "title": "Arithmetic Formatter",
-        "excerpt":"This small script formats and aligns arithmetic problems for visual clarity — a great starter exercise in string manipulation and Python logic.   Features     Handles multiple equations   Aligns output for easy reading   Minimalist and modular  ","categories": ["python"],
-        "tags": ["Python","Beginner","FreeCodeCamp"],
+        "excerpt":"Project Overview This formatter was originally built during my first month as an intern. Which helped and validating my python basics at the time. The tool accepts a list of arithmetic problems (e.g., \"32 + 8\", \"1 - 3801\") and outputs them in a neatly aligned, column-style format, mimicking how...","categories": ["python"],
+        "tags": ["Python","String Manipulation","FreeCodeCamp"],
         "url": "/projects/arithmetic-formatter/",
         "teaser": null
       }]

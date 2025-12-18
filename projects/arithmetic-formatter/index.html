@@ -12,7 +12,7 @@
   <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Arithmetic Formatter - Ardit Islami</title>
-<meta name="description" content="A CLI tool that formats simple arithmetic problems. Built as part of FreeCodeCamp challenges.">
+<meta name="description" content="A Python CLI tool that formats simple arithmetic expressions for visual clarity.">
 
 
   <meta name="author" content="Ardit Islami">
@@ -28,7 +28,7 @@
 <meta property="og:url" content="https://ardit-islami.github.io/projects/arithmetic-formatter/">
 
 
-  <meta property="og:description" content="A CLI tool that formats simple arithmetic problems. Built as part of FreeCodeCamp challenges.">
+  <meta property="og:description" content="A Python CLI tool that formats simple arithmetic expressions for visual clarity.">
 
 
 
@@ -157,7 +157,7 @@
                 
                 <span class="skill-pill">Python</span>
                 
-                <span class="skill-pill">Beginner</span>
+                <span class="skill-pill">String Manipulation</span>
                 
                 <span class="skill-pill">FreeCodeCamp</span>
                 
@@ -165,14 +165,52 @@
             
 
             <div class="project-body">
-                <p>This small script formats and aligns arithmetic problems for visual clarity — a great starter exercise in string manipulation and Python logic.</p>
+                <h3 id="project-overview">Project Overview</h3>
 
-<h3 id="features">Features</h3>
+<p>This formatter was originally built during my first month as an intern. Which helped and validating my python basics at the time.</p>
+
+<p>The tool accepts a list of arithmetic problems (e.g., <code class="language-plaintext highlighter-rouge">"32 + 8", "1 - 3801"</code>) and outputs them in a neatly aligned, column-style format, mimicking how you’d solve them on paper.</p>
+
+<h3 id="learning-journey">Learning Journey</h3>
+
+<p>What made this challenge interesting wasn’t the math — it was the formatting logic. I had to write conditionals to calculate alignment, pad spacing, and handle different operators. It also taught me:</p>
+
 <ul>
-  <li>Handles multiple equations</li>
-  <li>Aligns output for easy reading</li>
-  <li>Minimalist and modular</li>
+  <li>Why input validation matters, even for small tools</li>
+  <li>How to avoid hardcoding by calculating max lengths dynamically</li>
+  <li>When to raise meaningful errors vs. fail silently</li>
 </ul>
+
+<h3 id="key-features">Key Features</h3>
+
+<ul>
+  <li>Accepts a list of addition/subtraction expressions</li>
+  <li>Dynamically aligns results without fixed-width logic</li>
+  <li>Option to toggle solution display (via argument)</li>
+  <li>Clean, minimal CLI output for education or logging</li>
+</ul>
+
+<h3 id="what-id-do-differently">What I’d Do Differently</h3>
+
+<ul>
+  <li>Add test cases using pytest to formalize validation</li>
+  <li>Expand to support multiplication and division</li>
+  <li>Package as a reusable formatter module with CLI args</li>
+</ul>
+
+<h3 id="preview">Preview</h3>
+
+<p>Screenshots and terminal demo coming soon. The tool is currently usable and testable via GitHub.</p>
+
+<h3 id="code-snippet">Code Snippet</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">arithmetic_arranger</span><span class="p">([</span><span class="sh">"</span><span class="s">32 + 698</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">3801 - 2</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">45 + 43</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">123 + 49</span><span class="sh">"</span><span class="p">])</span>
+
+<span class="c1"># Output:
+</span>   <span class="mi">32</span>      <span class="mi">3801</span>      <span class="mi">45</span>      <span class="mi">123</span>
+<span class="o">+</span> <span class="mi">698</span>    <span class="o">-</span>    <span class="mi">2</span>    <span class="o">+</span> <span class="mi">43</span>    <span class="o">+</span>  <span class="mi">49</span>
+<span class="o">-----</span>    <span class="o">------</span>    <span class="o">----</span>    <span class="o">-----</span>
+</code></pre></div></div>
 
             </div>
             

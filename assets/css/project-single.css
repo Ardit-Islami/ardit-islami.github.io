@@ -45,27 +45,6 @@
   color: #ffffff;
 }
 
-.skill-section {
-  margin: 1rem 0 2rem;
-}
-
-.skill-pill {
-  display: inline-block;
-  background: rgba(123, 114, 255, 0.2);
-  color: #E0E6FF;
-  padding: 0.3rem 0.7rem;
-  margin: 0.2rem 0.4rem 0.4rem 0;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  border: 1px solid rgba(123, 114, 255, 0.3);
-  transition: background 0.3s ease;
-}
-
-.skill-pill:hover {
-  background: rgba(123, 114, 255, 0.4);
-}
-
 .project-image {
   max-width: 200px;
   border-radius: 6px;

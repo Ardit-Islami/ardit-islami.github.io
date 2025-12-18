@@ -12,7 +12,7 @@
   <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Password Manager CLI - Ardit Islami</title>
-<meta name="description" content="A secure Python CLI application for encrypted password management.">
+<meta name="description" content="A secure Python-based CLI tool for encrypted password storage and retrieval.">
 
 
   <meta name="author" content="Ardit Islami">
@@ -28,7 +28,7 @@
 <meta property="og:url" content="https://ardit-islami.github.io/projects/password-manager-cli/">
 
 
-  <meta property="og:description" content="A secure Python CLI application for encrypted password management.">
+  <meta property="og:description" content="A secure Python-based CLI tool for encrypted password storage and retrieval.">
 
 
 
@@ -167,54 +167,65 @@
             
 
             <div class="project-body">
-                <p>This Python-based Command Line Interface (CLI) password manager securely stores user credentials in an encrypted vault, protected by a master password. It incorporates cryptographic principles with practical, user-friendly CLI commands, providing a robust yet approachable way to manage sensitive data.</p>
+                <h3 id="project-overview">Project Overview</h3>
+
+<p>This command-line password manager was built to deepen my understanding of applied cryptography and data security in Python. It allows users to store and retrieve login credentials securely, using a master password and an encrypted vault.</p>
+
+<p>The core goal was to build something practical that I could actually use, while learning how secure applications are structured, especially in environments without graphical interfaces. It also gave me a clean opportunity to practice defensive programming, CLI design, and basic vault encryption workflows.</p>
+
+<h3 id="learning-journey">Learning Journey</h3>
+
+<p>This project helped me step beyond basic scripting into the world of sensitive data handling and encryption logic. I explored:</p>
+
+<ul>
+  <li>How to <strong>securely derive encryption keys</strong> using <code class="language-plaintext highlighter-rouge">PBKDF2HMAC</code> and salt-based methods.</li>
+  <li>When and why to use symmetric encryption with libraries like <code class="language-plaintext highlighter-rouge">Fernet</code>.</li>
+  <li>Designing <strong>a smooth CLI interface</strong> that gives clear feedback and doesn’t frustrate the user.</li>
+  <li>Structuring Python applications to separate logic (encryption) from interaction (CLI flow).</li>
+</ul>
+
+<p>Most importantly, it taught me to think about user safety — how to anticipate mistakes and design around them.</p>
+
+<blockquote>
+  <p>This project was developed with structured AI support. You can <a href="https://github.com/Ardit-Islami/password-manager-cli/blob/main/Gemini%20Transcript.txt">review the original Gemini interaction transcript</a> to see how LLM reasoning was used responsibly as a scaffold.</p>
+</blockquote>
 
 <h3 id="key-features">Key Features</h3>
 
 <ul>
-  <li><strong>Secure Encryption</strong>: Uses <code class="language-plaintext highlighter-rouge">cryptography</code> library (Fernet and PBKDF2HMAC) for secure credential storage.</li>
-  <li><strong>Simple CLI Interface</strong>: Intuitive commands for adding, viewing, and managing stored credentials.</li>
-  <li><strong>Robust Error Handling</strong>: Designed with clear user feedback and error messages to streamline troubleshooting.</li>
-  <li><strong>Data Persistence</strong>: Credential vault data securely stored in JSON format, encrypted and encoded with base64.</li>
+  <li>Secure encryption using the <code class="language-plaintext highlighter-rouge">cryptography</code> library with Fernet and key derivation.</li>
+  <li>Lightweight JSON-based encrypted vault, encoded with base64.</li>
+  <li>Intuitive CLI interface for adding, retrieving, and managing credentials.</li>
+  <li>Clear error handling and guardrails for incorrect input or missing files.</li>
 </ul>
 
-<h3 id="learning-journey">Learning Journey</h3>
+<h3 id="what-id-do-differently">What I’d Do Differently</h3>
 
-<p>This project was developed with assistance from AI-powered reasoning tools, specifically Gemini, to conceptualize and structure the encryption logic and CLI architecture.</p>
+<ul>
+  <li>Refactor the file structure to support easier testing and modular packaging.</li>
+  <li>Add environment variable support for salt and key generation config.</li>
+  <li>Expand to support optional 2FA vault unlock or GUI integration.</li>
+</ul>
 
-<p>For complete transparency, you can download the original <a href="https://github.com/Ardit-Islami/password-manager-cli/blob/main/Gemini%20Transcript.txt">AI interaction transcript</a>. Reviewers are encouraged to parse this transcript through an LLM or manually to confirm the appropriate and fair use of AI as an educational and developmental aid.</p>
+<h3 id="preview">Preview</h3>
 
-<h3 id="screenshots-and-demos">Screenshots and Demos</h3>
+<p>Screenshots and terminal demo coming soon. The tool is currently usable and testable via GitHub.</p>
 
-<p><em>Coming soon: Terminal screenshots demonstrating the CLI workflow, secure login, credential retrieval, and encryption verification.</em></p>
-
-<h3 id="example-code-snippet">Example Code Snippet</h3>
+<h3 id="code-snippet">Code Snippet</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">cryptography.fernet</span> <span class="kn">import</span> <span class="n">Fernet</span>
 
-<span class="c1"># Generate encryption key
-</span><span class="k">def</span> <span class="nf">generate_key</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">generate_key</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">Fernet</span><span class="p">.</span><span class="nf">generate_key</span><span class="p">()</span>
 
-<span class="c1"># Encrypt password
-</span><span class="k">def</span> <span class="nf">encrypt_password</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">encrypt_password</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
     <span class="n">fernet</span> <span class="o">=</span> <span class="nc">Fernet</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">fernet</span><span class="p">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="n">password</span><span class="p">.</span><span class="nf">encode</span><span class="p">()).</span><span class="nf">decode</span><span class="p">()</span>
 
-<span class="c1"># Decrypt password
-</span><span class="k">def</span> <span class="nf">decrypt_password</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">encrypted_password</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">decrypt_password</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">encrypted_password</span><span class="p">):</span>
     <span class="n">fernet</span> <span class="o">=</span> <span class="nc">Fernet</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">fernet</span><span class="p">.</span><span class="nf">decrypt</span><span class="p">(</span><span class="n">encrypted_password</span><span class="p">.</span><span class="nf">encode</span><span class="p">()).</span><span class="nf">decode</span><span class="p">()</span>
 </code></pre></div></div>
-
-<h3 id="future-enhancements">Future Enhancements</h3>
-
-<ul>
-  <li><strong>Graphical Interface (GUI)</strong>: Exploring the addition of a front-end interface for easier use.</li>
-  <li><strong>Packaging</strong>: Planning to package the tool for easier distribution and installation via PyPI.</li>
-</ul>
-
-<p>Feel free to view the full source code and explore the project’s development on GitHub.</p>
 
             </div>
             

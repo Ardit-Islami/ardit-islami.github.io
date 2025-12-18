@@ -143,25 +143,6 @@ summary.project-category-title {
   color: #FFFFFF;
 }
 
-/* --- Add a [+] icon to collapsed titles --- */
-summary.project-category-title::after {
-  content: ' [+]';
-  font-family: monospace;
-  float: right;
-  font-size: 1.1rem;
-  color: #7B72FF;
-}
-
-/* --- Change the icon to [-] when the section is open --- */
-details[open]>summary.project-category-title::after {
-  content: ' [-]';
-}
-
-/* --- Add a little space when the section is open --- */
-details[open]>summary.project-category-title {
-  margin-bottom: 1.5rem;
-}
-
 /* --- Responsive Helpers --- */
 @media (max-width: 600px) {
   .projects-content-container {
