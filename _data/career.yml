@@ -1,0 +1,22 @@
+education:
+  - title: "BSc Mathematics (First Class)"
+    org: "University of Kent"
+    date: "2018–2021"
+
+work:
+  - title: "Technical Support Consultant"
+    company: "OneAdvanced"
+    location: "UK (Remote / Hybrid)"
+    date: "May 2022 – Present"
+    details: "Supporting NHS software. SQL diagnostics, data fixes, and incident response for critical healthcare systems."
+
+  - title: "Data Science Intern"
+    company: "Saving P’s"
+    location: "Remote"
+    date: "Oct 2021 – Mar 2022"
+    details: "Built forecasting models and Python data pipelines to automate backend analytics."
+
+certifications:
+  - title: "AI Engineer Professional Certificate"
+    org: "Coursera"
+    url: "https://www.coursera.org/professional-certificates/ai-engineer#courses"

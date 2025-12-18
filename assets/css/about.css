@@ -59,55 +59,234 @@
 }
 
 /* Skill Pills */
-.skill-section {
-  margin-bottom: 1.5rem;
+.skills-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
-.skill-section h4 {
+.skill-category-title {
+  font-size: 1rem;
+  color: #A9BFFF;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(123, 114, 255, 0.2);
+  padding-bottom: 0.3rem;
+  display: inline-block;
+}
+
+/* --- INFO BLOCKS (Education/History) --- */
+/* Specific to About Page */
+.info-block-container {
+  margin-bottom: 2rem;
+}
+
+.info-block-container h4 {
   font-size: 1.1rem;
   color: #A9BFFF;
   margin-bottom: 0.5rem;
+  border-left: 3px solid transparent;
+  padding-left: 1.5rem;
 }
 
-.skill-pill {
-  display: inline-block;
-  background-color: rgba(77, 106, 255, 0.15);
-  color: #A9BFFF;
-  font-size: 0.85rem;
-  font-weight: 500;
-  padding: 6px 12px;
-  margin: 0 0.5rem 0.5rem 0;
-  border-radius: 999px;
-  border: 1px solid rgba(122, 128, 255, 0.3);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* Info Blocks */
 .info-block {
-  background-color: rgba(1, 2, 34, 0.6);
+  background: rgba(123, 114, 255, 0.05);
+  border-left: 3px solid #7B72FF;
   padding: 1rem 1.5rem;
-  border-left: 4px solid #7B72FF;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  border-radius: 0 8px 8px 0;
+  transition: transform 0.2s ease;
 }
 
-.info-block h4 {
-  margin-top: 0;
-  color: #A9BFFF;
-  font-size: 1.1rem;
+.info-block:hover {
+  background: rgba(123, 114, 255, 0.1);
+  transform: translateX(5px);
 }
 
 .info-block p {
-  margin: 0.2rem 0;
-  color: #D6E1FF;
+  margin: 0;
+  color: #D6DFFF;
   line-height: 1.5;
 }
+
+.info-block strong {
+  color: #FFFFFF;
+}
+
+.info-block a {
+  color: #7B72FF;
+  text-decoration: none;
+}
+
+.info-block a:hover {
+  text-decoration: underline;
+}
+
+.contact-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 350px;
+  margin-top: 1.5rem;
+}
+
+.email-trigger {
+  position: relative;
+  min-width: 280px;
+  justify-content: space-between;
+}
+
+.copy-hint {
+  font-size: 0.5em;
+  color: #7B72FF;
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+button.contact-item:hover .copy-hint {
+  opacity: 0.8;
+}
+
+button.contact-item {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: #B0B8D1;
+  transition: all 0.2s ease;
+}
+
+button.contact-item:hover {
+  color: #7B72FF !important; 
+  transform: translateX(4px);
+}
+
+button.contact-item:hover i {
+  color: #7B72FF !important;
+  width: 20px;
+  text-align: center;
+}
+
+/* --- Visual Polish for "Why Work With Me" --- */
+.why-work-with-me {
+  max-width: 90%; 
+  width: 100%; 
+  margin-bottom: 3rem;
+}
+
+.why-work-with-me p {
+  line-height: 1.6;
+  margin-bottom: 1.1rem; 
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+.why-work-with-me p:first-of-type {
+  color: #ffffff;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.why-work-with-me p:not(:first-of-type):not(:last-of-type) {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+}
+
+.why-work-with-me p:last-of-type {
+  color: #e2e8f0;
+  font-style: italic;
+  border-left: 2px solid #7758F5; 
+  padding-left: 1rem;
+  margin-top: 1.5rem;
+}
+
+.why-work-with-me:hover p {
+  transition: color 0.3s ease;
+}
+
+/* Container tweak - Career History */
+.info-block.work-block {
+  margin-bottom: 2rem;
+  border-left: 2px solid #7758F5;
+  padding-left: 1rem;
+}
+
+.ib-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.ib-header strong {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.ib-date {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.ib-meta {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.ib-company {
+  color: #c084fc;
+  font-weight: 500;
+}
+
+.ib-location {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+}
+
+.ib-details {
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-top: 0;
+}
+
 
 /* --- Responsive Helpers --- */
 @media (max-width: 1700px) {
 
   .content-column {
    max-width: 800px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-matrix {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-grid {
+    flex-direction: column;
+  }
+  
+  .contact-pill {
+    width: 100%; /* Full width buttons on mobile */
+    justify-content: center;
+  }
+  
+  .email-trigger {
+    min-width: 0;
   }
 }

@@ -1,0 +1,39 @@
+<div class="contact-stack">
+  
+  <button class="contact-item email-trigger" onclick="copyEmail(this)" aria-label="Copy Email">
+    <i class="fas fa-envelope"></i>
+    <span class="contact-text">arditislami.pro@gmail.com</span>
+    <span class="copy-hint" style="opacity:0; font-size:0.8em; margin-left:auto;">(Copy)</span>
+  </button>
+
+  <a href="https://github.com/Ardit-Islami" target="_blank" class="contact-item">
+    <i class="fab fa-github"></i>
+    GitHub
+  </a>
+
+  <a href="https://linkedin.com/in/ardit-islami" target="_blank" class="contact-item">
+    <i class="fab fa-linkedin"></i>
+    LinkedIn
+  </a>
+
+</div>
+
+<script>
+function copyEmail(btn) {
+  const email = "arditislami.pro@gmail.com";
+  const textSpan = btn.querySelector('.contact-text');
+  const originalText = textSpan.innerText;
+
+  navigator.clipboard.writeText(email).then(() => {
+    // Visual Feedback
+    textSpan.innerText = "Copied to Clipboard!";
+    btn.style.color = "#4CAF50"; // Green color for success
+    
+    // Reset after 2 seconds
+    setTimeout(() => {
+      textSpan.innerText = originalText;
+      btn.style.color = ""; // Revert to CSS default
+    }, 1000);
+  });
+}
+</script>

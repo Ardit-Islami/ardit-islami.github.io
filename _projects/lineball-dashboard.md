@@ -1,6 +1,6 @@
 ---
-title: "Line Ball Analysis"
-description: "An interactive Tableau dashboard analyzing player performance data from a unique game created by a friend."
+title: "Lineball Performance Dashboard"
+description: "An interactive Tableau dashboard analyzing player data from a community-made pool game."
 image: "/assets/images/lineball-teaser.jpg"
 date: 2025-05-06
 published: published
@@ -8,46 +8,40 @@ featured: false
 category: "viz"
 layout: project-page
 collection: projects
-tags: []
+tags: [Tableau, Data Viz, Python, Games]
 ---
 
 ### Project Overview
 
-This visualization was a personal passion project where I explored Tableau for the first time, working with data from a custom game called **Lineball**, invented by a friend. I participated in the tournament and took on the challenge of creating an interactive dashboard to analyze player performance.
+This was my first serious foray into data visualization. A personal project built around **Lineball**, a custom pool game invented by a friend. I participated in the tournament, then took on the challenge of designing an interactive Tableau dashboard to analyze shot-level performance.
+
+It was as much about learning the tools as it was about doing justice to the data.
 
 ### Game Playlist
-This is the official playlist for the Lineballs game, which the dashboard data is based on.
 
 <div class="responsive-video-wrapper">
-  <iframe src="https://www.youtube.com/embed/videoseries?list=PL7n5i86UMpE8bBDhZts_Ox4s8JwWI4Q9a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/videoseries?list=PL7n5i86UMpE8bBDhZts_Ox4s8JwWI4Q9a" title="Lineball Tournament Playlist" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ### Learning Journey
 
-Since this was my first serious attempt at data visualization, the project became a deep dive into not only Tableau’s toolset but also the fundamentals of data storytelling and design.  
-Some of the key learning moments included:
+**Manual Data Collection**  
+Every shot had to be logged by hand from video footage. This forced me to confront the reality of messy, subjective, human-generated data. I learnt a lot about clean input design.
 
-- **Manual Data Challenges**  
-  The data was collected by watching tournament footage and logging every shot manually — a process that taught me the importance of planning data collection for consistency and accuracy. Human error and data cleaning became major tasks, revealing how much effort goes into preparing data *before* any visualization work starts.
+**Inventing Metrics Midway**  
+There were no predefined KPIs. We had to decide what *should* be measured: accuracy, round wins, shot types. That freedom led to some creative thinking and helped sharpen my instincts for feature engineering.
 
-- **Feature Engineering on the Fly**  
-  Without predefined metrics, I had to invent features during the analysis — deciding what aspects of performance to measure and how to represent them visually. This iterative process helped me think critically about what questions the data should answer.
+**Design Choices & Clarity**  
+I leaned heavily into visual creativity... Sometimes at the expense of usability. In hindsight, I'd now prioritize layout clarity, hierarchy, and color accessibility. But this was a great sandbox for learning what works (and what doesn’t)!
 
-- **Balancing Design and Clarity**  
-  I took a lot of artistic liberty in designing the dashboard, aiming for creativity over convention. In hindsight, I see how more intentional choices around color palettes, chart types, and layout could have made the dashboard clearer and easier to navigate.  
-  I later learned from resources like [Tableau’s design best practices](https://interworks.com/blog/rcurtis/2017/06/20/tableau-deep-dive-dashboard-design-visual-best-practices/) and [Tableau dashboard tips](https://www.tableau.com/blog/7-tips-and-tricks-dashboard-experts) how to improve on this.
+### What I'd Do Differently
 
-### What I Would Do Differently
-
-If I were to revisit this project, I would:
-- Apply a consistent and accessible color palette designed for clarity rather than aesthetic experimentation.
-- Use Tableau’s *Story* or *Pages* features to break up the dashboard into a clearer narrative flow.
-- Plan data capture and key metrics in advance to reduce manual effort and potential errors.
-- Focus on fewer, more purposeful visuals that tell a clearer story.
+- Define key metrics *before* collecting data  
+- Use color and chart types with more intention  
+- Break the dashboard into clearer narrative steps  
+- Reduce visual noise for cleaner insight delivery
 
 ### Visualization Preview
-
-Below is a preview of the dashboard. Click the image or the link below to view the interactive version on Tableau Public.
 
 <a href="https://public.tableau.com/app/profile/ardit.islami/viz/LineBallStatistics/LineBallDashboard" target="_blank" rel="noopener noreferrer">
   <img src="/assets/images/lineball-thumbnail.jpg" alt="Lineball Dashboard Preview" class="project-banner-fade">
@@ -61,15 +55,10 @@ Below is a preview of the dashboard. Click the image or the link below to view t
 
 ### Key Features
 
-- **Player Performance Tracking:** View individual scores, win rates, and trends.
-- **Game Outcome Analysis:** Explore relationships between player metrics and match results.
-- **Interactive Exploration:** Filter by player, round, and other variables.
+- **Player-Level Tracking**: View individual stats, win ratios, and trends  
+- **Match Insights**: Breakdowns by round, shot type, and opponent  
+- **Fully Interactive**: Filter by player, game phase, and more
 
 ### Reflection
 
-This project was a valuable introduction to the challenges and craft of building dashboards. It deepened my appreciation for:
-- The importance of *storytelling* with data.
-- The design decisions that make dashboards effective and accessible.
-- The value of upfront planning in both data collection and visualization design.
-
-It remains an important step in my broader journey of working with data and tools like Tableau.
+This was the project that made dashboards *click* for me, especially that it goes beyond just learning the mechanics of this tool, but importance of intent behind every design choice. A good dashboard is one that has clarity, narrative, and making data worth exploring.

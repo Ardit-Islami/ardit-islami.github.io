@@ -1,0 +1,20 @@
+- category: "Languages"
+  items:
+    - Python
+    - SQL
+    - Bash / Shell
+    - JavaScript (ES6+)
+
+- category: "Data & AI"
+  items:
+    - PyTorch
+    - Pandas & NumPy
+    - Scikit-learn
+    - Jupyter
+
+- category: "Tools & DevOps"
+  items:
+    - Git & GitHub
+    - Docker
+    - Linux / Unix
+    - Jekyll

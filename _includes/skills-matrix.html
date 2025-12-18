@@ -1,0 +1,12 @@
+<div class="skills-matrix">
+  {% for group in site.data.skills %}
+  <div class="skill-category">
+    <h4 class="skill-category-title">{{ group.category }}</h4>
+    <div class="skill-pill-container">
+      {% for skill in group.items %}
+      <span class="skill-pill">{{ skill }}</span>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
