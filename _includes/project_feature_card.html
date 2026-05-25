@@ -1,0 +1,12 @@
+{% assign item_image = include.item.image | default: include.item.teaser | default: "/assets/images/placeholder.jpg" %}
+{% assign item_url = include.item.url | default: "#" %}
+<article class="flagship-project-card">
+  <a href="{{ item_url | relative_url }}" class="flagship-project-media" aria-label="View project: {{ include.item.title }}"><img src="{{ item_image | relative_url }}" alt="{{ include.item.title }} preview"></a>
+  <div class="flagship-project-content">
+    {% if include.item.project_type or include.item.status %}<div class="project-meta-line">{% if include.item.project_type %}<span>{{ include.item.project_type }}</span>{% endif %}{% if include.item.status %}<span>{{ include.item.status }}</span>{% endif %}</div>{% endif %}
+    <h3><a href="{{ item_url | relative_url }}">{{ include.item.title }}</a></h3>
+    {% if include.item.description %}<p class="flagship-project-description">{{ include.item.description }}</p>{% endif %}
+    {% if include.item.tags %}<div class="project-tags" aria-label="Technologies and focus areas">{% for tag in include.item.tags limit: 6 %}<span>{{ tag }}</span>{% endfor %}</div>{% endif %}
+    <a href="{{ item_url | relative_url }}" class="project-card-link">Read project →</a>
+  </div>
+</article>

@@ -10,6 +10,9 @@ layout: project-page
 collection: projects
 tags: [Python, CLI, Beginner, Games]
 github_url: https://github.com/Ardit-Islami/python-toys/
+library_order: 20
+nav_order: 20
+include_in_project_nav: true
 ---
 
 This repository contains a collection of simple Python command-line interface (CLI) projects developed as part of foundational learning and practice. Each project is self-contained and focuses on core programming concepts.

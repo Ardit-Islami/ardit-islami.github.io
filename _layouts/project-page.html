@@ -2,48 +2,130 @@
 layout: default
 ---
 
-<div class="page-container">
-    <div class="project-wrapper">
+<main class="standard-project-page">
+  <article class="standard-project">
+    <header class="standard-project-hero">
+      <div class="standard-project-copy">
+        <p class="eyebrow">{{ page.project_type | default: "Project" }}</p>
+        <h1 class="project-title">{{ page.title }}</h1>
 
-        <div class="project-content-box">
-            <h1 class="project-title">{{ page.title }}</h1>
+        {% if page.description %}
+          <p class="project-description">{{ page.description }}</p>
+        {% endif %}
 
-            {% if page.teaser %}
-            <img src="{{ page.teaser }}" alt="Project preview" class="project-image">
-            {% endif %}
-
-            {% if page.tags %}
-            <div class="skill-section">
-                {% for tag in page.tags %}
-                <span class="skill-pill">{{ tag }}</span>
-                {% endfor %}
-            </div>
-            {% endif %}
-
-            <div class="project-body">
-                {{ content }}
-            </div>
-            {% if page.github_url %}
-            <a href="{{ page.github_url }}" class="btn-github" target="_blank">
-                <i class="fab fa-github"></i> View on GitHub
-            </a>
-            {% endif %}
-
-            <!-- Prev/Next Navigation -->
-            <div class="project-nav">
-                {% if page.previous %}
-                <a class="nav-button prev" href="{{ page.previous.url }}">
-                    ← {{ page.previous.title }}
-                </a>
-                {% endif %}
-                {% if page.next %}
-                <a class="nav-button next" href="{{ page.next.url }}">
-                    {{ page.next.title }} →
-                </a>
-                {% endif %}
-            </div>
+        <div class="project-context-line">
+          {% if page.category %}<span>{{ page.category | replace: "-", " " | capitalize }}</span>{% endif %}
+          {% if page.date %}<span>{{ page.date | date: "%Y" }}</span>{% endif %}
+          {% if page.status %}<span>{{ page.status }}</span>{% endif %}
         </div>
+      </div>
 
+      {% assign preview_image = page.hero_image | default: page.image | default: page.teaser %}
+      {% if preview_image %}
+        <figure class="standard-project-preview">
+          <img src="{{ preview_image | relative_url }}" alt="{{ page.hero_alt | default: page.title }}" class="project-image">
+          {% if page.hero_caption %}
+            <figcaption>{{ page.hero_caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endif %}
+    </header>
+
+    {% assign has_project_meta = false %}
+    {% if page.tags or page.github_url or page.demo_url or page.case_study_url %}
+      {% assign has_project_meta = true %}
+    {% endif %}
+
+    {% if has_project_meta %}
+      <section class="project-mobile-meta" aria-label="Project details">
+        {% if page.tags %}
+          <div class="project-meta-group">
+            <h2>Skills Used</h2>
+            <ul class="project-rail-tags">
+              {% for tag in page.tags %}
+                <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        {% if page.github_url or page.demo_url or page.case_study_url %}
+          <div class="project-meta-group">
+            <h2>Inspect Further?</h2>
+            <div class="project-rail-links">
+              {% if page.github_url %}
+                <a href="{{ page.github_url }}" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  <span>View Work</span>
+                </a>
+              {% endif %}
+              {% if page.demo_url %}
+                <a href="{{ page.demo_url }}" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-up-right-from-square" aria-hidden="true"></i>
+                  <span>Live Demo</span>
+                </a>
+              {% endif %}
+              {% if page.case_study_url %}
+                <a href="{{ page.case_study_url }}" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-file-lines" aria-hidden="true"></i>
+                  <span>Case Study</span>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </section>
+    {% endif %}
+
+    <div class="standard-project-layout">
+      <div class="project-body">
+        {{ content }}
+
+        {% include project_prev_next.html %}
+      </div>
+
+      {% if has_project_meta %}
+        <aside class="standard-project-rail" aria-label="Project details">
+          {% if page.tags %}
+            <section class="project-rail-block">
+              <h2>Skills Used</h2>
+              <ul class="project-rail-tags">
+                {% for tag in page.tags %}
+                  <li>{{ tag }}</li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endif %}
+
+          {% if page.github_url or page.demo_url or page.case_study_url %}
+            <section class="project-rail-block">
+              <h2>Inspect Further?</h2>
+              <div class="project-rail-links">
+                {% if page.github_url %}
+                  <a href="{{ page.github_url }}" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <span>View Work</span>
+                  </a>
+                {% endif %}
+                {% if page.demo_url %}
+                  <a href="{{ page.demo_url }}" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-up-right-from-square" aria-hidden="true"></i>
+                    <span>Live Demo</span>
+                  </a>
+                {% endif %}
+                {% if page.case_study_url %}
+                  <a href="{{ page.case_study_url }}" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-lines" aria-hidden="true"></i>
+                    <span>Case Study</span>
+                  </a>
+                {% endif %}
+              </div>
+            </section>
+          {% endif %}
+        </aside>
+      {% endif %}
     </div>
-    {% include footer.html %}
-</div>
+  </article>
+
+  {% include footer.html %}
+</main>

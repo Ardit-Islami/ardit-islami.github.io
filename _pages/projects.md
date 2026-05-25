@@ -1,6 +1,6 @@
 ---
 layout: projects
-title: "A Showcase of My Projects"
+title: "Projects & Case Studies"
 permalink: /projects/
 page_css: project.css
 ---

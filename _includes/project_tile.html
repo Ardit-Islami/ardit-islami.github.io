@@ -1,14 +1,50 @@
-<div class="project-tile">
-  <a href="{{ item.url }}" class="tile-visual-link" aria-label="View project: {{ item.title }}">
-    <div class="tile-image" style="background-image: url('{{ item.image }}');"></div>
-    <div class="tile-overlay">
-      <p class="tile-description">{{ item.description }}</p>
+{% assign item_image = include.item.image | default: include.item.teaser | default: "/assets/images/placeholder.jpg" %}
+{% assign item_url = include.item.url | default: "#" %}
+{% assign fallback_tags = include.fallback_tags | default: "" | split: "," %}
+
+<article class="project-tile">
+  {% if item_url and item_url != "#" %}
+    <a href="{{ item_url | relative_url }}" class="tile-image-link" aria-label="View project: {{ include.item.title }}">
+      <img src="{{ item_image | relative_url }}" alt="{{ include.item.title }} preview">
+    </a>
+  {% else %}
+    <div class="tile-image-link" aria-hidden="true">
+      <img src="{{ item_image | relative_url }}" alt="{{ include.item.title }} preview">
     </div>
-  </a>
+  {% endif %}
 
   <div class="tile-caption">
     <h3 class="tile-title">
-      <a href="{{ item.url }}">{{ item.title }}</a>
+      {% if item_url and item_url != "#" %}
+        <a href="{{ item_url | relative_url }}">{{ include.item.title }}</a>
+      {% else %}
+        {{ include.item.title }}
+      {% endif %}
     </h3>
+
+    {% if include.item.description %}
+      <p class="tile-description">{{ include.item.description }}</p>
+    {% endif %}
+
+    {% if include.item.tags %}
+      <div class="project-tags tile-tags" aria-label="Technologies and focus areas">
+        {% for tag in include.item.tags limit: 4 %}
+          <span>{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% elsif include.fallback_tags %}
+      <div class="project-tags tile-tags" aria-label="Technologies and focus areas">
+        {% for tag in fallback_tags limit: 4 %}
+          {% assign clean_tag = tag | strip %}
+          {% if clean_tag != "" %}<span>{{ clean_tag }}</span>{% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if item_url and item_url != "#" %}
+      <a href="{{ item_url | relative_url }}" class="tile-link">Read project →</a>
+    {% else %}
+      <span class="tile-link tile-link-muted">Coming soon</span>
+    {% endif %}
   </div>
-</div>
+</article>

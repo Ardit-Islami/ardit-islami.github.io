@@ -1,13 +1,93 @@
-/* Shared Layout Structures */
+/* ==========================================================================
+   Portfolio Global Base
+   Phase 1: design tokens + shared primitives
 
-/* --- Main Structure CSS --- */
+   Ownership:
+   - This file owns the shared visual language: tokens, page shell, typography,
+     buttons, cards, tags, media frames, sidebar, modal, nav, and responsive basics.
+   - Page-specific CSS files should own composition only: homepage layout,
+     case-study layout, project grids, about-page structure, etc.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Core palette: quiet technical editorial */
+  --bg-page: #080B12;
+  --bg-page-alt: #0B1020;
+  --bg-surface: rgba(17, 24, 39, 0.84);
+  --bg-surface-strong: rgba(10, 15, 28, 0.92);
+  --bg-surface-soft: rgba(21, 28, 46, 0.72);
+  --bg-overlay: rgba(3, 6, 18, 0.58);
+
+  --text-primary: #F4F1EA;
+  --text-secondary: #C4C7D4;
+  --text-muted: #8F96AA;
+  --text-link: #B7C5FF;
+  --text-link-hover: #F4F1EA;
+
+  --accent: #8B7CF6;
+  --accent-soft: #B7C5FF;
+  --accent-teal: #5CA6A6;
+  --accent-blue: #6B9CFF;
+
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-soft: rgba(255, 255, 255, 0.06);
+  --border-accent: rgba(139, 124, 246, 0.32);
+
+  --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.24);
+  --shadow-panel: 0 18px 48px rgba(0, 0, 0, 0.30);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  --container-readable: 820px;
+  --container-content: 1040px;
+  --container-wide: 1240px;
+  --container-xwide: 1500px;
+
+  --space-xs: 0.35rem;
+  --space-sm: 0.65rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.25rem;
+  --space-2xl: 3rem;
+  --space-section: clamp(3rem, 6vw, 6rem);
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   2. Page shell
+   -------------------------------------------------------------------------- */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background: var(--bg-page);
+}
+
 .page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url('../images/full-background.jpg');
-  background-size: cover;
-  background-position: center top;
+  /* Charcoal navy foundation.
+     The previous AI-generated full-page background image is intentionally removed
+     so content, typography, and project evidence become the visual focus. */
+  background:
+    radial-gradient(circle at 18% 8%, rgba(92, 166, 166, 0.055), transparent 34rem),
+    radial-gradient(circle at 84% 12%, rgba(139, 124, 246, 0.060), transparent 32rem),
+    linear-gradient(180deg, #080B12 0%, #0A0F1C 42%, #080B12 100%);
+  background-size: auto;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
@@ -17,12 +97,16 @@
 .page-container::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.42), transparent 78%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.42), transparent 78%);
+  opacity: 0.42;
   z-index: 1;
+  pointer-events: none;
 }
 
 .main-wrapper {
@@ -39,63 +123,252 @@
 }
 
 .content-column {
-  flex-grow: 1;          /* 1. Force it to take ALL remaining space */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;           /* 2. Ensure it fills width-wise */
-  max-width: none;       /* 3. Remove artificial limits (was likely constrained before) */
-  padding-left: 3rem; 
+  width: 100%;
+  max-width: none;
+  padding-left: 3rem;
   padding-right: 2rem;
   box-sizing: border-box;
 }
 
-/* --- Standardised Buttons --- */
+/* --------------------------------------------------------------------------
+   3. Shared content primitives
+   -------------------------------------------------------------------------- */
+
+.content-shell {
+  width: min(100%, var(--container-content));
+  margin-inline: auto;
+}
+
+.content-wide {
+  width: min(100%, var(--container-wide));
+  margin-inline: auto;
+}
+
+.content-readable,
+.prose {
+  max-width: var(--container-readable);
+}
+
+.prose {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.prose p {
+  margin: 0 0 1rem;
+}
+
+.prose strong {
+  color: var(--text-primary);
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 0.45rem;
+  color: var(--accent-soft);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  margin: 0 0 1rem;
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.text-accent {
+  color: var(--accent-soft);
+}
+
+/* Keep current class usable, but make it quieter than the old neon gradient. */
+.text-gradient {
+  background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent-soft) 58%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Shared buttons
+   -------------------------------------------------------------------------- */
+
+.btn,
 .cta-button {
-  background: linear-gradient(to right, #5A4BFF, #7B72FF);
-  color: white;
-  padding: 10px 20px;
-  font-size: 0.95rem;
-  letter-spacing: 0.4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: fit-content;
+  min-height: 2.4rem;
+  padding: 0.64rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(183, 197, 255, 0.22);
+  background: rgba(139, 124, 246, 0.14);
+  color: var(--text-primary) !important;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.35;
+  letter-spacing: 0;
   font-weight: 600;
-  border: none;
-  border-radius: 6px;
   text-align: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(122, 128, 255, 0.25);
+  text-decoration: none !important;
+  white-space: nowrap;
+  box-shadow: none;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
 }
 
-.cta-button:hover {
-  background: linear-gradient(to right, #7B72FF, #9BA6FF);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(122, 128, 255, 0.35);
+.btn:hover,
+.btn:focus,
+.cta-button:hover,
+.cta-button:focus {
+  background: rgba(139, 124, 246, 0.21);
+  border-color: rgba(183, 197, 255, 0.38);
+  color: var(--text-primary) !important;
+  transform: translateY(-1px);
+  box-shadow: none;
 }
 
+.btn-primary,
+.cta-button.btn-primary {
+  background: rgba(139, 124, 246, 0.20);
+  border-color: rgba(183, 197, 255, 0.28);
+  color: var(--text-primary) !important;
+}
 
-/* --- Sidebar CSS --- */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: var(--border-subtle);
+  color: var(--text-secondary) !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary) !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Shared cards, tags, and media frames
+   -------------------------------------------------------------------------- */
+
+.card,
+.surface-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-soft);
+}
+
+.card-soft {
+  background: var(--bg-surface-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+}
+
+.tag-list,
+.skill-pill-container,
+.skill-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tag,
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.32rem 0.7rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(183, 197, 255, 0.20);
+  background: rgba(183, 197, 255, 0.07);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  cursor: default;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.tag:hover,
+.skill-pill:hover {
+  background: rgba(183, 197, 255, 0.10);
+  border-color: rgba(183, 197, 255, 0.28);
+  color: var(--text-primary);
+  transform: none;
+  box-shadow: none;
+}
+
+.media-frame {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.media-frame img,
+.media-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.media-caption,
+.caption {
+  margin-top: 0.65rem;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   6. Sidebar
+   -------------------------------------------------------------------------- */
+
 .sidebar {
   flex: 0 0 260px;
   max-width: 260px;
   margin-top: 15vh;
   margin-left: 2vh;
-  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
-  background-color: rgba(1, 2, 34, 0.95);
-  color: #E0E6FF;
-  border: 1px solid rgba(122, 128, 255, 0.25);
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  padding: 1.5rem 1.5rem 0.5rem;
+  background: rgba(10, 15, 28, 0.88);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   align-self: flex-start;
   height: auto;
-  transition: all 0.3s ease;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
 }
 
 .sidebar:hover {
-  background-color: rgba(15, 18, 58, 0.98);
-  border: 1px solid #7B72FF;
-  box-shadow: 0 0 10px rgba(123, 114, 255, 0.35), 0 4px 12px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
+  background: rgba(14, 20, 35, 0.92);
+  border-color: rgba(183, 197, 255, 0.22);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
 }
 
 .bio-photo {
@@ -105,21 +378,22 @@
   object-fit: cover;
   display: block;
   margin: 0 auto 1rem;
-  border: 3px solid #e9ecef;
+  border: 2px solid rgba(244, 241, 234, 0.84);
+  border-radius: 50%;
   max-width: unset !important;
 }
 
 .sidebar h3 {
-  font-size: 1.5rem;
-  color: #E0E6FF;
+  font-size: 1.45rem;
+  color: var(--text-primary);
   margin: 0 0 1rem;
   text-align: center;
 }
 
 .sidebar p {
   font-size: 0.95rem;
-  line-height: 1.6;
-  color: #B0B8D1;
+  line-height: 1.65;
+  color: var(--text-secondary);
   margin-bottom: 1rem;
 }
 
@@ -127,17 +401,16 @@
 .sidebar a:visited,
 .sidebar a:hover,
 .sidebar a:focus {
-  color: #E0E6FF;
+  color: var(--text-primary);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.18s ease;
 }
 
 .sidebar a:hover,
 .sidebar a:focus {
-  color: #9BA6FF;
+  color: var(--accent-soft);
 }
 
-/* --- Sidebar Contact/Icons CSS --- */
 .sidebar-contact-info {
   margin-top: 1.5rem;
   display: flex;
@@ -149,31 +422,35 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #B0B8D1;
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.95rem;
-  transition: all 0.2s ease;
+  transition: color 0.18s ease, transform 0.18s ease;
   line-height: 1.5;
 }
 
 a.contact-item:hover {
-  color: #FFFFFF;
-  transform: translateX(4px);
+  color: var(--text-primary);
+  transform: translateX(3px);
 }
 
 .contact-item i {
-  color: #7B72FF;
+  color: var(--accent-soft);
   width: 20px;
   text-align: center;
 }
 
-/* --- Contact Modal CSS --- */
+/* --------------------------------------------------------------------------
+   7. Contact modal
+   -------------------------------------------------------------------------- */
+
 .modal-overlay {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.85);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 6, 18, 0.82);
   z-index: 9999;
   justify-content: center;
   align-items: center;
@@ -185,14 +462,14 @@ a.contact-item:hover {
 }
 
 .modal-content {
-  background: #020412;
-  border: 1px solid #2A2F55;
-  border-radius: 12px;
+  background: var(--bg-surface-strong);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
   width: 95%;
   max-width: 850px;
   position: relative;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-  color: #E0E6FF;
+  box-shadow: var(--shadow-panel);
+  color: var(--text-primary);
   overflow: hidden;
 }
 
@@ -202,9 +479,9 @@ a.contact-item:hover {
 }
 
 .modal-info-side {
-  background: linear-gradient(135deg, rgba(123, 114, 255, 0.1), transparent);
+  background: rgba(255, 255, 255, 0.025);
   padding: 3rem 2rem;
-  border-right: 1px solid #2A2F55;
+  border-right: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -213,14 +490,14 @@ a.contact-item:hover {
 .modal-info-side h3 {
   margin-top: 0;
   font-size: 1.8rem;
-  color: #FFFFFF;
+  color: var(--text-primary);
   margin-bottom: 1rem;
 }
 
 .modal-info-side p {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #B0B8D1;
+  color: var(--text-secondary);
   margin-bottom: 2rem;
 }
 
@@ -229,17 +506,17 @@ a.contact-item:hover {
   align-items: center;
   gap: 12px;
   font-size: 0.9rem;
-  color: #A9BFFF;
+  color: var(--accent-soft);
   margin-bottom: 0.6rem;
 }
 
 .mini-contact-item i {
-  color: #7B72FF;
+  color: var(--accent);
 }
 
 .modal-form-side {
   padding: 3rem 2rem;
-  background: #020412;
+  background: var(--bg-surface-strong);
 }
 
 .form-group {
@@ -249,37 +526,43 @@ a.contact-item:hover {
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #A9BFFF;
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+#contact-modal .form-group input,
+#contact-modal .form-group textarea {
   width: 100%;
   padding: 0.8rem;
-  border-radius: 6px;
-  border: 1px solid #2A2F55;
-  background: rgba(255, 255, 255, 0.05);
-  color: #FFFFFF;
-  font-family: 'Inter', sans-serif;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
   font-size: 1rem;
-  transition: all 0.2s ease;
   box-sizing: border-box;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
 }
 
 .form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #5d658b;
+.form-group textarea::placeholder,
+#contact-modal .form-group input::placeholder,
+#contact-modal .form-group textarea::placeholder {
+  color: var(--text-muted);
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+#contact-modal .form-group input:focus,
+#contact-modal .form-group textarea:focus {
   outline: none;
-  border-color: #7B72FF;
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(183, 197, 255, 0.42);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .modal-close {
@@ -288,16 +571,16 @@ a.contact-item:hover {
   right: 1rem;
   background: none;
   border: none;
-  color: #5d658b;
+  color: var(--text-muted);
   font-size: 2rem;
   line-height: 1;
   cursor: pointer;
   z-index: 10;
-  transition: color 0.2s;
+  transition: color 0.18s ease;
 }
 
 .modal-close:hover {
-  color: #FFFFFF;
+  color: var(--text-primary);
 }
 
 #contact-modal .modal-form-side form {
@@ -308,155 +591,125 @@ a.contact-item:hover {
   border: none;
 }
 
-#contact-modal .form-group input,
-#contact-modal .form-group textarea {
+/* --------------------------------------------------------------------------
+   8. Masthead customisation
+   -------------------------------------------------------------------------- */
+
+.masthead {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 0.8rem;
-  border-radius: 6px;
-  border: 1px solid #2A2F55;
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  box-sizing: border-box;
-  transition: all 0.2s ease;
-}
-
-#contact-modal .form-group input::placeholder,
-#contact-modal .form-group textarea::placeholder {
-  color: #5d658b;
-}
-
-#contact-modal .form-group input:focus,
-#contact-modal .form-group textarea:focus {
-  outline: none;
-  border-color: #7B72FF;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* --- SKILL PILLS --- */
-.skill-pill {
-  display: inline-block;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  border-radius: 50px;
-  margin: 0 0.4rem 0.4rem 0;
-  background-color: rgba(123, 114, 255, 0.1); 
-  border: 1px solid rgba(123, 114, 255, 0.25);
-  color: #D6E1FF;
-  cursor: default;
-  transition: all 0.2s ease;
-}
-
-.skill-pill:hover {
-  background-color: rgba(123, 114, 255, 0.25);
-  border-color: rgba(123, 114, 255, 0.5);
-  color: #FFFFFF;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(123, 114, 255, 0.15);
-}
-.skill-pill-container,
-.skill-section {
+  min-height: 70px;
+  background: transparent !important;
+  z-index: 1000;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem;
+  align-items: center;
+  justify-content: center;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
-/* --- Masthead Custom CSS --- */
-    .masthead {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 70px;
-        background: transparent !important;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-bottom: none !important;
-        box-shadow: none !important;
-    }
+.masthead__inner-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 2rem !important;
+  margin: 0 auto !important;
+  background: transparent !important;
+  box-sizing: border-box;
+}
 
-    .masthead__inner-wrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        background: transparent !important;
-    }
+.masthead__menu {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  background: transparent !important;
+}
 
-    .masthead__menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: transparent !important;
-    }
+nav.greedy-nav {
+  position: relative;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 820px;
+  min-width: 0;
+  margin: 0 auto !important;
+  background: transparent !important;
+}
 
-    nav.greedy-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: transparent !important;
-    }
+.greedy-nav .site-title {
+  display: none !important;
+}
 
-    ul.visible-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        background: transparent !important;
-    }
+ul.visible-links,
+.greedy-nav .visible-links {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex: 0 1 auto !important;
+  list-style: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
 
-    ul.visible-links .masthead__menu-item {
-        margin: 0;
-        background: transparent !important;
-    }
+ul.visible-links .masthead__menu-item {
+  margin: 0;
+  background: transparent !important;
+}
 
-    ul.visible-links .masthead__menu-item a {
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
-        text-transform: none;
-        color: #FFFFFF;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        background-color: transparent;
-        padding: 0.8rem 1rem;
-        margin: 0 0.4rem;
-        border-radius: 5px;
-        transition: color 0.2s ease, background-color 0.2s ease;
-        text-decoration: none;
-    }
+ul.visible-links .masthead__menu-item a {
+  font-family: var(--font-sans);
+  font-weight: 560;
+  text-transform: none;
+  color: var(--text-secondary);
+  text-shadow: none;
+  background-color: transparent;
+  padding: 0.62rem 0.78rem;
+  margin: 0 0.16rem;
+  border-radius: var(--radius-sm);
+  transition: color 0.18s ease, background-color 0.18s ease;
+  text-decoration: none;
+}
 
-    ul.visible-links .masthead__menu-item a:hover {
-        color: #FFFFFF;
-        background-color: rgba(255, 255, 255, 0.15);
-    }
+ul.visible-links .masthead__menu-item a:hover,
+ul.visible-links .masthead__menu-item a:focus {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.055);
+}
 
-    ul.visible-links .masthead__menu-item.active a {
-        color: #FFFFFF;
-        font-weight: 600;
-        background-color: rgba(255, 255, 255, 0.2);
-    }
+ul.visible-links .masthead__menu-item.active a {
+  color: var(--text-primary);
+  font-weight: 650;
+  background-color: rgba(255, 255, 255, 0.075);
+}
 
-    .initial-content-wrap {
-        padding-top: 70px;
-    }
+.greedy-nav .hidden-links {
+  right: 0;
+}
 
-    #main a,
-    #main a:visited {
-        color: #A9BFFF !important;
-    }
+.initial-content-wrap {
+  padding-top: 70px;
+}
 
-    #main a:hover {
-        color: #FFFFFF !important;
-    }
+#main a,
+#main a:visited {
+  color: var(--text-link) !important;
+}
 
-/* --- Responsive Helpers --- */
+#main a:hover {
+  color: var(--text-link-hover) !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. Responsive helpers
+   -------------------------------------------------------------------------- */
+
 @media (max-width: 1800px) {
   .main-wrapper {
     flex-direction: column;
@@ -468,63 +721,73 @@ a.contact-item:hover {
     order: 1;
     width: 95%;
     max-width: 400px;
-    margin: 4rem auto 0.01rem auto;
+    margin: 4rem auto 0.01rem;
   }
 
   .content-column {
-    order: 2; 
+    order: 2;
     width: 100%;
-    margin: 0 auto 0.5rem auto;
+    margin: 0 auto 0.5rem;
     padding: 0;
   }
 }
 
-/* --- RESPONSIVE ADJUSTMENTS FOR NAVIGATION --- */
-
-    /* For Tablets and smaller */
-    @media (max-width: 1200px) {
-        ul.visible-links .masthead__menu-item a {
-            padding: 0.6rem 0.5rem;
-            margin: 0 0.2rem;
-            font-size: 0.95rem;
-        }
-    }
-
-    /* For Mobile phones */
-    @media (max-width: 480px) {
-        ul.visible-links .masthead__menu-item a {
-            padding: 0.5rem 0.2rem;
-            margin: 0 0.1rem;
-            font-size: 0.9rem;
-        }
-    }
-
-/* --- Contact Modal Resonsivness --- */
 @media (max-width: 1200px) {
-  .modal-body-grid {
-    grid-template-columns: 1fr; /* Stack vertically */
+  ul.visible-links .masthead__menu-item a {
+    padding: 0.6rem 0.5rem;
+    margin: 0 0.2rem;
+    font-size: 0.95rem;
   }
-  
+
+  .modal-body-grid {
+    grid-template-columns: 1fr;
+  }
+
   .modal-info-side {
     padding: 1.5rem;
     border-right: none;
-    border-bottom: 1px solid #2A2F55;
-    text-align: center; /* Center text on mobile for better balance */
+    border-bottom: 1px solid var(--border-subtle);
+    text-align: center;
   }
 
   .modal-mini-contacts {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center icons */
+    align-items: center;
   }
-  
+
   .modal-form-side {
     padding: 1.5rem;
   }
-  
+
   .modal-close {
     top: 0.5rem;
     right: 0.5rem;
-    color: #FFFFFF; /* Make X more visible on mobile */
+    color: var(--text-primary);
+  }
+}
+
+@media (max-width: 700px) {
+  .main-wrapper {
+    padding: 0 1rem;
+  }
+
+  .btn,
+  .cta-button {
+    width: 100%;
+    max-width: 22rem;
+  }
+
+  .tag,
+  .skill-pill {
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 480px) {
+  ul.visible-links .masthead__menu-item a {
+    padding: 0.5rem 0.2rem;
+    margin: 0 0.1rem;
+    font-size: 0.9rem;
   }
 }

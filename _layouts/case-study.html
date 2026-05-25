@@ -1,0 +1,109 @@
+---
+layout: default
+---
+
+{% assign hero_image = page.hero_image | default: page.teaser | default: page.image %}
+{% assign mobile_hero_image = page.mobile_hero_image | default: hero_image %}
+{% assign project_year = page.date | date: "%Y" %}
+
+<div class="page-container flagship-page-container">
+  <main class="flagship-main" aria-labelledby="case-study-title">
+    <article class="flagship-page">
+      <header class="flagship-hero">
+        <div class="flagship-hero-copy">
+          {% if page.project_type %}<p class="flagship-eyebrow">{{ page.project_type }}</p>{% endif %}
+          <h1 id="case-study-title">{{ page.title }}</h1>
+          {% if page.description %}<p class="flagship-lede">{{ page.description }}</p>{% endif %}
+
+          <p class="flagship-context-line">
+            {% if page.status %}<span>{{ page.status }}</span>{% endif %}
+            {% if page.flagship_type %}<span>{{ page.flagship_type | replace: '-', ' ' | capitalize }}</span>{% elsif page.category %}<span>{{ page.category | replace: '-', ' ' | capitalize }}</span>{% endif %}
+            {% if page.date %}<span>{{ project_year }}</span>{% endif %}
+          </p>
+
+          {% if page.tags %}
+            <p class="flagship-stack-line" aria-label="Project skills and technologies">
+              {% for tag in page.tags limit: 8 %}
+                <span>{{ tag }}</span>{% unless forloop.last %}<span class="stack-separator">·</span>{% endunless %}
+              {% endfor %}
+            </p>
+          {% endif %}
+        </div>
+
+        {% if hero_image %}
+          <figure class="flagship-hero-visual">
+            <picture>
+              <source media="(max-width: 760px)" srcset="{{ mobile_hero_image | relative_url }}">
+              <img src="{{ hero_image | relative_url }}" alt="{{ page.hero_alt | default: page.title | escape }}">
+            </picture>
+            {% if page.hero_caption %}<figcaption>{{ page.hero_caption }}</figcaption>{% endif %}
+          </figure>
+        {% endif %}
+      </header>
+
+      {% if page.snapshot %}
+        <section class="flagship-snapshot" aria-label="Project snapshot">
+          {% for item in page.snapshot %}
+            <div class="snapshot-item">
+              <span>{{ item.label }}</span>
+              <strong>{{ item.value }}</strong>
+            </div>
+          {% endfor %}
+        </section>
+      {% endif %}
+
+      {% if page.evidence_hub %}
+        <section class="flagship-evidence-hub" aria-labelledby="evidence-hub-title">
+          <div class="flagship-section-heading compact">
+            <p class="section-eyebrow">Choose your depth</p>
+            <h2 id="evidence-hub-title">Evidence Hub</h2>
+            <p>Jump to the proof that matters most, or open media without making the whole page a long gallery.</p>
+          </div>
+
+          <div class="evidence-hub-grid">
+            {% for item in page.evidence_hub %}
+              <a href="{{ item.href }}" class="evidence-hub-card">
+                <span>{{ item.label }}</span>
+                <strong>{{ item.title }}</strong>
+                {% if item.text %}<p>{{ item.text }}</p>{% endif %}
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
+      <div class="flagship-layout">
+        <div class="flagship-body">
+          {{ content }}
+        </div>
+
+        {% if page.case_nav %}
+          <aside class="flagship-dock" aria-label="Case study navigation">
+            <p>On this case study</p>
+            <nav>
+              {% for item in page.case_nav %}
+                <a href="{{ item.href }}">{{ item.label }}</a>
+              {% endfor %}
+            </nav>
+          </aside>
+        {% endif %}
+      </div>
+    </article>
+  </main>
+
+  {% include footer.html %}
+</div>
+
+<div class="case-modal" data-case-modal hidden>
+  <div class="case-modal-backdrop" data-modal-close></div>
+  <div class="case-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="case-modal-title">
+    <button class="case-modal-close" type="button" data-modal-close aria-label="Close media viewer">×</button>
+    <div class="case-modal-media" data-modal-media></div>
+    <div class="case-modal-copy">
+      <h2 id="case-modal-title" data-modal-title></h2>
+      <p data-modal-caption></p>
+    </div>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/case-study-interactions.js' | relative_url }}" defer></script>

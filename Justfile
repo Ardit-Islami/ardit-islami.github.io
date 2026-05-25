@@ -4,7 +4,7 @@ default:
 
 # Run the local development server
 dev:
-    bundle exec jekyll serve --livereload --force_polling
+	bundle exec jekyll serve --livereload --force_polling --host 0.0.0.0
 
 # Install dependencies
 setup:

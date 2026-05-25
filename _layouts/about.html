@@ -1,7 +1,99 @@
 ---
-layout: sidebar-page
+layout: default
 ---
 
-<div class="about-content">
-    {{ content }}
-</div>
+{% assign about = site.data.about %}
+
+<main class="about-page-shell">
+  <article class="about-page" aria-labelledby="about-title">
+
+    <section class="about-masthead">
+      <div class="about-intro-copy">
+        <h2 id="about-title">About Me</h2>
+
+        <div class="about-lead-wrap">
+          {% if site.author.avatar %}
+            <img src="{{ site.author.avatar | relative_url }}" alt="Portrait of {{ site.author.name | default: 'Ardit Islami' }}" class="about-inline-headshot">
+          {% endif %}
+          <p>{{ about.intro.lead }}</p>
+        </div>
+
+        <div class="about-intro-rest">
+          {% for paragraph in about.intro.body %}
+            <p>{{ paragraph }}</p>
+          {% endfor %}
+        </div>
+      </div>
+
+      <aside class="about-direction-panel" aria-label="Current direction">
+        <p class="panel-kicker">{{ about.direction.kicker }}</p>
+        <p class="panel-summary">{{ about.direction.summary }}</p>
+
+        <ul class="role-chip-list">
+          {% for role in about.direction.roles %}
+            <li>{{ role }}</li>
+          {% endfor %}
+        </ul>
+      </aside>
+    </section>
+
+    <section class="about-section about-story" aria-labelledby="why-work-with-me">
+      <h2 id="why-work-with-me">Why Work With Me</h2>
+
+      <div class="about-wide-copy">
+        {% for paragraph in about.why_work.paragraphs %}
+          <p>{{ paragraph }}</p>
+        {% endfor %}
+
+        <blockquote>
+          <p>{{ about.why_work.quote }}</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="about-skills-band" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+
+      <div class="skills-summary" aria-label="Skills summary">
+        {% for skill_group in about.skills %}
+          <section class="skill-group">
+            <h3>{{ skill_group.group }}</h3>
+            <ul>
+              {% for skill in skill_group.items %}
+                <li>{{ skill }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="about-section about-background" aria-labelledby="background-heading">
+      <h2 id="background-heading">Background</h2>
+      {% include career-history.html %}
+    </section>
+
+    <section class="about-bottom-grid">
+      <section class="about-bottom-panel about-looking-detail" aria-labelledby="looking-heading">
+        <h2 id="looking-heading">What I’m Looking For</h2>
+        <p>{{ about.looking_for.text }}</p>
+      </section>
+
+      <section class="about-bottom-panel about-contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+
+        <div class="about-contact-list">
+          {% for link in about.contact %}
+            <a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>
+              <i class="{{ link.icon }}" aria-hidden="true"></i>
+              <span>{{ link.label }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
+    </section>
+
+  </article>
+
+  {% include footer.html %}
+</main>

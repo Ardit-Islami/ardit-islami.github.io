@@ -1,9 +1,11 @@
-<div class="project-card">
-  <img class="project-teaser" src="{{ item.image | default: item.teaser }}" alt="{{ item.title }} Teaser">
-  
-  <h3>{{ item.title }}</h3>
-  
-  <p>{{ item.description | default: item.excerpt | strip_html | truncate: 120 }}</p>
-  
-  <a href="{{ item.url }}" class="cta-button">View Project</a>
-</div>
+{% assign item_image = include.item.teaser | default: include.item.image | default: "/assets/images/placeholder.jpg" %}
+{% assign item_url = include.item.url | default: "#" %}
+
+<article class="project-card">
+  <a href="{{ item_url | relative_url }}" class="project-card-image-link" aria-label="View project: {{ include.item.title }}">
+    <img src="{{ item_image | relative_url }}" alt="{{ include.item.title }} preview" class="project-teaser">
+  </a>
+  <h3><a href="{{ item_url | relative_url }}">{{ include.item.title }}</a></h3>
+  {% if include.item.description %}<p>{{ include.item.description }}</p>{% endif %}
+  <a href="{{ item_url | relative_url }}" class="cta-button">View Project</a>
+</article>

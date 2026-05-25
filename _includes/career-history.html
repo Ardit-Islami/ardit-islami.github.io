@@ -1,46 +1,41 @@
 <div class="info-block-container">
   <h4>Education</h4>
-  {% for item in site.data.career.education %}
-  <div class="info-block">
-    <p>
-      <strong>{{ item.org }}</strong><br>
-      {{ item.title }} • <em>{{ item.date }}</em>
-    </p>
-  </div>
-  {% endfor %}
-</div>
 
-<div class="info-block-container">
-  <h4>Work Experience</h4>
-  {% for item in site.data.career.work %}
-  <div class="info-block work-block">
-    
+  <div class="info-block">
     <div class="ib-header">
-      <strong>{{ item.title }}</strong>
-      <span class="ib-date">{{ item.date }}</span>
+      <strong>University of Kent</strong>
+      <span class="ib-date">2018–2021</span>
     </div>
-
-    <div class="ib-meta">
-      <span class="ib-company">{{ item.company }}</span>
-      <span class="ib-location">{{ item.location }}</span>
-    </div>
-
-    <p class="ib-details">
-      {{ item.details }}
-    </p>
-
+    <p>BSc Mathematics (First Class)</p>
   </div>
-  {% endfor %}
-</div>
 
-<div class="info-block-container">
+  <h4>Work Experience</h4>
+
+  <div class="info-block work-block">
+    <div class="ib-header">
+      <strong>Technical Support Consultant</strong>
+      <span class="ib-date">May 2022 – Present</span>
+    </div>
+    <p><a href="https://www.oneadvanced.com/" target="_blank" rel="noopener noreferrer">OneAdvanced</a> &nbsp; UK (Remote / Hybrid)</p>
+    <p>Supporting NHS software. SQL diagnostics, data fixes, and incident response for critical healthcare systems.</p>
+  </div>
+
+  <div class="info-block work-block">
+    <div class="ib-header">
+      <strong>Data Science Intern</strong>
+      <span class="ib-date">Oct 2021 – Mar 2022</span>
+    </div>
+    <p><a href="https://savingps.co.uk/" target="_blank" rel="noopener noreferrer">Saving P's</a> &nbsp; Remote</p>
+    <p>Built forecasting models and Python data pipelines to automate backend analytics.</p>
+  </div>
+
   <h4>Certificates (Ongoing)</h4>
-  {% for item in site.data.career.certifications %}
+
   <div class="info-block">
-    <p>
-      <a href="{{ item.url }}" target="_blank"><strong>{{ item.title }}</strong></a><br>
-      <em>{{ item.org }}</em>
-    </p>
+    <div class="ib-header">
+      <strong>AI Engineer Professional Certificate</strong>
+      <span class="ib-date">Ongoing</span>
+    </div>
+    <p><a href="https://www.coursera.org/" target="_blank" rel="noopener noreferrer">Coursera</a></p>
   </div>
-  {% endfor %}
 </div>

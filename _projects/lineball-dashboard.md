@@ -9,6 +9,9 @@ category: "viz"
 layout: project-page
 collection: projects
 tags: [Tableau, Data Viz, Python, Games]
+library_order: 10
+nav_order: 60
+include_in_project_nav: true
 ---
 
 ### Project Overview

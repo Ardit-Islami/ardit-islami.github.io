@@ -1,10 +1,33 @@
-{% comment %} 
-    Load page-specific CSS files declaratively 
+{% comment %}
+  Page/layout stylesheet loader.
+
+  Ownership:
+  - Global baseline styles are loaded through assets/css/main.scss.
+  - Standalone pages declare page_css in front matter when needed.
+  - Reusable layouts can map to their own default stylesheet here.
+  - Avoid ad-hoc extra “fix” CSS files.
 {% endcomment %}
-{% if page.page_css %}
-  <link rel="stylesheet" href="{{ '/assets/css/' | append: page.page_css | relative_url }}">
+
+{% assign resolved_page_css = page.page_css %}
+
+{% if resolved_page_css == nil or resolved_page_css == "" %}
+  {% case page.layout %}
+    {% when "project-page" %}
+      {% assign resolved_page_css = "project-single.css" %}
+    {% when "case-study" %}
+      {% assign resolved_page_css = "case-study.css" %}
+    {% when "projects" %}
+      {% assign resolved_page_css = "project.css" %}
+    {% when "about" %}
+      {% assign resolved_page_css = "about.css" %}
+    {% when "sidebar-page" %}
+      {% assign resolved_page_css = "homepage.css" %}
+  {% endcase %}
 {% endif %}
 
+{% if resolved_page_css %}
+  <link rel="stylesheet" href="{{ '/assets/css/' | append: resolved_page_css | relative_url }}">
+{% endif %}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

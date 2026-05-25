@@ -10,6 +10,9 @@ layout: project-page
 collection: projects
 tags: [Python, String Manipulation, FreeCodeCamp]
 github_url: https://github.com/Ardit-Islami/Arithmetic_Formatter
+library_order: 10
+nav_order: 10
+include_in_project_nav: true
 ---
 
 ### Project Overview

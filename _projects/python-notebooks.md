@@ -4,12 +4,15 @@ description: "A curated set of notebooks that document my learning journey throu
 image: /assets/images/python-notebooks-teaser.jpg
 date: 2025-05-07
 published: published
-featured: true
+featured: false
 category: "python"
 layout: project-page
 collection: projects
 tags: [Python, Jupyter, Learning, Data Structures, Functional Programming]
 github_url: https://github.com/Ardit-Islami/learning-python-notes/
+library_order: 30
+nav_order: 30
+include_in_project_nav: true
 ---
 
 This project is a curated set of Jupyter notebooks that chronicle my learning journey through Python programming. The notebooks cover a wide range of topics, from core syntax and object-oriented principles to advanced techniques like multithreading, recursion, and working with NumPy.

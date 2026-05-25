@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Rota Case Study Extension
+   Phase 2: project-specific composition only
+
+   This file keeps rota-specific modules while relying on global/case-study
+   tokens. It should not create a separate neon visual system.
+   ========================================================================== */
+
+.case-study-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.95rem;
+  margin: 1.3rem 0;
+}
+
+.case-study-flow-grid .case-study-card {
+  position: relative;
+  min-height: 100%;
+}
+
+.case-study-flow-grid .case-study-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -0.67rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-top: 2px solid rgba(196, 199, 212, 0.42);
+  border-right: 2px solid rgba(196, 199, 212, 0.42);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.workflow-taxonomy-grid .case-study-card,
+.truth-state-grid .case-study-card {
+  border-top: 2px solid rgba(92, 166, 166, 0.28);
+}
+
+.workflow-taxonomy-grid .case-study-card:nth-child(1) {
+  border-top-color: rgba(139, 124, 246, 0.45);
+}
+
+.workflow-taxonomy-grid .case-study-card:nth-child(2) {
+  border-top-color: rgba(217, 164, 65, 0.48);
+}
+
+.workflow-taxonomy-grid .case-study-card:nth-child(3) {
+  border-top-color: rgba(107, 156, 255, 0.42);
+}
+
+.workflow-taxonomy-grid .case-study-card:nth-child(4) {
+  border-top-color: rgba(92, 166, 166, 0.54);
+}
+
+.case-study-diagram-module .case-study-media,
+.audit-evidence-panel .case-study-media {
+  margin: 0;
+}
+
+.audit-evidence-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.audit-evidence-panel .case-study-checklist {
+  margin-top: 0.7rem;
+}
+
+.truth-state-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.truth-state-grid .case-study-card {
+  padding: clamp(1rem, 1.7vw, 1.25rem);
+}
+
+.truth-state-grid .case-study-card ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.truth-state-grid .case-study-card li {
+  color: var(--text-secondary);
+  margin-bottom: 0.42rem;
+  font-size: 0.93rem;
+  line-height: 1.52;
+}
+
+.case-study-evidence-grid .case-study-card {
+  min-height: 100%;
+}
+
+.case-study-wide-module .case-study-prose + .case-study-media {
+  margin-top: 1rem;
+}
+
+@media (max-width: 1180px) {
+  .case-study-flow-grid,
+  .truth-state-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-study-flow-grid .case-study-card:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .case-study-flow-grid,
+  .truth-state-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-deep-dive {
+    padding: 0.95rem;
+    border-radius: var(--radius-md, 14px);
+  }
+}

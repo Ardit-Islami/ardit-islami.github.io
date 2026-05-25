@@ -4,12 +4,15 @@ description: "A secure Python-based CLI tool for encrypted password storage and 
 image: /assets/images/password-manager-teaser.jpg
 date: 2025-05-04
 published: published
-featured: true
+featured: false
 category: "python"
 layout: project-page
 collection: projects
 tags: [Python, CLI, Encryption, Cryptography]
 github_url: https://github.com/Ardit-Islami/password-manager-cli/
+library_order: 50
+nav_order: 50
+include_in_project_nav: true
 ---
 
 ### Project Overview

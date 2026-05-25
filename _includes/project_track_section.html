@@ -1,0 +1,17 @@
+{% assign track_projects = include.projects %}
+{% if track_projects.size > 0 %}
+<section class="project-section project-track-section" id="{{ include.title | slugify }}" aria-labelledby="{{ include.title | slugify }}-title">
+  <div class="project-section-heading">
+    <h2 id="{{ include.title | slugify }}-title" class="project-category-title">{{ include.title }}</h2>
+    {% if include.description %}
+      <p class="section-description">{{ include.description }}</p>
+    {% endif %}
+  </div>
+
+  <div class="project-grid-wrapper">
+    {% for item in track_projects %}
+      {% include project_tile.html item=item %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

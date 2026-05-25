@@ -1,0 +1,58 @@
+{% comment %}
+  Controlled single-project previous/next navigation.
+
+  Normal project:
+    include_in_project_nav: true
+    nav_order: 10
+
+  Excluded project/case study:
+    include_in_project_nav: false
+{% endcomment %}
+
+{% assign nav_projects = site.projects
+  | where_exp: "project", "project.include_in_project_nav != false"
+  | sort: "nav_order" %}
+
+{% assign current_index = nil %}
+{% for project in nav_projects %}
+  {% if project.url == page.url %}
+    {% assign current_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% if current_index != nil %}
+  {% assign previous_index = current_index | minus: 1 %}
+  {% assign next_index = current_index | plus: 1 %}
+  {% assign previous_project = nil %}
+  {% assign next_project = nil %}
+
+  {% if previous_index >= 0 %}
+    {% assign previous_project = nav_projects[previous_index] %}
+  {% endif %}
+
+  {% if next_index < nav_projects.size %}
+    {% assign next_project = nav_projects[next_index] %}
+  {% endif %}
+
+  {% if previous_project or next_project %}
+    <nav class="project-nav" aria-label="Project navigation">
+      {% if previous_project %}
+        <a href="{{ previous_project.url | relative_url }}" class="nav-button previous">
+          <span>Previous</span>
+          <strong>{{ previous_project.title }}</strong>
+        </a>
+      {% else %}
+        <span class="nav-button nav-button-empty" aria-hidden="true"></span>
+      {% endif %}
+
+      {% if next_project %}
+        <a href="{{ next_project.url | relative_url }}" class="nav-button next">
+          <span>Next</span>
+          <strong>{{ next_project.title }}</strong>
+        </a>
+      {% else %}
+        <span class="nav-button nav-button-empty" aria-hidden="true"></span>
+      {% endif %}
+    </nav>
+  {% endif %}
+{% endif %}

@@ -1,50 +1,98 @@
 ---
-layout: sidebar-page
+layout: default
 ---
 
-<div class="about-spacer"></div>
-<section class="project-section">
-  <details>
-    <summary class="project-category-title">Ongoing Learning</summary>
-    <div class="project-grid-wrapper scrollable">
-      {% for item in site.data.learning %}
-        {% include project_tile.html item=item %}
-      {% endfor %}
-    </div>
-  </details>
-</section>
-<div class="projects-content-container">
-  <h1 class="projects-main-title">A Showcase of My Projects</h1>
-  <section class="project-section">
-    <details>
-      <summary class="project-category-title"> AI / Data </summary>
-      <div class="project-grid-wrapper scrollable">
-        {% for item in site.data.projects_ai %}
-          {% include project_tile.html item=item %}
-        {% endfor %}
-      </div>
-    </details>
-  </section>
-  <section class="project-section">
-    <details>
-      <summary class="project-category-title">Python Basics</summary>
-      <div class="project-grid-wrapper scrollable">
-        {% assign python_projects = site.projects | where: "category", "python" %}
-              {% for item in python_projects %}
-                {% include project_tile.html item=item %}
-              {% endfor %}
-      </div>
-    </details>
-  </section>
-  <section class="project-section" data-type="viz">
-    <details>
-      <summary class="project-category-title">Data Visualisation</summary>
-        <div class="project-grid-wrapper scrollable">
-          {% assign viz_projects = site.projects | where: "category", "viz" %}
-              {% for item in viz_projects %}
-                {% include project_tile.html item=item %}
-              {% endfor %}
+<main class="page-container projects-page-shell">
+  <div class="projects-page" aria-labelledby="projects-page-title">
+    <section class="projects-hero">
+      <p class="projects-kicker">Portfolio</p>
+      <h1 id="projects-page-title" class="projects-main-title">Projects & Case Studies</h1>
+      <p class="projects-intro">A curated view of systems, machine learning, data tools, and applied technical experiments. Flagship work leads the page; smaller projects sit in a cleaner library below.</p>
+    </section>
+
+    {% assign flagship_projects = site.projects | where: "spotlight", true | sort: "spotlight_order" %}
+    {% if flagship_projects.size > 0 %}
+      <section class="project-section project-section-flagship" aria-labelledby="flagship-work-title">
+        <div class="project-section-heading">
+          <p class="section-eyebrow">Selected work</p>
+          <h2 id="flagship-work-title" class="project-category-title">Flagship Work</h2>
+          <p class="section-description">Larger projects with stronger problem framing, architecture notes, validation, and implementation detail.</p>
         </div>
-    </details>
-  </section>
-</div>
+        <div class="flagship-project-list">
+          {% for item in flagship_projects %}
+            {% include project_feature_card.html item=item %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    <section class="project-section project-library" aria-labelledby="project-library-title">
+      <div class="project-section-heading project-library-heading">
+        <p class="section-eyebrow">Project library</p>
+        <h2 id="project-library-title" class="project-category-title">Browse Smaller Work</h2>
+        <p class="section-description">Practice projects, notebooks, dashboards, and experiments grouped by track.</p>
+
+        <div class="project-tabs" data-project-tabs>
+          <div class="project-tab-list" role="tablist" aria-label="Project tracks">
+            <button class="project-tab is-active" type="button" role="tab" id="tab-python" aria-controls="panel-python" aria-selected="true" data-tab-target="python">Python</button>
+            <button class="project-tab" type="button" role="tab" id="tab-data-ai" aria-controls="panel-data-ai" aria-selected="false" data-tab-target="data-ai">Data & AI</button>
+            <button class="project-tab" type="button" role="tab" id="tab-visualisation" aria-controls="panel-visualisation" aria-selected="false" data-tab-target="visualisation">Visualisation</button>
+            <button class="project-tab" type="button" role="tab" id="tab-learning" aria-controls="panel-learning" aria-selected="false" data-tab-target="learning">Learning Lab</button>
+          </div>
+        </div>
+      </div>
+
+      {% assign non_flagship_projects = site.projects | where_exp: "project", "project.spotlight != true" %}
+      {% assign python_projects = non_flagship_projects | where: "category", "python" | sort: "library_order" %}
+      {% assign data_ai_projects = non_flagship_projects | where: "category", "data-ai" | sort: "library_order" %}
+      {% assign viz_projects = non_flagship_projects | where: "category", "viz" | sort: "library_order" %}
+      {% assign learning_items = site.data.learning | sort: "library_order" %}
+
+      <div class="project-tab-panels" data-project-tabs-panels>
+        <section class="project-tab-panel is-active" role="tabpanel" id="panel-python" aria-labelledby="tab-python" data-tab-panel="python">
+          <div class="tab-panel-heading"><h3>Python Foundations</h3><p>CLI tools, practice apps, and programming fundamentals.</p></div>
+          <div class="project-grid-wrapper">
+            {% for item in python_projects %}
+              {% include project_tile.html item=item %}
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="project-tab-panel" role="tabpanel" id="panel-data-ai" aria-labelledby="tab-data-ai" data-tab-panel="data-ai" hidden>
+          <div class="tab-panel-heading"><h3>Data & AI Experiments</h3><p>Machine learning, clustering, analytics, notebooks, and applied AI/data investigations.</p></div>
+          <div class="project-grid-wrapper">
+            {% if data_ai_projects.size > 0 %}
+              {% for item in data_ai_projects %}
+                {% include project_tile.html item=item %}
+              {% endfor %}
+            {% else %}
+              {% include project_placeholder_tile.html title="Upcoming Data & AI Project" description="A public-safe machine learning or analytics project will sit here once the work is ready to publish." %}
+            {% endif %}
+          </div>
+        </section>
+
+        <section class="project-tab-panel" role="tabpanel" id="panel-visualisation" aria-labelledby="tab-visualisation" data-tab-panel="visualisation" hidden>
+          <div class="tab-panel-heading"><h3>Visualisation & Analytics</h3><p>Dashboards, exploratory analysis, and visual storytelling projects.</p></div>
+          <div class="project-grid-wrapper">
+            {% for item in viz_projects %}
+              {% include project_tile.html item=item %}
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="project-tab-panel" role="tabpanel" id="panel-learning" aria-labelledby="tab-learning" data-tab-panel="learning" hidden>
+          <div class="tab-panel-heading"><h3>Learning Lab</h3><p>Course-backed notes, experiments, and structured learning artefacts that support the wider portfolio.</p></div>
+          <div class="project-grid-wrapper">
+            {% for item in learning_items %}
+              {% include project_tile.html item=item fallback_tags="Learning Lab,Coursework" %}
+            {% endfor %}
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  {% include footer.html %}
+</main>
+
+<script src="{{ '/assets/js/projects-tabs.js' | relative_url }}" defer></script>

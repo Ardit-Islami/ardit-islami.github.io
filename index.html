@@ -1,17 +1,16 @@
 ---
 layout: sidebar-page
-title: "Ardit Islami – AI Portfolio"
+title: "Ardit Islami Portfolio"
 permalink: /
 page_css: homepage.css
 ---
 
 <div class="hero-block hero-mission">
-        <p class="hero-subtitle">Mathematics • Data • Intelligence</p>
-      
-        <h1>
-          Tinkering with <span class="text-gradient">Systems</span>.<br>
-          Steered by <span class="text-gradient">Maths.</span>
-        </h1>
+  <p class="hero-subtitle">Mathematics • Data • Intelligence</p>
+  <h1>
+    Tinkering with <span class="text-gradient">Systems</span>.<br>
+    Steered by <span class="text-gradient">Maths</span>.
+  </h1>
 </div>
 
 <div class="hero-block hero-value">
@@ -19,13 +18,11 @@ page_css: homepage.css
     Graduate of Mathematics, head over heels with taming Data,<br>
     from CLI scripting to building foundations for AI workflows.
   </p>
-        
   <div class="hero-bottom-wrapper">
     <p class="hero-tagline">
       <code>Learning becomes meaningful when it meets practice.</code><br>
       <code>Have a look while you're here:</code>
     </p>
-
     <div class="hero-cta-buttons">
       <a href="/projects/" class="cta-button">View Work</a>
       <a href="/assets/files/Ardit Islami CV.pdf" class="cta-button" target="_blank">Download CV</a>
@@ -36,21 +33,22 @@ page_css: homepage.css
 <section class="projects-scroll">
   <h2 class="projects-scroll-title">Featured Projects</h2>
   <div class="project-list">
-    {% assign featured_projects = site.projects | where: "featured", true %}
+    {% assign rota_project = site.projects | where: "title", "24/7 Rota Consequence Engine" | first %}
+    {% assign nhs_project = site.projects | where: "title", "NHS 111 ML Clustering Project" | first %}
+    {% assign finance_project = site.projects | where: "title", "Personal Finance Tracker" | first %}
+
+    {% if rota_project %}{% include homepage_card.html item=rota_project %}{% endif %}
+    {% if nhs_project %}{% include homepage_card.html item=nhs_project %}{% endif %}
+    {% if finance_project %}{% include homepage_card.html item=finance_project %}{% endif %}
+
+    {% assign featured_projects = site.projects | where: "featured", true | sort: "date" | reverse %}
     {% for item in featured_projects %}
-      {% include homepage_card.html item=item %}
+      {% unless item.title == "24/7 Rota Consequence Engine" or item.title == "NHS 111 ML Clustering Project" or item.title == "Personal Finance Tracker" %}
+        {% include homepage_card.html item=item %}
+      {% endunless %}
     {% endfor %}
   </div>
   <div class="cta-text">
-    <a href="/projects/" class="cta-button">See All Projects →</a>
+    <a href="/projects/" class="inline-project-link">See All Projects →</a>
   </div>
-</section>
-
-
-<section class="description-box">
-  <p><strong>This space is my lab.</strong><br>
-    A place where I wish to digitise my progress, learning and slowly turn knowledge into tools.<br>
-    Every project here reflects something I'm learning, building, or figuring out... CLI apps, Streamlit dashboards, or a stub of an AI system.<br><br>
-    You won't find perfection, but steady evolution, real curiosity, and a love for making things work.
-  </p>
 </section>
