@@ -75,14 +75,19 @@
 
   
 
-  <link rel="stylesheet" href="/assets/css/project-single.css">
 
+
+
+
+
+  <link rel="stylesheet" href="/assets/css/project-single.css">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body
@@ -144,30 +149,76 @@
 </div>
 
   <div class="initial-content">
-    <div class="page-container">
-    <div class="project-wrapper">
+    <main class="standard-project-page">
+  <article class="standard-project">
+    <header class="standard-project-hero">
+      <div class="standard-project-copy">
+        <p class="eyebrow">Project</p>
+        <h1 class="project-title">Python Toys</h1>
 
-        <div class="project-content-box">
-            <h1 class="project-title">Python Toys</h1>
+        
+          <p class="project-description">A collection of beginner-friendly Python CLI projects built for practice and learning.</p>
+        
 
-            
+        <div class="project-context-line">
+          <span>Python</span>
+          <span>2025</span>
+          
+        </div>
+      </div>
 
-            
-            <div class="skill-section">
-                
-                <span class="skill-pill">Python</span>
-                
-                <span class="skill-pill">CLI</span>
-                
-                <span class="skill-pill">Beginner</span>
-                
-                <span class="skill-pill">Games</span>
-                
+      
+      
+        <figure class="standard-project-preview">
+          <img src="/assets/images/python-toys-teaser.jpg" alt="Python Toys" class="project-image">
+          
+        </figure>
+      
+    </header>
+
+    
+    
+
+    
+      <section class="project-mobile-meta" aria-label="Project details">
+        
+          <div class="project-meta-group">
+            <h2>Skills Used</h2>
+            <ul class="project-rail-tags">
+              
+                <li>Python</li>
+              
+                <li>CLI</li>
+              
+                <li>Beginner</li>
+              
+                <li>Games</li>
+              
+            </ul>
+          </div>
+        
+
+        
+          <div class="project-meta-group">
+            <h2>Inspect Further?</h2>
+            <div class="project-rail-links">
+              
+                <a href="https://github.com/Ardit-Islami/python-toys/" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  <span>View Work</span>
+                </a>
+              
+              
+              
             </div>
-            
+          </div>
+        
+      </section>
+    
 
-            <div class="project-body">
-                <p>This repository contains a collection of simple Python command-line interface (CLI) projects developed as part of foundational learning and practice. Each project is self-contained and focuses on core programming concepts.</p>
+    <div class="standard-project-layout">
+      <div class="project-body">
+        <p>This repository contains a collection of simple Python command-line interface (CLI) projects developed as part of foundational learning and practice. Each project is self-contained and focuses on core programming concepts.</p>
 
 <h3 id="projects-included">Projects Included</h3>
 
@@ -179,31 +230,86 @@
 
 <p>Each project resides in its own subfolder and can be executed independently.</p>
 
-            </div>
-            
-            <a href="https://github.com/Ardit-Islami/python-toys/" class="btn-github" target="_blank">
-                <i class="fab fa-github"></i> View on GitHub
-            </a>
-            
 
-            <!-- Prev/Next Navigation -->
-            <div class="project-nav">
-                
-                <a class="nav-button prev" href="/projects/python-notebooks/">
-                    ← Python Core Notebooks
-                </a>
-                
-                
-                <a class="nav-button next" href="/projects/arithmetic-formatter/">
-                    Arithmetic Formatter →
-                </a>
-                
-            </div>
-        </div>
+        
 
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    <nav class="project-nav" aria-label="Project navigation">
+      
+        <a href="/projects/arithmetic-formatter/" class="nav-button previous">
+          <span>Previous</span>
+          <strong>Arithmetic Formatter</strong>
+        </a>
+      
+
+      
+        <a href="/projects/python-notebooks/" class="nav-button next">
+          <span>Next</span>
+          <strong>Python Core Notebooks</strong>
+        </a>
+      
+    </nav>
+  
+
+
+      </div>
+
+      
+        <aside class="standard-project-rail" aria-label="Project details">
+          
+            <section class="project-rail-block">
+              <h2>Skills Used</h2>
+              <ul class="project-rail-tags">
+                
+                  <li>Python</li>
+                
+                  <li>CLI</li>
+                
+                  <li>Beginner</li>
+                
+                  <li>Games</li>
+                
+              </ul>
+            </section>
+          
+
+          
+            <section class="project-rail-block">
+              <h2>Inspect Further?</h2>
+              <div class="project-rail-links">
+                
+                  <a href="https://github.com/Ardit-Islami/python-toys/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <span>View Work</span>
+                  </a>
+                
+                
+                
+              </div>
+            </section>
+          
+        </aside>
+      
     </div>
-    <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
-  © 2025 Ardit Islami · Built with Jekyll
+  </article>
+
+  <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
+  © 2026 Ardit Islami · Built with Jekyll
 </footer>
 
 <div id="contact-modal" class="modal-overlay">
@@ -276,7 +382,8 @@
     });
   });
 </script>
-</div>
+</main>
+
     
   </div>
 
@@ -287,7 +394,7 @@
       <footer>
         
         <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
-  © 2025 Ardit Islami · Built with Jekyll
+  © 2026 Ardit Islami · Built with Jekyll
 </footer>
 
 <div id="contact-modal" class="modal-overlay">

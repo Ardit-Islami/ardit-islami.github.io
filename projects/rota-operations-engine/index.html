@@ -1,0 +1,667 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>24/7 Rota Consequence Engine - Ardit Islami</title>
+<meta name="description" content="A sanitised reference implementation modelling how 24/7 rota changes affect TOIL, payments, cover, approvals and final shift visibility.">
+
+
+  <meta name="author" content="Ardit Islami">
+  
+  <meta property="article:author" content="Ardit Islami">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ardit Islami">
+<meta property="og:title" content="24/7 Rota Consequence Engine">
+<meta property="og:url" content="https://ardit-islami.github.io/projects/rota-operations-engine/">
+
+
+  <meta property="og:description" content="A sanitised reference implementation modelling how 24/7 rota changes affect TOIL, payments, cover, approvals and final shift visibility.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2026-05-13T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://ardit-islami.github.io/projects/rota-operations-engine/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="/assets/css/case-study.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body
+  class="layout--case-study"
+  dir="ltr">
+  <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <ul class="visible-links"><li class="masthead__menu-item">
+            <a href="/" 
+                
+               
+               >
+               Home
+            </a>
+          </li><li class="masthead__menu-item">
+            <a href="/projects/" 
+                
+               
+               >
+               Projects
+            </a>
+          </li><li class="masthead__menu-item">
+            <a href="/about/" 
+                
+               
+               >
+               About Me
+            </a>
+          </li><li class="masthead__menu-item">
+            <a href="/" 
+                class="js-open-contact"  
+               
+               >
+               Contact
+            </a>
+          </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <div class="initial-content">
+    
+
+
+
+<div class="page-container flagship-page-container">
+  <main class="flagship-main" aria-labelledby="case-study-title">
+    <article class="flagship-page">
+      <header class="flagship-hero">
+        <div class="flagship-hero-copy">
+          <p class="flagship-eyebrow">Flagship systems case study</p>
+          <h1 id="case-study-title">24/7 Rota Consequence Engine</h1>
+          <p class="flagship-lede">A sanitised reference implementation modelling how 24/7 rota changes affect TOIL, payments, cover, approvals and final shift visibility.</p>
+
+          <p class="flagship-context-line">
+            <span>Prototype and sanitised reference implementation</span>
+            <span>Systems</span>
+            <span>2026</span>
+          </p>
+
+          
+            <p class="flagship-stack-line" aria-label="Project skills and technologies">
+              
+                <span>SQL Server</span><span class="stack-separator">·</span>
+              
+                <span>FastAPI</span><span class="stack-separator">·</span>
+              
+                <span>HTMX</span><span class="stack-separator">·</span>
+              
+                <span>Jinja2</span><span class="stack-separator">·</span>
+              
+                <span>pyodbc</span><span class="stack-separator">·</span>
+              
+                <span>Workflow Modelling</span><span class="stack-separator">·</span>
+              
+                <span>Data Architecture</span><span class="stack-separator">·</span>
+              
+                <span>Read Models</span>
+              
+            </p>
+          
+        </div>
+
+        
+          <figure class="flagship-hero-visual">
+            <picture>
+              <source media="(max-width: 760px)" srcset="/assets/images/rota-engine-hero.png">
+              <img src="/assets/images/rota-engine-hero.png" alt="Conceptual visual showing rota baseline, workflow events, consequences, audit trail and trusted view.">
+            </picture>
+            <figcaption>Sanitised conceptual visual. Public screenshots and diagrams use fictional support-team data and do not expose real operational records.</figcaption>
+          </figure>
+        
+      </header>
+
+      
+        <section class="flagship-snapshot" aria-label="Project snapshot">
+          
+            <div class="snapshot-item">
+              <span>Problem</span>
+              <strong>Rota changes create linked schedule, TOIL, payment, approval and audit consequences.</strong>
+            </div>
+          
+            <div class="snapshot-item">
+              <span>Built</span>
+              <strong>A SQL Server and FastAPI/HTMX prototype with workflow state, derived effects and trusted read models.</strong>
+            </div>
+          
+            <div class="snapshot-item">
+              <span>Evidence</span>
+              <strong>Architecture diagrams, workflow examples, validation checks and interface-ready evidence modules.</strong>
+            </div>
+          
+            <div class="snapshot-item">
+              <span>Boundary</span>
+              <strong>Personal prototype using fictionalised/sanitised data, not production payroll or HR software.</strong>
+            </div>
+          
+        </section>
+      
+
+      
+        <section class="flagship-evidence-hub" aria-labelledby="evidence-hub-title">
+          <div class="flagship-section-heading compact">
+            <p class="section-eyebrow">Choose your depth</p>
+            <h2 id="evidence-hub-title">Evidence Hub</h2>
+            <p>Jump to the proof that matters most, or open media without making the whole page a long gallery.</p>
+          </div>
+
+          <div class="evidence-hub-grid">
+            
+              <a href="#short-case" class="evidence-hub-card">
+                <span>Story</span>
+                <strong>Short case</strong>
+                <p>The project in one guided read.</p>
+              </a>
+            
+              <a href="#architecture" class="evidence-hub-card">
+                <span>Model</span>
+                <strong>Architecture</strong>
+                <p>Layered truth model and read-model projection.</p>
+              </a>
+            
+              <a href="#workflow-example" class="evidence-hub-card">
+                <span>Flow</span>
+                <strong>Workflow example</strong>
+                <p>SICK → Cover → TOIL/payment consequences.</p>
+              </a>
+            
+              <a href="#validation" class="evidence-hub-card">
+                <span>Proof</span>
+                <strong>Validation</strong>
+                <p>Checks used to prove consequences stayed consistent.</p>
+              </a>
+            
+              <a href="#gallery" class="evidence-hub-card">
+                <span>Media</span>
+                <strong>Gallery</strong>
+                <p>Diagrams and future screenshot/video slots.</p>
+              </a>
+            
+              <a href="#appendix" class="evidence-hub-card">
+                <span>Depth</span>
+                <strong>Appendix</strong>
+                <p>Extra notes without overloading the main page.</p>
+              </a>
+            
+          </div>
+        </section>
+      
+
+      <div class="flagship-layout">
+        <div class="flagship-body">
+          <section class="flagship-section" id="short-case">
+  <div class="flagship-section-heading">
+    <p class="section-eyebrow">The short case</p>
+    <h2>Not just a rota calendar</h2>
+    <p>The visible rota was only the surface. The harder problem was preserving causality when operational changes affect multiple downstream records.</p>
+  </div>
+
+  <div class="short-case-grid">
+    <div class="prose-block">
+      <p>I built this project to push beyond day-to-day SQL querying into deeper system design: schema boundaries, stored procedures, workflow tables, derived effects, read models and validation logic.</p>
+
+      <p>The core design challenge was that a rota change is rarely just a calendar edit. A sickness record, cover assignment, reassignment or swap can affect primary shift visibility, supplemental work, TOIL movement, payment adjustments, approval state and audit history. If those consequences are inferred loosely, the final rota can look correct while the underlying truth is inconsistent.</p>
+
+      <p>The solution became a layered operational model. Generated rota rows stay as baseline truth. Workflow rows record what changed and why. Derived effect tables store TOIL and payment consequences. Read models project the trusted operational view used by the interface.</p>
+
+      <p>The strongest lesson was architectural: the system became easier to reason about once each layer owned one type of truth. Instead of one broad “change shift” concept, the model separates annual leave, sickness, cover, reassignment and swaps by their operational meaning.</p>
+    </div>
+
+    <aside class="proof-note">
+      <strong>What this demonstrates</strong>
+      <p>SQL depth, workflow modelling, backend architecture, testable consequences, operational reasoning and public-safe technical communication.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="flagship-section" id="architecture">
+  <div class="flagship-section-heading">
+    <p class="section-eyebrow">Architecture</p>
+    <h2>Layered truth model</h2>
+    <p>The key decision was to avoid overwriting generated rota truth directly.</p>
+  </div>
+
+  <figure class="case-media">
+    <img src="/assets/images/projects/rota/rota-layered-operational-model.svg" alt="Layered operational model diagram showing configuration truth, generated baseline truth, workflow truth, derived effects and trusted read models" />
+    <figcaption><strong>Layered operational model:</strong> configuration truth feeds generated baseline truth; workflows record operational changes; derived effects store TOIL and payment consequences; read models project the final operational view.</figcaption>
+  </figure>
+
+  <div class="case-card-grid">
+    <div class="case-card"><h3>Configuration truth</h3><p>Staff scope, profiles, shift types, rota pattern versions, pattern slots, payment rules and TOIL causality configuration.</p></div>
+    <div class="case-card"><h3>Generated baseline truth</h3><p>Pattern-generated rota rows and generated TOIL links provide the original reference state.</p></div>
+    <div class="case-card"><h3>Workflow truth</h3><p>Annual leave, sickness, cover, reassignment, swaps, approval, rejection and cancellation state.</p></div>
+    <div class="case-card"><h3>Derived effects</h3><p>Payment events, TOIL resolution, TOIL events and TOIL schedule adjustments linked back to parent workflows.</p></div>
+    <div class="case-card"><h3>Trusted read models</h3><p>Effective primary schedule, supplemental work, TOIL occurrence projection, bank balance and payment-event reporting.</p></div>
+  </div>
+</section>
+
+<section class="flagship-section" id="workflow-example">
+  <div class="flagship-section-heading">
+    <p class="section-eyebrow">Workflow example</p>
+    <h2>SICK → Cover → Payment / TOIL consequences</h2>
+    <p>One scenario is enough to show why the project is more than a shift viewer.</p>
+  </div>
+
+  <figure class="case-media">
+    <img src="/assets/images/projects/rota/rota-sick-cover-consequence-flow.svg" alt="Sickness cover consequence flow showing absence, cover assignment, extra payment, TOIL handling and trusted views" />
+    <figcaption><strong>Example consequence chain:</strong> sickness on an OOH shift can create a coverage gap, trigger cover, create extra payment for the coverer, move or bank TOIL, and update final read models.</figcaption>
+  </figure>
+
+  <div class="case-card-grid">
+    <div class="case-card"><h3>Absence changes primary truth</h3><p>The original generated shift remains auditable, but the effective primary view reflects the approved absence.</p></div>
+    <div class="case-card"><h3>Cover is supplemental</h3><p>The coverer does not simply replace the absent worker’s row. Cover creates an additional work event with its own consequences.</p></div>
+    <div class="case-card"><h3>Consequences are explicit</h3><p>Payment and TOIL outcomes are stored as derived effect rows rather than guessed from the final display.</p></div>
+  </div>
+</section>
+
+<section class="flagship-section" id="validation">
+  <div class="flagship-section-heading">
+    <p class="section-eyebrow">Validation</p>
+    <h2>Testing the consequence chain</h2>
+    <p>The project needed evidence that workflow scenarios created the expected truth-state, not just successful UI interactions.</p>
+  </div>
+
+  <div class="case-tabs" data-case-tabs="">
+    <div class="case-tab-list" role="tablist" aria-label="Technical deep dive sections">
+      <button class="case-tab is-active" type="button" role="tab" aria-selected="true" data-case-tab-target="architecture">Architecture checks</button>
+      <button class="case-tab" type="button" role="tab" aria-selected="false" data-case-tab-target="workflow">Workflow logic</button>
+      <button class="case-tab" type="button" role="tab" aria-selected="false" data-case-tab-target="interface">Interface evidence</button>
+      <button class="case-tab" type="button" role="tab" aria-selected="false" data-case-tab-target="boundaries">Boundaries</button>
+    </div>
+
+    <div class="case-tab-panel is-active" role="tabpanel" data-case-tab-panel="architecture">
+      <div class="case-card-grid">
+        <div class="case-card"><h3>No duplicate primary rows</h3><p>Effective schedule projection must not create competing primary truth for the same staff/date.</p></div>
+        <div class="case-card"><h3>No orphaned effects</h3><p>Payment, TOIL and schedule adjustment rows should remain linked to the workflow that caused them.</p></div>
+        <div class="case-card"><h3>Cancellation unwinds effects</h3><p>Cancelled workflows should no longer influence trusted operational views.</p></div>
+      </div>
+    </div>
+
+    <div class="case-tab-panel" role="tabpanel" data-case-tab-panel="workflow" hidden="">
+      <div class="case-card-grid">
+        <div class="case-card"><h3>Annual leave / sickness</h3><p>Replacement workflows alter effective primary state while keeping baseline rows intact.</p></div>
+        <div class="case-card"><h3>Cover</h3><p>Cover is supplemental work and can create OOH extra payment plus TOIL transfer or banking effects.</p></div>
+        <div class="case-card"><h3>Reassignment / swaps</h3><p>Different workflow families are separated so same-looking rota actions can carry different consequences.</p></div>
+      </div>
+    </div>
+
+    <div class="case-tab-panel" role="tabpanel" data-case-tab-panel="interface" hidden="">
+      <div class="case-card-grid">
+        <div class="case-card"><h3>Daily board</h3><p>Designed to show final operational coverage and surface redirected or supplemental work clearly.</p></div>
+        <div class="case-card"><h3>Workflow launcher</h3><p>Administrative workflows are routed through structured preflight, submit and decision paths.</p></div>
+        <div class="case-card"><h3>Ledger views</h3><p>TOIL and payment evidence can be exposed as reviewable operational records.</p></div>
+      </div>
+    </div>
+
+    <div class="case-tab-panel" role="tabpanel" data-case-tab-panel="boundaries" hidden="">
+      <div class="boundary-note">
+        <strong>Public-safe boundary</strong>
+        <p>This is a personal prototype and sanitised reference implementation. It is not production payroll, HR, legal-compliance, or enterprise workforce-management software. No real staff, customer or operational data is published.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flagship-section" id="gallery">
+  <div class="flagship-section-heading">
+    <p class="section-eyebrow">Media gallery</p>
+    <h2>Evidence without loading every asset into the main scroll</h2>
+    <p>Diagrams open in a modal. Later, real screenshots and walkthrough videos can use the same pattern.</p>
+  </div>
+
+  <div class="case-media-gallery">
+    <button class="media-thumb" type="button" data-modal-src="/assets/images/projects/rota/rota-layered-operational-model.svg" data-modal-title="Layered operational model" data-modal-caption="Configuration, generated baseline, workflow, derived effects and read models." data-modal-type="image">
+      <img src="/assets/images/projects/rota/rota-layered-operational-model.svg" alt="Layered operational model thumbnail" />
+      <span>Layered operational model</span>
+    </button>
+    <button class="media-thumb" type="button" data-modal-src="/assets/images/projects/rota/rota-controlled-workflow-lifecycle.svg" data-modal-title="Controlled workflow lifecycle" data-modal-caption="Preflight, pending state, approval, consequence creation, read model update and cancellation." data-modal-type="image">
+      <img src="/assets/images/projects/rota/rota-controlled-workflow-lifecycle.svg" alt="Controlled workflow lifecycle thumbnail" />
+      <span>Controlled workflow lifecycle</span>
+    </button>
+    <button class="media-thumb" type="button" data-modal-src="/assets/images/projects/rota/rota-operational-truth-audit.svg" data-modal-title="Operational truth audit" data-modal-caption="Checks used to reason about final schedule, TOIL and payment consistency." data-modal-type="image">
+      <img src="/assets/images/projects/rota/rota-operational-truth-audit.svg" alt="Operational truth audit thumbnail" />
+      <span>Operational truth audit</span>
+    </button>
+    <button class="media-thumb" type="button" data-modal-src="/assets/images/projects/rota/rota-primary-supplemental-truth.svg" data-modal-title="Primary vs supplemental truth" data-modal-caption="Separating primary schedule projection from additional work such as cover." data-modal-type="image">
+      <img src="/assets/images/projects/rota/rota-primary-supplemental-truth.svg" alt="Primary versus supplemental truth thumbnail" />
+      <span>Primary vs supplemental truth</span>
+    </button>
+  </div>
+</section>
+
+<section class="flagship-section" id="appendix">
+  <div class="flagship-section-heading">
+    <p class="section-eyebrow">Appendix</p>
+    <h2>Deeper notes, available on demand</h2>
+    <p>These sections preserve technical depth without forcing every reader through the entire implementation story.</p>
+  </div>
+
+  <div class="case-appendix">
+    <details>
+      <summary>Legacy diagnosis</summary>
+      <div class="appendix-content">
+        <p>The project began with investigation into how an older rota setup could continue displaying schedule rows while derived consequences became unreliable. That led to the core design lesson: identify which layer owns the truth before patching symptoms.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Workflow family taxonomy</summary>
+      <div class="appendix-content">
+        <p>Annual leave and sickness replace primary state. Cover creates supplemental work. Reassignment models one-way substitution or redirection. Same-date swaps model reciprocal movement with separate payment and TOIL treatment rules.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Primary vs supplemental truth</summary>
+      <div class="appendix-content">
+        <p>The system separates effective primary schedule from supplemental work so a cover assignment does not corrupt the original rota pattern or primary shift ownership.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Future direction</summary>
+      <div class="appendix-content">
+        <p>The reusable idea is not another generic rota calendar. The stronger direction is a consequence and reconciliation layer for complex 24/7 operations, with managed rota truth, import/reconciliation mode, or report-only audit mode.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+        </div>
+
+        
+          <aside class="flagship-dock" aria-label="Case study navigation">
+            <p>On this case study</p>
+            <nav>
+              
+                <a href="#short-case">Short case</a>
+              
+                <a href="#architecture">Architecture</a>
+              
+                <a href="#workflow-example">Workflow</a>
+              
+                <a href="#validation">Validation</a>
+              
+                <a href="#gallery">Gallery</a>
+              
+                <a href="#appendix">Appendix</a>
+              
+            </nav>
+          </aside>
+        
+      </div>
+    </article>
+  </main>
+
+  <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
+  © 2026 Ardit Islami · Built with Jekyll
+</footer>
+
+<div id="contact-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close js-close-contact">&times;</button>
+    
+    <div class="modal-body-grid">
+      <div class="modal-info-side">
+        <h3>Let's Chat</h3>
+        <p>I'm always open to discussing AI projects, data challenges, or just geeking out over Python.</p>
+        
+        <div class="modal-mini-contacts">
+          
+          <div class="mini-contact-item">
+            <i class="fas fa-envelope fa-fw"></i> arditislami.pro@gmail.com
+          </div>
+          
+          <div class="mini-contact-item">
+            <i class="fas fa-map-marker-alt fa-fw"></i> UK
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-form-side">
+        <form id="contact-form" action="https://formspree.io/f/mjknpyov" method="POST">
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" name="email" id="email" placeholder="name@example.com" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="4" placeholder="How can I help?" required></textarea>
+            </div>
+
+            <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+
+            <p class="form-success" style="display:none;margin-top:1rem;">
+                Thanks – your message was sent!
+            </p>
+        </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('contact-modal');
+    const openBtns = document.querySelectorAll('.js-open-contact');
+    const closeBtn = document.querySelector('.js-close-contact');
+
+    // Open Modal
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.add('is-visible');
+      });
+    });
+
+    // Close Modal (X button)
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('is-visible');
+    });
+
+    // Close Modal (Click outside)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('is-visible');
+      }
+    });
+  });
+</script>
+</div>
+
+<div class="case-modal" data-case-modal hidden>
+  <div class="case-modal-backdrop" data-modal-close></div>
+  <div class="case-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="case-modal-title">
+    <button class="case-modal-close" type="button" data-modal-close aria-label="Close media viewer">×</button>
+    <div class="case-modal-media" data-modal-media></div>
+    <div class="case-modal-copy">
+      <h2 id="case-modal-title" data-modal-title></h2>
+      <p data-modal-caption></p>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/case-study-interactions.js" defer></script>
+
+    
+  </div>
+
+  
+
+  <!--
+    <div id="footer" class="page__footer">
+      <footer>
+        
+        <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
+  © 2026 Ardit Islami · Built with Jekyll
+</footer>
+
+<div id="contact-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close js-close-contact">&times;</button>
+    
+    <div class="modal-body-grid">
+      <div class="modal-info-side">
+        <h3>Let's Chat</h3>
+        <p>I'm always open to discussing AI projects, data challenges, or just geeking out over Python.</p>
+        
+        <div class="modal-mini-contacts">
+          
+          <div class="mini-contact-item">
+            <i class="fas fa-envelope fa-fw"></i> arditislami.pro@gmail.com
+          </div>
+          
+          <div class="mini-contact-item">
+            <i class="fas fa-map-marker-alt fa-fw"></i> UK
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-form-side">
+        <form id="contact-form" action="https://formspree.io/f/mjknpyov" method="POST">
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" name="email" id="email" placeholder="name@example.com" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="4" placeholder="How can I help?" required></textarea>
+            </div>
+
+            <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+
+            <p class="form-success" style="display:none;margin-top:1rem;">
+                Thanks – your message was sent!
+            </p>
+        </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('contact-modal');
+    const openBtns = document.querySelectorAll('.js-open-contact');
+    const closeBtn = document.querySelector('.js-close-contact');
+
+    // Open Modal
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.add('is-visible');
+      });
+    });
+
+    // Close Modal (X button)
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('is-visible');
+    });
+
+    // Close Modal (Click outside)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('is-visible');
+      }
+    });
+  });
+</script>
+      </footer>
+    </div>
+  -->
+
+  <script defer src="/assets/js/contact-modal.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">SICK plus Cover Consequence Flow</title>
+  <desc id="desc">Workflow diagram showing sickness on an OOH shift leading to payment deduction, TOIL suppression, cover, extra payment, TOIL transfer, read model updates, and cancellation.</desc>
+  
+  <defs>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#102033"/>
+      <stop offset="100%" stop-color="#0B1424"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#38BDF8"/>
+    </marker>
+    <style>
+      .bg { fill: #07111F; }
+      .title { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 34px; font-weight: 760; fill: #F8FAFC; }
+      .subtitle { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 17px; fill: #CBD5E1; }
+      .label { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 18px; font-weight: 740; fill: #F8FAFC; }
+      .small { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; fill: #CBD5E1; }
+      .tiny { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; fill: #94A3B8; }
+      .card { fill: url(#panelGrad); stroke: #1E3A5F; stroke-width: 1.2; rx: 22; filter: url(#softShadow); }
+      .cardLight { fill: #0E1B2B; stroke: #27496D; stroke-width: 1.2; rx: 18; }
+      .accentLine { stroke: url(#accentGrad); stroke-width: 4; stroke-linecap: round; }
+      .arrow { stroke: #38BDF8; stroke-width: 2.8; fill: none; marker-end: url(#arrow); }
+      .arrowMuted { stroke: #64748B; stroke-width: 2.2; fill: none; marker-end: url(#arrow); opacity: 0.75; }
+      .orange { fill: #FDBA74; }
+      .cyan { fill: #7DD3FC; }
+      .muted { fill: #94A3B8; }
+      .pill { fill: #11243A; stroke: #2A4E73; stroke-width: 1; rx: 14; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1100" class="bg"/>
+  <text x="90" y="95" class="title">SICK plus Cover Consequence Flow</text>
+  <text x="90" y="130" class="subtitle">A single absence can affect schedule truth, payment, TOIL causality, supplemental work, and cancellation behaviour.</text>
+  <line x1="90" y1="160" x2="1510" y2="160" class="accentLine"/>
+
+  <rect x="100" y="230" width="310" height="120" class="card"/>
+  <text x="130" y="278" class="label">1. Base OOH shift</text>
+  <text x="130" y="310" class="small">Staff A is assigned a generated</text>
+  <text x="130" y="332" class="small">OOH shift that normally creates TOIL.</text>
+
+  <rect x="515" y="230" width="310" height="120" class="card"/>
+  <text x="545" y="278" class="label">2. SICK override</text>
+  <text x="545" y="310" class="small">Staff A is absent. Base truth</text>
+  <text x="545" y="332" class="small">remains traceable.</text>
+
+  <rect x="930" y="190" width="260" height="110" class="cardLight"/>
+  <text x="960" y="238" class="label">Payment effect</text>
+  <text x="960" y="270" class="small">OOH deduction for</text>
+  <text x="960" y="292" class="small">missed compensated work.</text>
+
+  <rect x="930" y="335" width="260" height="110" class="cardLight"/>
+  <text x="960" y="383" class="label">TOIL suppression</text>
+  <text x="960" y="415" class="small">Generated TOIL is not</text>
+  <text x="960" y="437" class="small">earned if the source shift was not worked.</text>
+
+  <rect x="1285" y="260" width="230" height="150" class="card"/>
+  <text x="1315" y="308" class="label">3. Cover approved</text>
+  <text x="1315" y="340" class="small">Staff B fills the gap</text>
+  <text x="1315" y="362" class="small">as supplemental work.</text>
+  <text x="1315" y="390" class="tiny">Linked to the parent absence.</text>
+
+  <path d="M410 290 L515 290" class="arrow"/>
+  <path d="M825 290 C870 290 880 245 930 245" class="arrow"/>
+  <path d="M825 290 C870 290 880 390 930 390" class="arrow"/>
+  <path d="M1190 390 C1240 390 1235 335 1285 335" class="arrow"/>
+
+  <rect x="205" y="575" width="285" height="140" class="cardLight"/>
+  <text x="235" y="620" class="label">Supplemental work</text>
+  <text x="235" y="652" class="small">Cover appears in addition</text>
+  <text x="235" y="674" class="small">to primary schedule truth.</text>
+
+  <rect x="555" y="575" width="285" height="140" class="cardLight"/>
+  <text x="585" y="620" class="label">Extra payment</text>
+  <text x="585" y="652" class="small">Cover staff receives a</text>
+  <text x="585" y="674" class="small">linked OOH extra payment event.</text>
+
+  <rect x="905" y="575" width="285" height="140" class="cardLight"/>
+  <text x="935" y="620" class="label">TOIL outcome</text>
+  <text x="935" y="652" class="small">Generated TOIL can transfer,</text>
+  <text x="935" y="674" class="small">bank, or project as an off-day.</text>
+
+  <path d="M1400 410 C1400 520 350 510 350 575" class="arrowMuted"/>
+  <path d="M1400 410 C1400 535 700 515 700 575" class="arrowMuted"/>
+  <path d="M1400 410 C1400 535 1050 515 1050 575" class="arrowMuted"/>
+
+  <rect x="250" y="835" width="460" height="120" class="card"/>
+  <text x="285" y="885" class="label">4. Read models update</text>
+  <text x="285" y="918" class="small">My Shifts and Daily Board project primary state,</text>
+  <text x="285" y="940" class="small">supplemental cover, TOIL outcome, and payments.</text>
+
+  <rect x="890" y="835" width="460" height="120" class="card"/>
+  <text x="925" y="885" class="label">5. Cancellation / unwind</text>
+  <text x="925" y="918" class="small">Cancelling cover removes cover-linked effects.</text>
+  <text x="925" y="940" class="small">Cancelling SICK restores base truth and TOIL projection.</text>
+
+  <path d="M700 715 C700 780 480 780 480 835" class="arrow"/>
+  <path d="M1050 715 C1050 780 1120 780 1120 835" class="arrow"/>
+</svg>

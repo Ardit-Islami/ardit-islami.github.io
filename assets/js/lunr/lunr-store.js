@@ -1,11 +1,11 @@
 var store = [{
         "title": "About Me",
-        "excerpt":"Why Work With Me I’ve spent the last few years working closely with real users, real data, and the consequences of systems that don’t quite work the way they should. In my current role supporting NHS software, that has meant diagnosing SQL issues and fixing data inconsistencies to keeping services...","categories": [],
+        "excerpt":" ","categories": [],
         "tags": [],
         "url": "/about/",
         "teaser": null
       },{
-        "title": "A Showcase of My Projects",
+        "title": "Projects & Case Studies",
         "excerpt":" ","categories": [],
         "tags": [],
         "url": "/projects/",
@@ -45,5 +45,23 @@ var store = [{
         "excerpt":"Project Overview This formatter was originally built during my first month as an intern. Which helped and validating my python basics at the time. The tool accepts a list of arithmetic problems (e.g., \"32 + 8\", \"1 - 3801\") and outputs them in a neatly aligned, column-style format, mimicking how...","categories": ["python"],
         "tags": ["Python","String Manipulation","FreeCodeCamp"],
         "url": "/projects/arithmetic-formatter/",
+        "teaser": null
+      },{
+        "title": "NHS 111 ML Clustering Project",
+        "excerpt":"Summary TODO: Explain the clustering project, dataset type, and analytical goal. Why I Built This TODO: Tie this to learning unsupervised ML, service-demand analysis, and practical data science reasoning. The Analytical Question TODO: State the question clearly. Example direction: can clustering expose meaningful groups in service-demand, location, timing, or operational...","categories": ["data-ai"],
+        "tags": ["Python","Clustering","Scikit-learn","Machine Learning","Visualisation","Unsupervised Learning"],
+        "url": "/projects/nhs111-clustering-project/",
+        "teaser": null
+      },{
+        "title": "Personal Finance Tracker",
+        "excerpt":"Summary TODO: Explain the finance tracker as a privacy-first budgeting/data project. Why I Built This TODO: Explain the motivation: control over financial data, replacing budget apps, learning data cleaning and spreadsheet/system design through a real personal use case. The Problem TODO: Describe the problem generically: fragmented bank exports, manual review,...","categories": ["systems"],
+        "tags": ["Python","Excel","CSV Processing","Data Cleaning","Budgeting","Personal Analytics"],
+        "url": "/projects/personal-finance-tracker/",
+        "teaser": null
+      },{
+        "title": "24/7 Rota Consequence Engine",
+        "excerpt":"The short case Not just a rota calendar The visible rota was only the surface. The harder problem was preserving causality when operational changes affect multiple downstream records. I built this project to push beyond day-to-day SQL querying into deeper system design: schema boundaries, stored procedures, workflow tables, derived effects,...","categories": ["systems"],
+        "tags": ["SQL Server","FastAPI","HTMX","Jinja2","pyodbc","Workflow Modelling","Data Architecture","Read Models","Systems Design"],
+        "url": "/projects/rota-operations-engine/",
         "teaser": null
       }]

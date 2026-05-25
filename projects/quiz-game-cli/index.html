@@ -75,14 +75,19 @@
 
   
 
-  <link rel="stylesheet" href="/assets/css/project-single.css">
 
+
+
+
+
+  <link rel="stylesheet" href="/assets/css/project-single.css">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body
@@ -144,30 +149,76 @@
 </div>
 
   <div class="initial-content">
-    <div class="page-container">
-    <div class="project-wrapper">
+    <main class="standard-project-page">
+  <article class="standard-project">
+    <header class="standard-project-hero">
+      <div class="standard-project-copy">
+        <p class="eyebrow">Project</p>
+        <h1 class="project-title">Quiz Game CLI</h1>
 
-        <div class="project-content-box">
-            <h1 class="project-title">Quiz Game CLI</h1>
+        
+          <p class="project-description">A command-line Python quiz game that scrapes live trivia questions and uses fuzzy matching to score.</p>
+        
 
-            
+        <div class="project-context-line">
+          <span>Python</span>
+          <span>2025</span>
+          
+        </div>
+      </div>
 
-            
-            <div class="skill-section">
-                
-                <span class="skill-pill">Python</span>
-                
-                <span class="skill-pill">CLI</span>
-                
-                <span class="skill-pill">Selenium</span>
-                
-                <span class="skill-pill">Tkinter</span>
-                
+      
+      
+        <figure class="standard-project-preview">
+          <img src="/assets/images/quiz-game-teaser.jpg" alt="Quiz Game CLI" class="project-image">
+          
+        </figure>
+      
+    </header>
+
+    
+    
+
+    
+      <section class="project-mobile-meta" aria-label="Project details">
+        
+          <div class="project-meta-group">
+            <h2>Skills Used</h2>
+            <ul class="project-rail-tags">
+              
+                <li>Python</li>
+              
+                <li>CLI</li>
+              
+                <li>Selenium</li>
+              
+                <li>Tkinter</li>
+              
+            </ul>
+          </div>
+        
+
+        
+          <div class="project-meta-group">
+            <h2>Inspect Further?</h2>
+            <div class="project-rail-links">
+              
+                <a href="https://github.com/Ardit-Islami/" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  <span>View Work</span>
+                </a>
+              
+              
+              
             </div>
-            
+          </div>
+        
+      </section>
+    
 
-            <div class="project-body">
-                <p>This Python-based CLI quiz game uses Selenium to scrape trivia questions from the web, then presents them via a simple GUI and validates answers using fuzzy string matching.</p>
+    <div class="standard-project-layout">
+      <div class="project-body">
+        <p>This Python-based CLI quiz game uses Selenium to scrape trivia questions from the web, then presents them via a simple GUI and validates answers using fuzzy string matching.</p>
 
 <h3 id="features">Features</h3>
 <ul>
@@ -176,31 +227,86 @@
   <li>Scoring with fuzzywuzzy</li>
 </ul>
 
-            </div>
-            
-            <a href="https://github.com/Ardit-Islami/" class="btn-github" target="_blank">
-                <i class="fab fa-github"></i> View on GitHub
-            </a>
-            
 
-            <!-- Prev/Next Navigation -->
-            <div class="project-nav">
-                
-                <a class="nav-button prev" href="/projects/password-manager-cli/">
-                    ← Password Manager CLI
-                </a>
-                
-                
-                <a class="nav-button next" href="/projects/lineball-dashboard/">
-                    Lineball Performance Dashboard →
-                </a>
-                
-            </div>
-        </div>
+        
 
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    <nav class="project-nav" aria-label="Project navigation">
+      
+        <a href="/projects/python-notebooks/" class="nav-button previous">
+          <span>Previous</span>
+          <strong>Python Core Notebooks</strong>
+        </a>
+      
+
+      
+        <a href="/projects/password-manager-cli/" class="nav-button next">
+          <span>Next</span>
+          <strong>Password Manager CLI</strong>
+        </a>
+      
+    </nav>
+  
+
+
+      </div>
+
+      
+        <aside class="standard-project-rail" aria-label="Project details">
+          
+            <section class="project-rail-block">
+              <h2>Skills Used</h2>
+              <ul class="project-rail-tags">
+                
+                  <li>Python</li>
+                
+                  <li>CLI</li>
+                
+                  <li>Selenium</li>
+                
+                  <li>Tkinter</li>
+                
+              </ul>
+            </section>
+          
+
+          
+            <section class="project-rail-block">
+              <h2>Inspect Further?</h2>
+              <div class="project-rail-links">
+                
+                  <a href="https://github.com/Ardit-Islami/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <span>View Work</span>
+                  </a>
+                
+                
+                
+              </div>
+            </section>
+          
+        </aside>
+      
     </div>
-    <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
-  © 2025 Ardit Islami · Built with Jekyll
+  </article>
+
+  <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
+  © 2026 Ardit Islami · Built with Jekyll
 </footer>
 
 <div id="contact-modal" class="modal-overlay">
@@ -273,7 +379,8 @@
     });
   });
 </script>
-</div>
+</main>
+
     
   </div>
 
@@ -284,7 +391,7 @@
       <footer>
         
         <footer style="margin-top: auto; text-align: center; font-size: 0.8rem; color: #888;">
-  © 2025 Ardit Islami · Built with Jekyll
+  © 2026 Ardit Islami · Built with Jekyll
 </footer>
 
 <div id="contact-modal" class="modal-overlay">
