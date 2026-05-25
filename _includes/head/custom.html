@@ -1,12 +1,9 @@
-{% comment %}
-  Page/layout stylesheet loader.
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Ardit Islami | Portfolio{% endif %}" />
+<meta property="og:description" content="Tinkering with Systems. Steered by Maths." />
 
-  Ownership:
-  - Global baseline styles are loaded through assets/css/main.scss.
-  - Standalone pages declare page_css in front matter when needed.
-  - Reusable layouts can map to their own default stylesheet here.
-  - Avoid ad-hoc extra “fix” CSS files.
-{% endcomment %}
+<meta property="og:image" content="https://ardit-islami.github.io/assets/images/website-teaser.png" />
 
 {% assign resolved_page_css = page.page_css %}
 
